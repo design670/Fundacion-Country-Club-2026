@@ -475,6 +475,127 @@ document.querySelectorAll(".vswitch").forEach(sw => sw.addEventListener("click",
 /* ---------- Contacto: si el visor no permite incrustar el mapa, queda el mapa ilustrado con el enlace ---------- */
 document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.violatedDirective || "") && /google/.test(e.blockedURI || "")) document.querySelectorAll(".ct-map").forEach(m => m.classList.add("no-frame")); });
 
+
+/* ---------- Trabaja con nosotros: vacantes (contenido de ejemplo) y ventana de postulación ---------- */
+(function(){
+  const list = document.getElementById("jobList"), filters = document.getElementById("jobFilters"), modal = document.getElementById("jobModal");
+  if(!list || !modal) return;
+  const JOBS = [{"t":"Coordinador(a) de programas educativos","a":"Educación","tipo":"Tiempo completo","lugar":"Barranquilla","d":"Lidera la planeación y el seguimiento de los auxilios educativos, el Club de Liderazgo y las alianzas con instituciones de formación.","r":["Coordinar las convocatorias de auxilios educativos de los calendarios A y B.","Hacer seguimiento a la permanencia y el desempeño de los beneficiarios.","Gestionar convenios con universidades e instituciones aliadas."],"q":["Profesional en educación, psicología, trabajo social o afines.","Tres años de experiencia en programas educativos o sociales.","Manejo de indicadores y elaboración de informes."]},{"t":"Trabajador(a) social comunitario","a":"Gestión social","tipo":"Tiempo completo","lugar":"Salgar, Puerto Colombia","d":"Acompaña a las familias y líderes de la comunidad de Salgar en los programas de la Fundación y fortalece el vínculo con el territorio.","r":["Caracterizar a las familias participantes y hacer visitas domiciliarias.","Acompañar los procesos de Descubriendo mis Habilidades y Emprendiendo Juntos.","Articular acciones con el colegio y las organizaciones del corregimiento."],"q":["Profesional en trabajo social o desarrollo familiar.","Dos años de experiencia en trabajo con comunidades.","Disponibilidad para desplazarse a Salgar."]},{"t":"Facilitador(a) de emprendimiento","a":"Gestión social","tipo":"Medio tiempo","lugar":"Salgar, Puerto Colombia","d":"Dicta los talleres de emprendimiento y competencias para la vida del programa Emprendiendo Juntos – Comunidad.","r":["Preparar y facilitar las sesiones de los jueves y algunos viernes.","Asesorar a las participantes en costos, precios y comercialización.","Apoyar la preparación de la muestra de productos en La Vitrina."],"q":["Formación en administración, mercadeo o áreas afines.","Experiencia como formador(a) de emprendedores.","Habilidad para trabajar con grupos de mujeres adultas."]},{"t":"Profesional de bienestar y salud","a":"Bienestar","tipo":"Tiempo completo","lugar":"Barranquilla","d":"Diseña y ejecuta las actividades de bienestar integral para los colaboradores del Club y sus familias.","r":["Programar las actividades de Bienestar Integral, gimnasio y curso de natación.","Apoyar el Programa de Riesgo Psicosocial y Salud.","Medir la participación y la satisfacción de los colaboradores."],"q":["Profesional en psicología, salud ocupacional o afines.","Dos años de experiencia en bienestar laboral.","Licencia en seguridad y salud en el trabajo (deseable)."]},{"t":"Analista de proyectos de vivienda","a":"Vivienda","tipo":"Tiempo completo","lugar":"Barranquilla","d":"Gestiona las solicitudes de subsidio, préstamo y mejoramiento de vivienda, y acompaña a las familias durante las obras.","r":["Recibir y evaluar las postulaciones al Proyecto Vivienda Digna.","Realizar visitas técnicas y hacer seguimiento a las obras.","Llevar el control presupuestal de los subsidios y préstamos."],"q":["Profesional en arquitectura, ingeniería civil o afines.","Experiencia en proyectos de vivienda de interés social.","Manejo de presupuestos y herramientas ofimáticas."]},{"t":"Practicante de comunicaciones","a":"Comunicaciones","tipo":"Prácticas","lugar":"Barranquilla","d":"Apoya la creación de contenidos para la web, las redes sociales y las noticias de la Fundación.","r":["Redactar notas y cubrir los eventos de los programas.","Tomar fotografías y editar piezas para redes sociales.","Mantener actualizada la sección de noticias del sitio web."],"q":["Estudiante de últimos semestres de comunicación social o afines.","Buena redacción y manejo básico de edición de fotos y video.","Aval de la universidad para realizar prácticas."]}];
+  const SPONT = {t:"Envíanos tu hoja de vida", a:"Candidatura espontánea", tipo:"", lugar:"", d:"Cuéntanos quién eres y en qué área te gustaría aportar. Guardaremos tu hoja de vida para las próximas convocatorias de la Fundación.", r:[], q:[]};
+  const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg>';
+  let area = "todas";
+  const areas = ["todas", ...new Set(JOBS.map(j => j.a))];
+  filters.innerHTML = areas.map(a => '<button type="button" class="chip" data-a="' + h(a) + '" aria-pressed="' + (a === area) + '">' + (a === "todas" ? "Todas" : h(a)) + '</button>').join("");
+  function render(){
+    const rows = JOBS.map((j, i) => ({j, i})).filter(x => area === "todas" || x.j.a === area);
+    list.innerHTML = rows.length ? rows.map(({j, i}) =>
+      '<article class="job" tabindex="0" role="button" data-job="' + i + '" aria-label="' + h(j.t) + ': ver vacante y postularme">' +
+        '<div><span class="job-area">' + h(j.a) + '</span><h3>' + h(j.t) + '</h3><ul class="job-meta"><li>' + h(j.tipo) + '</li><li>' + h(j.lugar) + '</li></ul></div>' +
+        '<div class="job-go"><span>Postularme</span><i>' + arrow + '</i></div>' +
+      '</article>').join("") : '<p class="job-empty">No hay vacantes abiertas en esta área por ahora.</p>';
+    [...filters.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.a === area)));
+  }
+  filters.addEventListener("click", e => { const b = e.target.closest(".chip"); if(b){ area = b.dataset.a; render(); } });
+  render();
+
+  /* ventana */
+  const form = document.getElementById("jobForm"), ok = document.getElementById("jobOk"), fileName = document.getElementById("jmFileName"), fileBox = modal.querySelector(".jm-file");
+  let last = null;
+  const listHTML = (title, arr) => arr.length ? '<div><h4>' + title + '</h4><ul>' + arr.map(x => '<li>' + h(x) + '</li>').join("") + '</ul></div>' : "";
+  function open(i, from){
+    const j = i < 0 ? SPONT : JOBS[i]; if(!j) return;
+    last = from || document.activeElement;
+    document.getElementById("jmArea").textContent = j.a;
+    document.getElementById("jmTitle").textContent = j.t;
+    document.getElementById("jmMeta").innerHTML = [j.tipo, j.lugar].filter(Boolean).map(x => '<li>' + h(x) + '</li>').join("");
+    document.getElementById("jmDesc").textContent = j.d;
+    document.getElementById("jmCols").innerHTML = listHTML("Qué harás", j.r) + listHTML("Qué buscamos", j.q);
+    form.reset(); ok.hidden = true; fileBox.classList.remove("has"); fileName.textContent = "PDF o Word, máximo 5 MB";
+    modal.hidden = false; document.body.classList.add("jm-lock");
+    modal.querySelector(".jm-box").scrollTop = 0;
+    void modal.offsetWidth; setTimeout(() => modal.classList.add("open"), 20);
+    setTimeout(() => modal.querySelector(".jm-x").focus(), 60);
+  }
+  function close(){
+    if(modal.hidden) return;
+    modal.classList.remove("open"); document.body.classList.remove("jm-lock");
+    setTimeout(() => { modal.hidden = true; }, 380);
+    if(last && last.focus) last.focus();
+  }
+  document.addEventListener("click", e => {
+    const t = e.target.closest("[data-job]"); if(t){ open(+t.dataset.job, t); return; }
+    if(e.target.closest("#jobModal [data-close]")) close();
+  });
+  document.addEventListener("keydown", e => {
+    if(e.key === "Escape") close();
+    if((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("job")){ e.preventDefault(); open(+e.target.dataset.job, e.target); }
+    if(e.key === "Tab" && !modal.hidden){
+      const f = [...modal.querySelectorAll("button, input, textarea, a[href]")].filter(x => x.offsetParent !== null);
+      if(!f.length) return;
+      if(e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f[f.length - 1].focus(); }
+      else if(!e.shiftKey && document.activeElement === f[f.length - 1]){ e.preventDefault(); f[0].focus(); }
+    }
+  });
+  form.cv.addEventListener("change", () => { const f = form.cv.files[0]; fileBox.classList.toggle("has", !!f); fileName.textContent = f ? f.name : "PDF o Word, máximo 5 MB"; });
+  form.addEventListener("submit", e => { e.preventDefault(); if(!form.checkValidity()){ form.reportValidity(); return; } ok.hidden = false; ok.scrollIntoView({block:"nearest"}); });
+  addEventListener("hashchange", close);
+})();
+
+
+/* ---------- Programas: ventana de inscripción ---------- */
+(function(){
+  const modal = document.getElementById("enrollModal"); if(!modal) return;
+  const form = document.getElementById("enrollForm"), ok = document.getElementById("enrollOk"), place = document.getElementById("emPlace");
+  const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  let last = null;
+  const row = (t, v) => v ? '<div><h4>' + t + '</h4><ul><li>' + h(v) + '</li></ul></div>' : "";
+  function setRole(v){
+    form.querySelectorAll('input[name="role"]').forEach(r => r.checked = r.value === v);
+    place.placeholder = v === "Miembro de la comunidad" ? "Barrio o sector donde vives" : "Área o cargo en el Club";
+  }
+  function open(name, from){
+    const p = PROGRAMS.find(x => x.n === name); if(!p) return;
+    last = from || document.activeElement;
+    const label = enrollLabel(p.n);
+    document.getElementById("emLine").textContent = p.l;
+    document.getElementById("emTitle").textContent = p.n;
+    document.getElementById("emDesc").textContent = p.d;
+    document.getElementById("emCols").innerHTML = row("A quién beneficia", p.who) + row("Dónde", p.where || "Por confirmar") + row("Frecuencia", p.freq);
+    document.getElementById("emFormTitle").textContent = label;
+    document.getElementById("emSubmit").textContent = /^Solicitar|^Postularme/.test(label) ? "Enviar solicitud" : "Enviar inscripción";
+    form.reset(); ok.hidden = true;
+    setRole(p.e === "comunidad" ? "Miembro de la comunidad" : "Colaborador");
+    modal.hidden = false; document.body.classList.add("jm-lock");
+    modal.querySelector(".jm-box").scrollTop = 0;
+    void modal.offsetWidth; setTimeout(() => modal.classList.add("open"), 20);
+    setTimeout(() => modal.querySelector(".jm-x").focus(), 60);
+  }
+  function close(){
+    if(modal.hidden) return;
+    modal.classList.remove("open"); document.body.classList.remove("jm-lock");
+    setTimeout(() => { modal.hidden = true; }, 380);
+    if(last && last.focus) last.focus();
+  }
+  document.addEventListener("click", e => {
+    const t = e.target.closest("[data-enroll]"); if(t){ e.preventDefault(); open(t.dataset.enroll, t); return; }
+    if(e.target.closest("#enrollModal [data-close]")) close();
+  });
+  document.getElementById("emRole").addEventListener("change", e => setRole(e.target.value));
+  document.addEventListener("keydown", e => {
+    if(modal.hidden) return;
+    if(e.key === "Escape") close();
+    if(e.key === "Tab"){
+      const f = [...modal.querySelectorAll("button, input, textarea, a[href]")].filter(x => x.offsetParent !== null);
+      if(!f.length) return;
+      if(e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f[f.length - 1].focus(); }
+      else if(!e.shiftKey && document.activeElement === f[f.length - 1]){ e.preventDefault(); f[0].focus(); }
+    }
+  });
+  form.addEventListener("submit", e => { e.preventDefault(); if(!form.checkValidity()){ form.reportValidity(); return; } ok.hidden = false; ok.scrollIntoView({block:"nearest"}); });
+  addEventListener("hashchange", close);
+})();
+
 /* ---------- Video de Quiénes somos: se reproduce al estar visible ---------- */
 (function(){
   if(!("IntersectionObserver" in window)) return;
@@ -599,6 +720,16 @@ const LINE_TXT = {
   "Gestión ambiental":"Educación ambiental y promoción de prácticas responsables para el cuidado y conservación del entorno."
 };
 const listHTML = v => Array.isArray(v) ? '<ul class="pdl-list">' + v.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul>' : esc(v);
+function enrollLabel(n){
+  if(/^Auxilio/i.test(n)) return "Inscribirme al auxilio";
+  if(/^Subsidio/i.test(n)) return "Solicitar el subsidio";
+  if(/^Préstamo/i.test(n)) return "Solicitar el préstamo";
+  if(/^Póliza/i.test(n)) return "Solicitar la póliza";
+  if(/^Proyecto/i.test(n)) return "Postularme al proyecto";
+  if(/^Curso/i.test(n)) return "Inscribirme al curso";
+  if(/^Club/i.test(n)) return "Inscribirme al club";
+  return "Inscribirme al programa";
+}
 function progCard(p, i){
   return `
     <article class="prog" tabindex="0" role="button" aria-expanded="false" data-l="${esc(p.l)}" data-cursor="Más información" style="--i:${i}" aria-label="${esc(p.n)}: ver ficha">
@@ -615,6 +746,7 @@ function progCard(p, i){
             <div><dt>Dónde</dt><dd>${p.where ? esc(p.where) : 'Por confirmar'}</dd></div>
             <div><dt>Frecuencia</dt><dd>${esc(p.freq)}</dd></div>
             <div><dt>Resultados</dt><dd>${listHTML(p.res)}</dd></div>
+            <div class="pdl-cta"><button type="button" class="cta" data-enroll="${esc(p.n)}">${esc(enrollLabel(p.n))} <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
           </div></dl>
         </div>
         <div class="foot"><small>${esc(p.freq)}</small><span class="more"><span class="more-t">Más información</span> <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
@@ -651,7 +783,7 @@ function setFilter(f, jump){
 /* abrir y cerrar la ficha de cada programa */
 (function(){ const el = document.getElementById("plist");
   const toggle = card => { const open = !card.classList.contains("open"); card.classList.toggle("open", open); card.setAttribute("aria-expanded", String(open)); const t = card.querySelector(".more-t"); if(t) t.textContent = open ? "Cerrar" : "Más información"; };
-  el.addEventListener("click", e => { const c = e.target.closest(".prog"); if(c) toggle(c); });
+  el.addEventListener("click", e => { if(e.target.closest("[data-enroll]")) return; const c = e.target.closest(".prog"); if(c) toggle(c); });
   el.addEventListener("keydown", e => { if((e.key === "Enter" || e.key === " ") && e.target.classList.contains("prog")){ e.preventDefault(); toggle(e.target); } });
 })();
 document.getElementById("pside").addEventListener("click", e => { const b = e.target.closest(".ps-b"); if(!b) return; const t = document.getElementById("pshop").getBoundingClientRect().top; setFilter(b.dataset.f, t < -40); });
@@ -803,7 +935,7 @@ mm.addEventListener("click", e => { if(e.target.closest("a")) closeMenu(false); 
 addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(true); });
 
 /* ---------- Navegación entre páginas ---------- */
-const PAGES = ["inicio","nosotros","programas","impacto","apoya","noticias","noticia","noticia-emprendiendo","noticia-vitrina","noticia-vivienda","noticia-auxilios","noticia-aliados","contacto"];
+const PAGES = ["inicio","nosotros","programas","impacto","apoya","noticias","trabaja","noticia","noticia-emprendiendo","noticia-vitrina","noticia-vivienda","noticia-auxilios","noticia-aliados","contacto"];
 function route(){
   const h = (location.hash || "#inicio").slice(1);
   const page = PAGES.includes(h) ? h : (h === "formContacto" ? "contacto" : "inicio");
