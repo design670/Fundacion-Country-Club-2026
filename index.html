@@ -1,0 +1,1437 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Fundación Social Country Club de Barranquilla: desde 1989 trabajamos por el bienestar y desarrollo integral de nuestros colaboradores, sus familias y las comunidades de nuestro entorno.">
+<title>Fundación Social Country Club</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="protopill"><strong>Prototipo</strong><label for="notesToggle"><input type="checkbox" id="notesToggle" checked> Datos pendientes</label></div>
+
+
+<div class="wpp" id="wpp">
+  <div class="wpp-card" id="wppCard" role="dialog" aria-label="Escríbenos por WhatsApp">
+    <div class="wpp-qr" id="wppQr" aria-hidden="true"></div>
+    <div><h4>Escríbenos por WhatsApp</h4><p style="margin-top:8px">Escanea el código QR para chatear con nosotros desde tu celular.</p></div>
+    <a class="wpp-link" href="https://wa.me/570000000000" target="_blank" rel="noopener noreferrer">Chatear desde el computador<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 5 C 60 2, 140 2, 197 5"/><path pathLength="1" d="M40 11 C 90 9, 130 9, 170 11"/></svg></a>
+  </div>
+  <button class="wpp-btn" id="wppBtn" type="button" aria-expanded="false" aria-controls="wppCard" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg></button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+
+
+<div class="pt" id="pageTransition" aria-hidden="true">
+  <svg class="pt-scribble" viewBox="0 0 3222 3114" preserveAspectRatio="none" fill="none"><path pathLength="1" d="M300 460 C 520 320 760 170 930 110 C 1010 90 990 160 900 290 C 700 590 360 1080 130 1440 C 60 1560 110 1570 230 1480 C 620 1180 1150 720 1480 380 C 1560 300 1560 350 1480 500 C 1210 1000 780 1740 480 2250 C 430 2340 480 2360 580 2280 C 1060 1900 1840 1230 2420 780 C 2520 700 2540 740 2470 870 C 2140 1460 1650 2230 1320 2780 C 1270 2870 1320 2890 1420 2800 C 1900 2380 2550 1840 3000 1480" stroke="currentColor" stroke-width="980" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <img class="pt-logo" src="assets/logo-simbolo.png" alt="">
+</div>
+
+<header class="site" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Fundación Social Country Club de Barranquilla, inicio">
+      <img class="logo-color" src="assets/logo-horizontal-color.png" alt="Fundación Social Country Club de Barranquilla">
+      <img class="logo-blanco" src="assets/logo-horizontal-blanco.png" alt="">
+      <img class="logo-oscuro" src="assets/logo-horizontal-color-oscuro.png" alt="">
+    </a>
+    <div class="hnav">
+      <nav class="links" aria-label="Accesos rápidos">
+        <a class="link-u" href="#nosotros">Quiénes somos</a>
+        <a class="link-u" href="#programas">Nuestros programas</a>
+        <a class="link-u" href="#impacto">Nuestro impacto</a>
+        <a class="link-u" href="#apoya">Sé parte</a>
+        <a class="link-u" href="#contacto">Contacto</a>
+      </nav>
+      <a class="cta cta-green" href="#apoya">Donar <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="megaMenu" aria-label="Abrir menú"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú de pantalla completa -->
+<div class="mm" id="megaMenu" aria-hidden="true">
+  <div class="mm-circle"></div>
+  <div class="mm-content">
+    <div class="mm-grid">
+      <nav class="mm-links" aria-label="Menú principal">
+        <div class="mm-group" style="--i:0"><a href="#inicio">Inicio</a></div>
+        <div class="mm-group" style="--i:1"><a href="#nosotros">Quiénes somos</a><div class="subs"><a href="#nosotros">Nuestra historia</a><a href="#nosotros">Propósito</a><a href="#nosotros">Misión y visión</a><a href="#nosotros">Valores</a></div></div>
+        <div class="mm-group" style="--i:2"><a href="#programas">Nuestros programas</a><div class="subs"><a href="#programas" data-filter="colaboradores">Colaboradores</a><a href="#programas" data-filter="comunidad">Comunidad</a></div></div>
+        <div class="mm-group" style="--i:3"><a href="#impacto">Nuestro impacto</a><div class="subs"><a href="#impacto">Nuestras cifras</a><a href="#impacto">Historias que transforman</a><a href="#impacto">Resultados destacados</a></div></div>
+        <div class="mm-group" style="--i:5"><a href="#apoya">Sé parte</a><div class="subs"><a href="#apoya">Dona</a><a href="#apoya">Sé voluntario</a><a href="#apoya">Haz una alianza</a><a href="#apoya">Apoya nuestros programas</a></div></div>
+        <div class="mm-group" style="--i:6"><a href="#noticias">Noticias</a><div class="subs"><a href="#noticias">Eventos</a><a href="#noticias">Programas</a><a href="#noticias">Aliados</a></div></div>
+      </nav>
+      <div class="mm-card-wrap">
+      <aside class="mm-card">
+        <div class="gen" data-seed="11" data-img="assets/img/menu-risas.webp" data-alt="Dos niños riendo" data-pal="green"></div>
+        <div class="body">
+          <h3>Tu aporte puede convertirse en una oportunidad</h3>
+          <p>Hay muchas formas de contribuir a la transformación social. Encuentra la que mejor se adapte a ti o a tu organización.</p>
+          <div><a class="cta" href="#apoya">Quiero apoyar <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+        </div>
+      </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- ================= INICIO ================= -->
+<div data-page="inicio">
+  <section class="hero-sheet has-photo" data-tone="light" id="heroSheet">
+    <div class="hero-bg" data-parallax=".18"><div class="zoom"><video class="hv on" autoplay muted playsinline preload="auto" poster="assets/img/hero-portada.webp" aria-hidden="true"><source src="assets/video/hero-001.mp4" type="video/mp4"></video><video class="hv" muted playsinline preload="auto" aria-hidden="true"><source src="assets/video/hero-002.mp4" type="video/mp4"></video></div></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="hslides">
+          <div class="hslide on"><h1 class="sr-only">Fundación Social Country Club de Barranquilla</h1>
+        <p class="lead hero-lead fade-up" style="animation-delay:.2s"><strong>Desde 1989 trabajamos por el bienestar y desarrollo integral de nuestros colaboradores</strong>, sus familias y las comunidades de nuestro entorno.</p></div>
+          
+        </div>
+        <div class="row fade-up" style="margin-top:30px;animation-delay:.65s">
+          <a class="cta" href="#nosotros">Conoce nuestra labor <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a>
+          <a class="cta cta-green" href="#apoya">Haz parte del cambio <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+      <div class="hdots" role="group" aria-label="Portada">
+        <button type="button" class="hdot on" aria-label="Diapositiva 1"><i></i></button>
+        <button type="button" class="hdot" aria-label="Diapositiva 2"><i></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="hwords" data-tone="light" id="hwords">
+    <div class="hwords-pin">
+      <div class="hwords-track">
+        <h2 class="hwords-title" aria-label="Transformamos realidades, generamos oportunidades."></h2>
+        <span class="hwords-sticker" aria-hidden="true"><img src="assets/logo-simbolo.png" alt=""></span>
+        <svg class="hwords-arc" viewBox="0 0 260 130" fill="none" aria-hidden="true"><path pathLength="1" d="M8 122 C 14 40, 110 2, 200 26 C 250 40, 262 80, 236 104" stroke="#16313F" stroke-width="4" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" data-tone="light" style="padding-top:10px">
+    <div class="wrap">
+      <p class="hwords-lead reveal"><strong>Nuestra labor se desarrolla en dos grandes frentes:</strong> fortalecemos las capacidades y condiciones de vida de nuestros colaboradores y sus familias, y contribuimos a la transformación social de las comunidades de nuestro entorno.</p>
+      <div class="split" style="margin-top:70px">
+        <div class="gen reveal" data-seed="4" data-img="assets/img/colaboradores.webp" data-alt="Colaboradores del Country Club" data-pal="navy" data-parallax=".12"></div>
+        <div class="stack reveal" style="--d:120ms">
+          <div class="paths">
+            <div class="card path"><h3>Fortalecimiento interno</h3><p class="path-who">Colaboradores y sus familias</p><p>Educación, vivienda y bienestar para generar oportunidades de desarrollo y mejorar la calidad de vida.</p><div><a class="cta" href="#programas">Conoce nuestros programas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div></div>
+            <div class="card path"><h3>Transformación del entorno</h3><p class="path-who">Comunidades</p><p>Trabajamos especialmente en Salgar mediante iniciativas de gestión social y ambiental.</p><div><a class="cta" href="#impacto">Conoce nuestro impacto <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué hacemos: carrusel de las 5 líneas -->
+  <section class="block lcar-sec" data-tone="navy">
+    <div class="wrap">
+      <h2 class="pin-title reveal">Convertimos nuestro propósito en <em>acción</em></h2>
+      <div class="lcar" id="lineCarousel" role="region" aria-roledescription="carrusel" aria-label="Nuestras 5 líneas">
+        <div class="lcar-track" tabindex="0">
+          <article class="lcar-slide on" aria-roledescription="diapositiva" aria-label="1 de 5: Educación">
+            <div class="lcar-text">
+              <h3>Educación</h3>
+              <p>Facilitamos oportunidades para el acceso y permanencia educativa, formación superior y desarrollo de competencias.</p>
+              <span class="lcar-tag">Colaboradores</span>
+            </div>
+            <figure class="lcar-photo"><img src="assets/img/educacion.webp" alt="Madre e hija estudiando en casa" loading="lazy"></figure>
+          </article>
+          <article class="lcar-slide" aria-roledescription="diapositiva" aria-label="2 de 5: Vivienda">
+            <div class="lcar-text">
+              <h3>Vivienda</h3>
+              <p>Apoyamos el acceso, mejoramiento y adecuación de viviendas para contribuir a hogares dignos y seguros.</p>
+              <span class="lcar-tag">Colaboradores</span>
+            </div>
+            <figure class="lcar-photo"><img src="assets/img/vivienda.webp" alt="Familia en su cocina renovada" loading="lazy"></figure>
+          </article>
+          <article class="lcar-slide" aria-roledescription="diapositiva" aria-label="3 de 5: Bienestar">
+            <div class="lcar-text">
+              <h3>Bienestar</h3>
+              <p>Promovemos la salud física, mental y emocional, el desarrollo personal, la actividad física y el emprendimiento.</p>
+              <span class="lcar-tag">Colaboradores</span>
+            </div>
+            <figure class="lcar-photo"><img src="assets/img/bienestar.webp" alt="Colaboradores haciendo ejercicio al amanecer" loading="lazy"></figure>
+          </article>
+          <article class="lcar-slide" aria-roledescription="diapositiva" aria-label="4 de 5: Gestión social">
+            <div class="lcar-text">
+              <h3>Gestión social</h3>
+              <p>Fortalecemos capacidades, participación y tejido social en las comunidades de nuestro entorno.</p>
+              <span class="lcar-tag">Comunidad</span>
+            </div>
+            <figure class="lcar-photo"><img src="assets/img/gestion-social.webp" alt="Estudiantes trabajando en un proyecto escolar" loading="lazy"></figure>
+          </article>
+          <article class="lcar-slide" aria-roledescription="diapositiva" aria-label="5 de 5: Gestión ambiental">
+            <div class="lcar-text">
+              <h3>Gestión ambiental</h3>
+              <p>Promovemos educación ambiental y prácticas responsables para el cuidado y conservación del entorno.</p>
+              <span class="lcar-tag">Comunidad</span>
+            </div>
+            <figure class="lcar-photo"><img src="assets/img/gestion-ambiental.webp" alt="Niños sembrando manglares en la playa" loading="lazy"></figure>
+          </article>
+        </div>
+        <div class="lcar-ui">
+          <div class="lcar-count"><span class="cur">01</span><span class="bar"><i></i></span><span>05</span></div>
+          <div class="lcar-dots" role="tablist" aria-label="Elegir línea"><button type="button" role="tab" aria-selected="true" aria-label="Educación" data-i="0"></button><button type="button" role="tab" aria-selected="false" aria-label="Vivienda" data-i="1"></button><button type="button" role="tab" aria-selected="false" aria-label="Bienestar" data-i="2"></button><button type="button" role="tab" aria-selected="false" aria-label="Gestión social" data-i="3"></button><button type="button" role="tab" aria-selected="false" aria-label="Gestión ambiental" data-i="4"></button></div>
+          <div class="lcar-arrows"><button type="button" class="lcar-btn" data-dir="-1" aria-label="Línea anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4"/><path d="m11 5-7 7 7 7"/></svg></button><button type="button" class="lcar-btn" data-dir="1" aria-label="Línea siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></button></div>
+        </div>
+      </div>
+      <div class="lcar-cta"><a class="cta" href="#programas">Conoce todos nuestros programas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+    </div>
+  </section>
+
+
+  
+
+  <section class="block" data-tone="sand">
+    <div class="wrap split">
+      <div class="islider reveal" id="impactSlider" role="region" aria-roledescription="carrusel" aria-label="Fotos de impacto"><img class="on" src="assets/img/mujeres-velas.webp" alt="Mujeres elaborando velas decorativas" loading="eager"><img src="assets/img/vitrina.webp" alt="Artesanas mostrando sus productos en la Vitrina" loading="lazy"><img src="assets/img/gestion-social.webp" alt="Estudiantes trabajando en un proyecto" loading="lazy"><img src="assets/img/comunidad.webp" alt="Encuentro comunitario" loading="lazy"><img src="assets/img/educacion.webp" alt="Madre e hija estudiando en casa" loading="lazy"><div class="islider-dots" role="tablist" aria-label="Elegir foto"><button type="button" role="tab" aria-selected="true" aria-label="Foto 1" data-i="0"></button><button type="button" role="tab" aria-selected="false" aria-label="Foto 2" data-i="1"></button><button type="button" role="tab" aria-selected="false" aria-label="Foto 3" data-i="2"></button><button type="button" role="tab" aria-selected="false" aria-label="Foto 4" data-i="3"></button><button type="button" role="tab" aria-selected="false" aria-label="Foto 5" data-i="4"></button></div></div>
+      <div class="stack reveal" style="--d:120ms">
+        <h2>El impacto comienza cuando una oportunidad cambia una <em>realidad</em></h2>
+        <div class="facts-stack">
+          <div class="fi"><b data-count="300" data-prefix="+">+300</b><span>Mujeres fortalecidas en emprendimiento y competencias para la vida</span></div>
+          <div class="fi"><b data-count="165" data-prefix="+">+165</b><span>Mujeres capacitadas en elaboración de velas decorativas</span></div>
+          <div class="fi"><b data-count="20" data-prefix="+">+20</b><span>Nuevas oportunidades para generar ingresos y fortalecer la autonomía</span></div>
+        </div>
+        <div><a class="cta" href="#impacto">Conoce nuestro impacto <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="green" style="padding-bottom:60px">
+    <div class="wrap">
+      <div class="intro reveal intro-center">
+        <h2>Historias que nos inspiran a <em>seguir</em> con nuestra labor.</h2>
+      </div>
+      <div class="stack-row" id="stackRow">
+        <div class="stack-blob" aria-hidden="true"></div>
+        <div class="ptk" data-rot="-7.5" data-y="-22"><div class="ph"><img src="assets/img/educacion.webp" alt="Madre e hija estudiando en casa" loading="lazy"></div></div>
+        <div class="ptk" data-rot="3.5" data-y="22"><div class="ph"><img src="assets/img/mujeres-velas.webp" alt="Mujeres elaborando velas decorativas" loading="lazy"></div></div>
+        <div class="ptk" data-rot="-5" data-y="-18"><div class="ph"><img src="assets/img/vivienda.webp" alt="Familia en su cocina renovada" loading="lazy"></div></div>
+        <div class="ptk" data-rot="3.5" data-y="10"><div class="ph"><img src="assets/img/colaboradores.webp" alt="Colaboradores del Country Club" loading="lazy"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" data-tone="navy">
+    <div class="wrap">
+      <div class="band reveal">
+        <img class="bm" src="assets/logo-simbolo.png" alt="">
+        <div class="stack">
+          <h2>Tu aporte puede convertirse en una <em>oportunidad</em></h2>
+          <p class="muted">Hay muchas formas de contribuir a la transformación social. Encuentra la que mejor se adapte a ti o a tu organización.</p>
+        </div>
+        <div class="row aporte-row" style="justify-content:flex-end"><a class="cta" href="#apoya">Quiero apoyar <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      </div>
+      <div class="values aporte-cards" style="margin-top:14px">
+        <div class="card reveal"><span class="ic" data-icon="heart"></span><h3>Dona</h3><p>Apoya directamente las iniciativas de la Fundación.</p></div>
+        <div class="card reveal" style="--d:80ms"><span class="ic" data-icon="users"></span><h3>Sé voluntario</h3><p>Comparte tu tiempo, conocimientos y capacidades.</p></div>
+        <div class="card reveal" style="--d:160ms"><span class="ic" data-icon="link"></span><h3>Haz una alianza</h3><p>Construyamos iniciativas que generen impacto.</p></div>
+        <div class="card reveal" style="--d:240ms"><span class="ic" data-icon="target"></span><h3>Apoya un programa</h3><p>Contribuye a una iniciativa específica.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="light">
+    <div class="wrap stack">
+      <h2 class="reveal vtitle">Sumamos esfuerzos para generar mayor <em>impacto</em></h2>
+      <div class="marquee" aria-label="Aliados">
+        <div class="track">
+          <span class="ally-logo"><img src="assets/aliados/cul.webp" alt="CUL" loading="lazy"></span><span class="ally-logo"><img src="assets/aliados/universidad-simon-bolivar.webp" alt="Universidad Simón Bolívar" loading="lazy"></span><span class="ally-logo"><img src="assets/aliados/inca.webp" alt="Centro INCA" loading="lazy"></span><span class="ally-logo"><img src="assets/aliados/universidad-reformada.webp" alt="Corporación Universitaria Reformada" loading="lazy"></span><span class="ally-logo"><img src="assets/aliados/universidad-autonoma-del-caribe.webp" alt="Universidad Autónoma del Caribe" loading="lazy"></span><span class="ally-logo"><img src="assets/aliados/proactuar.webp" alt="ProActuar Caribe" loading="lazy"></span><span class="ally-logo"><img src="assets/aliados/serviparamo.webp" alt="Serviparamo" loading="lazy"></span>
+          <span class="ally-logo" aria-hidden="true"><img src="assets/aliados/cul.webp" alt="" loading="lazy"></span><span class="ally-logo" aria-hidden="true"><img src="assets/aliados/universidad-simon-bolivar.webp" alt="" loading="lazy"></span><span class="ally-logo" aria-hidden="true"><img src="assets/aliados/inca.webp" alt="" loading="lazy"></span><span class="ally-logo" aria-hidden="true"><img src="assets/aliados/universidad-reformada.webp" alt="" loading="lazy"></span><span class="ally-logo" aria-hidden="true"><img src="assets/aliados/universidad-autonoma-del-caribe.webp" alt="" loading="lazy"></span><span class="ally-logo" aria-hidden="true"><img src="assets/aliados/proactuar.webp" alt="" loading="lazy"></span><span class="ally-logo" aria-hidden="true"><img src="assets/aliados/serviparamo.webp" alt="" loading="lazy"></span>
+        </div>
+      </div>
+          </div>
+  </section>
+  <section class="block is-hidden" data-tone="green" hidden>
+    <div class="wrap">
+      <div class="band-final-wrap">
+      <div class="band band-final reveal">
+        <img class="band-bg" src="assets/img/cta-002.webp" alt="" loading="lazy">
+        <div class="stack">
+          <h2>Hagamos que más oportunidades lleguen a quienes las <em>necesitan</em></h2>
+          <p class="muted">Conoce nuestra labor, apoya nuestros programas o construye con nosotros nuevas oportunidades de transformación.</p>
+          <div class="row cta-row"><a class="cta" href="#programas">Conoce nuestros programas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a><a class="cta" href="#apoya">Quiero apoyar <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+        </div>
+        
+      </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= NOSOTROS ================= -->
+<div data-page="nosotros" hidden>
+  <section class="phead" data-tone="light">
+    <div class="wrap intro">
+      <div class="stack reveal"><h1>Una Fundación comprometida con transformar <em>realidades</em></h1></div>
+      <p class="lead reveal" style="--d:100ms">Desde 1989 trabajamos por el bienestar y el desarrollo integral de nuestros colaboradores, sus familias y las comunidades de nuestro entorno.</p>
+    </div>
+  </section>
+  <section class="block" data-tone="light" style="padding-top:0;padding-bottom:40px">
+    <figure class="nos-video reveal"><video autoplay muted loop playsinline preload="metadata" poster="assets/img/comunidad.webp" aria-label="Video de la Fundación"><source src="assets/video/hero-002.mp4" type="video/mp4"></video></figure>
+  </section>
+  <section class="tlx" data-tone="navy" id="timeline">
+    <div class="tlx-pin">
+      <div class="wrap tlx-head"><h2>Nuestra <em>historia</em></h2></div>
+      <div class="tlx-viewport">
+        <div class="tlx-track">
+          <svg class="tlx-line" aria-hidden="true" preserveAspectRatio="none"><path class="tlx-line-base"/><path class="tlx-line-fill" pathLength="1"/></svg>
+          <article class="tlx-item">
+            <div class="tlx-year" aria-hidden="true">1989</div>
+            <span class="tlx-node" aria-hidden="true"></span>
+            <div class="tlx-body">
+              <figure class="tlx-photo"><img src="assets/img/sede-club.webp" alt="" loading="lazy"></figure>
+              <div class="tlx-text"><h3><span class="sr-only">1989: </span>Nace FundaCountry</h3><p>El 18 de julio nace FundaCountry, una iniciativa del Country Club de Barranquilla para fortalecer el bienestar y desarrollo integral de sus colaboradores y sus familias, en educación, vivienda y bienestar.</p></div>
+            </div>
+          </article>
+          <article class="tlx-item is-word">
+            <div class="tlx-year" aria-hidden="true">Después</div>
+            <span class="tlx-node" aria-hidden="true"></span>
+            <div class="tlx-body">
+              <figure class="tlx-photo"><img src="assets/img/comunidad.webp" alt="" loading="lazy"></figure>
+              <div class="tlx-text"><h3><span class="sr-only">Después: </span>Llegamos a la comunidad</h3><p>Ampliamos nuestro campo de acción hacia las comunidades del entorno y consolidamos dos enfoques: el fortalecimiento interno de los colaboradores y la transformación social del entorno.</p></div>
+            </div>
+          </article>
+          <article class="tlx-item">
+            <div class="tlx-year" aria-hidden="true">2024</div>
+            <span class="tlx-node" aria-hidden="true"></span>
+            <div class="tlx-body">
+              <figure class="tlx-photo"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"></figure>
+              <div class="tlx-text"><h3><span class="sr-only">2024: </span>Fortalecimiento institucional</h3><p>El 1 de octubre ampliamos el objeto social, lo que dio paso a la Fundación Social Country Club de Barranquilla.</p></div>
+            </div>
+          </article>
+          <div class="tlx-end">
+            <span class="tlx-node" aria-hidden="true"></span>
+            <p>Lo que sigue lo escribimos <em>juntos.</em></p>
+            <a class="cta" href="#apoya">Súmate <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="light">
+    <div class="wrap stack">
+      <div class="intro reveal purpose">
+        <h2>Nuestro <em>propósito</em></h2>
+        <p class="lead">Contribuir al bienestar y la transformación social de nuestros colaboradores, sus familias y las comunidades de nuestro entorno, generando oportunidades para su desarrollo integral y una mejor calidad de vida.</p>
+      </div>
+      <div class="two mv-cards" style="margin-top:30px">
+        <div class="card reveal"><h3>Misión</h3><p>Mejoramos las condiciones de vida y el desarrollo integral de nuestros colaboradores, sus familias y las comunidades de nuestro entorno, con programas de educación, salud, bienestar y asistencia social.</p></div>
+        <div class="card reveal" style="--d:100ms"><h3>Visión</h3><p>Ser una Fundación reconocida por la calidad y sostenibilidad de su acción social, con programas que transformen la vida de los colaboradores, sus familias y las comunidades de nuestro entorno.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="green">
+    <div class="wrap stack">
+      <h2 class="reveal vtitle">Nuestros <em>valores</em></h2>
+      <div class="vfan">
+        <svg class="vline" viewBox="0 0 1600 420" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M-40 300 C 120 380 220 180 360 240 S 520 420 640 300 C 720 220 620 140 560 200 C 500 260 640 360 800 330 S 1020 120 1150 210 C 1240 270 1180 360 1110 320 C 1040 280 1160 170 1300 200 S 1520 330 1660 250"/></svg>
+        <article class="vcard v-orange" style="--r:-5deg"><span class="ic" data-icon="target"></span><div><span class="vnum">01</span><h3>Compromiso</h3><p>Asumimos con responsabilidad nuestro propósito y cada iniciativa que desarrollamos.</p></div></article>
+        <figure class="vphoto" style="--r:4deg" aria-hidden="true"><img src="assets/img/educacion.webp" alt="" loading="lazy"></figure>
+        <article class="vcard v-cream" style="--r:-3deg"><span class="ic" data-icon="heart"></span><div><span class="vnum">02</span><h3>Empatía</h3><p>Comprendemos las diferentes realidades y promovemos acciones pertinentes y humanas.</p></div></article>
+        <article class="vcard v-navy" style="--r:5deg"><span class="ic" data-icon="users"></span><div><span class="vnum">03</span><h3>Solidaridad</h3><p>Reconocemos las necesidades de las personas y trabajamos para generar oportunidades.</p></div></article>
+        <figure class="vphoto" style="--r:-4deg" aria-hidden="true"><img src="assets/img/bienestar.webp" alt="" loading="lazy"></figure>
+        <article class="vcard v-white" style="--r:3deg"><span class="ic" data-icon="leaf"></span><div><span class="vnum">04</span><h3>Responsabilidad social</h3><p>Buscamos que nuestras acciones generen un impacto positivo y sostenible.</p></div></article>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="sand">
+    <div class="wrap split">
+      <div class="stack reveal">
+        <h2>Nuestra forma de <em>trabajar</em></h2>
+        <ul class="results steps">
+          <li>Identificamos necesidades</li>
+          <li>Diseñamos programas</li>
+          <li>Acompañamos a las personas</li>
+          <li>Fortalecemos capacidades</li>
+          <li>Buscamos generar transformaciones sostenibles</li>
+        </ul>
+      </div>
+      <div class="gen reveal" data-seed="44" data-img="assets/img/gestion-social.webp" data-alt="Estudiantes trabajando en un proyecto" data-pal="sand" data-parallax=".1" style="--d:120ms"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= PROGRAMAS ================= -->
+<div data-page="programas" hidden>
+  <section class="phead" data-tone="light">
+    <div class="wrap stack">
+      <div class="intro intro-col">
+        <div class="stack reveal"><h1>Nuestros <em>programas</em></h1></div>
+        <p class="lead reveal" style="--d:100ms">Programas para colaboradores y sus familias, y para las comunidades de nuestro entorno, organizados en cinco líneas de trabajo.</p>      </div>
+    </div>
+  </section>
+  <section class="block pblock pshop" data-tone="light" id="pshop">
+    <div class="wrap pshop-grid">
+      <aside class="pside" aria-label="Filtrar programas">
+        <p class="ps-title">Filtrar por</p>
+        <div class="ps-in" id="pside">
+          <button type="button" class="ps-b ps-main ps-all" data-f="todos" aria-pressed="false"><span>Todos los programas</span><i class="ps-n"></i></button>
+          <div class="ps-g">
+            <span class="pb-tag">Bloque 1 · Fortalecimiento interno</span>
+            <button type="button" class="ps-b ps-main" data-f="colaboradores" aria-pressed="false"><span>Colaboradores y sus familias</span><i class="ps-n"></i></button>
+            <div class="ps-sub"><button type="button" class="ps-b" data-f="Educación" aria-pressed="false"><span>Educación</span><i class="ps-n"></i></button><button type="button" class="ps-b" data-f="Vivienda" aria-pressed="false"><span>Vivienda</span><i class="ps-n"></i></button><button type="button" class="ps-b" data-f="Bienestar" aria-pressed="false"><span>Bienestar</span><i class="ps-n"></i></button></div>
+          </div>
+          <div class="ps-g">
+            <span class="pb-tag">Bloque 2 · Transformación del entorno</span>
+            <button type="button" class="ps-b ps-main" data-f="comunidad" aria-pressed="false"><span>Comunidades de nuestro entorno</span><i class="ps-n"></i></button>
+            <div class="ps-sub"><button type="button" class="ps-b" data-f="Gestión social" aria-pressed="false"><span>Gestión social</span><i class="ps-n"></i></button><button type="button" class="ps-b" data-f="Gestión ambiental" aria-pressed="false"><span>Gestión ambiental</span><i class="ps-n"></i></button></div>
+          </div>
+        </div>
+      </aside>
+      <div class="pmain">
+        <div class="pfhead" id="pfhead" aria-live="polite"></div>
+        <div class="plist" id="plist"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= IMPACTO ================= -->
+<div data-page="impacto" hidden>
+  <section class="hero-sheet has-photo" data-tone="light">
+    <div class="hero-bg" data-parallax=".18"><div class="zoom"><img src="assets/img/impacto-hero.webp" alt="" style="object-position:60% 40%"></div></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1><span class="hw" style="animation-delay:0.05s">Medimos</span> <span class="hw" style="animation-delay:0.12s">nuestro</span> <span class="hw" style="animation-delay:0.19s">impacto</span> <span class="hw" style="animation-delay:0.26s">en</span> <span class="hw" style="animation-delay:0.33s"><em>oportunidades</em></span> <span class="hw" style="animation-delay:0.40s">y</span> <span class="hw" style="animation-delay:0.47s">transformaciones</span></h1>
+      </div>
+    </div>
+  </section>
+  <section class="block is-hidden" hidden>
+    <div class="wrap">
+      <h2 class="reveal">Nuestros <em>números</em></h2>
+      <div class="igrid" style="margin-top:28px">
+        <div class="icard reveal"><b data-count="20">20</b><span>Mujeres de Salgar formadas en emprendimiento</span></div>
+        <div class="icard reveal" style="--d:60ms"><b data-count="300" data-prefix="+">+300</b><span>Beneficiarios totales</span></div>
+        <div class="icard reveal" style="--d:120ms"><b data-count="165" data-prefix="+">+165</b><span>Familias beneficiadas</span></div>
+        <div class="icard reveal" style="--d:180ms"><b data-count="25" data-prefix="+">+25</b><span>Programas ejecutados</span></div>
+        <div class="icard reveal" style="--d:240ms"><b data-count="850" data-prefix="+">+850</b><span>Horas de formación</span></div>
+        <div class="icard reveal" style="--d:300ms"><b data-count="40" data-prefix="+">+40</b><span>Viviendas mejoradas</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="light">
+    <div class="wrap stack">
+      <h2 class="istat-title reveal">Nuestro <em>impacto</em></h2>
+      <div class="istat-car reveal" id="statCar" role="region" aria-roledescription="carrusel" aria-label="Cifras de impacto">
+        <div class="istat-track" tabindex="0">
+          <article class="istat">
+            <b class="istat-num" data-count="180" data-prefix="+">+180</b>
+            <h3>Colaboradores y sus familias</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="120" data-prefix="+">+120</b>
+            <h3>Comunidades de nuestro entorno</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="13">13</b>
+            <h3>Programas activos</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="5">5</b>
+            <h3>Líneas de trabajo</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="90" data-prefix="+">+90</b>
+            <h3>Auxilios educativos entregados</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="40" data-prefix="+">+40</b>
+            <h3>Viviendas adquiridas o mejoradas</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="120" data-prefix="+">+120</b>
+            <h3>Colaboradores en programas de bienestar</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="20">20</b>
+            <h3>Mujeres de Salgar formadas en emprendimiento</h3>
+          </article>
+          <article class="istat">
+            <b class="istat-num" data-count="5" data-prefix="+">+5</b>
+            <h3>Programas ambientales por definir</h3>
+          </article>
+        </div>
+        <div class="istat-dots" role="tablist" aria-label="Grupos de cifras"></div>
+      </div>
+    </div>
+  </section>
+  <section class="block vst" data-tone="navy" id="videoStories">
+    <div class="wrap">
+      <div class="vst-head">
+        <h2>Historias que <em>transforman</em></h2>
+        <div class="vst-arrows"><button type="button" class="lcar-btn" data-dir="-1" aria-label="Historias anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4"/><path d="m11 5-7 7 7 7"/></svg></button><button type="button" class="lcar-btn" data-dir="1" aria-label="Historias siguientes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></button></div>
+      </div>
+      <div class="vst-track" tabindex="0" role="region" aria-roledescription="carrusel" aria-label="Historias en video">
+        <article class="vst-card" tabindex="0" aria-label="Historia de una mujer emprendedora: reproducir video">
+          <video muted loop playsinline preload="none" poster="assets/img/mujeres-velas.webp"><source src="assets/video/hero-005.mp4" type="video/mp4"></video>
+          <span class="vst-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+          <div class="vst-info"><h3>Historia de una mujer emprendedora</h3></div>
+        </article>
+        <article class="vst-card" tabindex="0" aria-label="Historia de un colaborador: reproducir video">
+          <video muted loop playsinline preload="none" poster="assets/img/colaboradores.webp"><source src="assets/video/hero-001.mp4" type="video/mp4"></video>
+          <span class="vst-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+          <div class="vst-info"><h3>Historia de un colaborador</h3></div>
+        </article>
+        <article class="vst-card" tabindex="0" aria-label="Historia de una familia: reproducir video">
+          <video muted loop playsinline preload="none" poster="assets/img/vivienda.webp"><source src="assets/video/hero-002.mp4" type="video/mp4"></video>
+          <span class="vst-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+          <div class="vst-info"><h3>Historia de una familia</h3></div>
+        </article>
+        <article class="vst-card" tabindex="0" aria-label="Historia de un estudiante: reproducir video">
+          <video muted loop playsinline preload="none" poster="assets/img/gestion-social.webp"><source src="assets/video/hero-005.mp4" type="video/mp4"></video>
+          <span class="vst-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+          <div class="vst-info"><h3>Historia de un estudiante</h3></div>
+        </article>
+        <article class="vst-card" tabindex="0" aria-label="Historia de bienestar: reproducir video">
+          <video muted loop playsinline preload="none" poster="assets/img/bienestar.webp"><source src="assets/video/hero-001.mp4" type="video/mp4"></video>
+          <span class="vst-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+          <div class="vst-info"><h3>Historia de bienestar</h3></div>
+        </article>
+        <article class="vst-card" tabindex="0" aria-label="Historia de una madre: reproducir video">
+          <video muted loop playsinline preload="none" poster="assets/img/educacion.webp"><source src="assets/video/hero-002.mp4" type="video/mp4"></video>
+          <span class="vst-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg></span>
+          <div class="vst-info"><h3>Historia de una madre</h3></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="block is-hidden" hidden>
+    <div class="wrap stack">
+      <h2 class="reveal">Impacto por <em>línea</em></h2>
+      <div class="iline-grid">
+        <article class="iline reveal" style="--d:0ms">
+          <div class="iline-media"><span class="pill">Educación</span><img src="assets/img/educacion.webp" alt="" loading="lazy"></div>
+          <div class="iline-body">
+            <b data-count="90" data-prefix="+">+90</b>
+            <span>Auxilios educativos entregados</span>
+          </div>
+        </article>
+        <article class="iline reveal" style="--d:70ms">
+          <div class="iline-media"><span class="pill">Vivienda</span><img src="assets/img/vivienda.webp" alt="" loading="lazy"></div>
+          <div class="iline-body">
+            <b data-count="40" data-prefix="+">+40</b>
+            <span>Viviendas adquiridas o mejoradas</span>
+          </div>
+        </article>
+        <article class="iline reveal" style="--d:140ms">
+          <div class="iline-media"><span class="pill">Bienestar</span><img src="assets/img/bienestar.webp" alt="" loading="lazy"></div>
+          <div class="iline-body">
+            <b data-count="120" data-prefix="+">+120</b>
+            <span>Colaboradores en programas de bienestar</span>
+          </div>
+        </article>
+        <article class="iline reveal real" style="--d:210ms">
+          <div class="iline-media"><span class="pill m">Gestión social</span><img src="assets/img/mujeres-velas.webp" alt="" loading="lazy"></div>
+          <div class="iline-body">
+            <b data-count="20">20</b>
+            <span>Mujeres de Salgar formadas en emprendimiento</span>
+          </div>
+        </article>
+        <article class="iline reveal" style="--d:280ms">
+          <div class="iline-media"><span class="pill m">Gestión ambiental</span><img src="assets/img/gestion-ambiental.webp" alt="" loading="lazy"></div>
+          <div class="iline-body">
+            <b data-count="5" data-prefix="+">+5</b>
+            <span>Programas ambientales por definir</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="block res-sec" data-tone="sand">
+    <div class="wrap split">
+      <div class="stack reveal">
+        <h2>Resultados <em>destacados</em></h2>
+        <p class="muted">Emprendiendo Juntos – Comunidad, con mujeres del corregimiento de Salgar.</p>
+        <ul class="results">
+          <li>20 mujeres fortalecidas en emprendimiento y competencias para la vida.</li>
+          <li>20 mujeres capacitadas en la elaboración de velas decorativas.</li>
+          <li>Más confianza para emprender y generar ingresos por sus propios medios.</li>
+          <li>Nuevas habilidades prácticas que pueden convertirse en ingresos para sus familias.</li>
+        </ul>
+      </div>
+      <div class="gen reveal" data-seed="51" data-img="assets/img/vitrina.webp" data-alt="Artesanas mostrando sus velas en la Vitrina" data-pal="green" data-parallax=".1" style="--d:120ms"></div>
+    </div>
+  </section>
+
+
+</div>
+
+<!-- ================= HISTORIAS ================= -->
+<div data-page="historias" hidden>
+  <section class="phead" data-tone="light">
+    <div class="wrap stack">
+      <div class="intro">
+        <div class="stack reveal"><h1>Historias que <em>transforman</em></h1></div>
+        <p class="lead reveal" style="--d:100ms">Detrás de cada programa hay personas, aprendizajes y nuevas oportunidades. Conoce las historias de quienes han sido parte de nuestra labor.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="light" style="padding-top:0;padding-bottom:40px">
+    <figure class="nos-video reveal"><video autoplay muted loop playsinline preload="metadata" poster="assets/img/mujeres-velas.webp" aria-label="Video de historias de la Fundación"><source src="assets/video/hero-001.mp4" type="video/mp4"></video></figure>
+  </section>
+  <section class="block story story-featured" data-tone="sand">
+    <div class="wrap story-grid">
+      <figure class="story-photo reveal"><img src="assets/img/mujeres-velas.webp" alt="" loading="lazy"></figure>
+      <div class="story-text reveal" style="--d:120ms">
+        <h2>Historia de una mujer <em>emprendedora</em></h2>
+        <blockquote class="story-quote"><p>Aquí irá el testimonio, contado en sus propias palabras.</p></blockquote>
+          <ol class="story-steps">
+            <li><h3>Situación inicial</h3><p>Cuál era su situación antes de llegar a la Fundación.</p></li>
+            <li><h3>Acompañamiento de la Fundación</h3><p>Cómo intervino la Fundación y con qué programa.</p></li>
+            <li><h3>Transformación</h3><p>Qué cambió después en su vida o en la de su familia.</p></li>
+          </ol>
+      </div>
+    </div>
+  </section>
+  <section class="block story" data-tone="light">
+    <div class="wrap story-grid rev">
+      <figure class="story-photo reveal"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"></figure>
+      <div class="story-text reveal" style="--d:120ms">
+        <h2>Historia de un <em>colaborador</em></h2>
+          <ol class="story-steps">
+            <li><h3>Situación inicial</h3><p>Cuál era su situación antes de llegar a la Fundación.</p></li>
+            <li><h3>Acompañamiento de la Fundación</h3><p>Cómo intervino la Fundación y con qué programa.</p></li>
+            <li><h3>Transformación</h3><p>Qué cambió después en su vida o en la de su familia.</p></li>
+          </ol>
+        <blockquote class="story-quote"><p>Aquí irá el testimonio, contado en sus propias palabras.</p></blockquote>
+      </div>
+    </div>
+  </section>
+  <section class="block story" data-tone="navy">
+    <div class="wrap story-grid">
+      <figure class="story-photo reveal"><img src="assets/img/vivienda.webp" alt="" loading="lazy"></figure>
+      <div class="story-text reveal" style="--d:120ms">
+        <h2>Historia de una <em>familia</em></h2>
+          <ol class="story-steps">
+            <li><h3>Situación inicial</h3><p>Cuál era su situación antes de llegar a la Fundación.</p></li>
+            <li><h3>Acompañamiento de la Fundación</h3><p>Cómo intervino la Fundación y con qué programa.</p></li>
+            <li><h3>Transformación</h3><p>Qué cambió después en su vida o en la de su familia.</p></li>
+          </ol>
+        <blockquote class="story-quote"><p>Aquí irá el testimonio, contado en sus propias palabras.</p></blockquote>
+      </div>
+    </div>
+  </section>
+  <section class="block story" data-tone="green">
+    <div class="wrap story-grid rev">
+      <figure class="story-photo reveal"><img src="assets/img/nina-sonrisa.webp" alt="" loading="lazy" style="object-position:68% 50%"></figure>
+      <div class="story-text reveal" style="--d:120ms">
+        <h2>Historia de un <em>estudiante</em></h2>
+          <ol class="story-steps">
+            <li><h3>Situación inicial</h3><p>Cuál era su situación antes de llegar a la Fundación.</p></li>
+            <li><h3>Acompañamiento de la Fundación</h3><p>Cómo intervino la Fundación y con qué programa.</p></li>
+            <li><h3>Transformación</h3><p>Qué cambió después en su vida o en la de su familia.</p></li>
+          </ol>
+        <blockquote class="story-quote"><p>Aquí irá el testimonio, contado en sus propias palabras.</p></blockquote>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= APOYA ================= -->
+<div data-page="apoya" hidden>
+  <section class="hero-sheet has-photo sp-hero" data-tone="light">
+    <div class="hero-bg" data-parallax=".18"><div class="zoom"><video class="hv on solo" autoplay muted loop playsinline preload="metadata" poster="assets/img/cta-002.webp" aria-hidden="true"><source src="assets/video/hero-005.mp4" type="video/mp4"></video></div></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 class="fade-up" style="animation-delay:.1s">Hay muchas formas de hacer parte del <em>cambio</em></h1>
+        <p class="lead fade-up" style="margin-top:22px;animation-delay:.4s">Personas, empresas, socios del Club, voluntarios e instituciones pueden hacer parte. Elige una forma de apoyo para conocer cómo funciona.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block sp-opt" data-tone="sand" id="sp-dona">
+    <div class="wrap sp-grid">
+      <figure class="sp-photo reveal"><img src="assets/img/manos-planta.webp" alt="" loading="lazy"><span class="sp-num" aria-hidden="true">01</span></figure>
+      <div class="sp-text reveal" style="--d:120ms">
+        <h2> <em>Dona</em></h2>
+        <p class="sp-intro">Apoya directamente las iniciativas de la Fundación.</p>
+        <div class="sp-subs"><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2" pathLength="1"/><path d="M2.5 10h19" pathLength="1"/><path d="M6.5 15h4" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Cómo donar</h3><p>Medios de pago y pasos para hacer tu aporte.</p></div></div><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18v4H3z" pathLength="1"/><path d="M5 12v8h14v-8" pathLength="1"/><path d="M12 8v12" pathLength="1"/><path d="M12 8C10.5 4.5 6 4.5 7 7.5c.4 1 2.5.5 5 .5Z" pathLength="1"/><path d="M12 8c1.5-3.500 6-3.500 5-.5-.4 1-2.500.5-5 .5Z" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Qué se puede donar</h3><p>Aportes económicos y montos sugeridos.</p></div></div><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" pathLength="1"/><circle cx="12" cy="12" r="5" pathLength="1"/><circle cx="12" cy="12" r="1.3" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Destino de los recursos</h3><p>A qué programas y necesidades se dirige cada aporte.</p></div></div><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5Z" pathLength="1"/><path d="M8 9.500h8" pathLength="1"/><path d="M8 12.500h5" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Datos de contacto</h3><p>A quién escribir para resolver dudas sobre tu donación.</p></div></div></div>
+        <div><button class="cta" type="button" data-way="Dona">Quiero donar <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block sp-opt" data-tone="green" id="sp-voluntario">
+    <div class="wrap sp-grid rev">
+      <figure class="sp-photo reveal"><img src="assets/img/comunidad.webp" alt="" loading="lazy"><span class="sp-num" aria-hidden="true">02</span></figure>
+      <div class="sp-text reveal" style="--d:120ms">
+        <h2>Sé <em>voluntario</em></h2>
+        <p class="sp-intro">Comparte tu tiempo, conocimientos y capacidades.</p>
+        <div class="sp-subs"><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2" pathLength="1"/><path d="M9 4V3h6v1" pathLength="1"/><path d="m9 13 2.200 2.200L15.500 11" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Cómo participar</h3><p>Pasos para inscribirte como voluntario.</p></div></div><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.500" pathLength="1"/><path d="M5 20c.6-3.600 3.400-5.500 7-5.500s6.400 1.900 7 5.500" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Perfiles requeridos</h3><p>Conocimientos y habilidades que buscamos.</p></div></div><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.500" y="5" width="17" height="15" rx="2" pathLength="1"/><path d="M3.500 10h17" pathLength="1"/><path d="M8 3v4" pathLength="1"/><path d="M16 3v4" pathLength="1"/><path d="M8 14.500h3" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Actividades</h3><p>En qué programas y espacios puedes aportar.</p></div></div><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" pathLength="1"/><path d="M12 7v5l3.500 2" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Tiempo y disponibilidad</h3><p>Dedicación sugerida y horarios de las actividades.</p></div></div></div>
+        <div><button class="cta" type="button" data-way="Sé voluntario">Quiero ser voluntario <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block sp-opt" data-tone="navy" id="sp-alianza">
+    <div class="wrap sp-grid">
+      <figure class="sp-photo reveal"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"><span class="sp-num" aria-hidden="true">03</span></figure>
+      <div class="sp-text reveal" style="--d:120ms">
+        <h2>Haz una <em>alianza</em></h2>
+        <p class="sp-intro">Orientada principalmente a empresas e instituciones. Construyamos juntos iniciativas que generen impacto.</p>
+        <ul class="sp-chips"><li>Empresas</li><li>Instituciones</li></ul>
+        <div><button class="cta" type="button" data-way="Haz una alianza">Proponer una alianza <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block sp-opt" data-tone="light" id="sp-programa">
+    <div class="wrap sp-grid rev">
+      <figure class="sp-photo reveal"><img src="assets/img/educacion.webp" alt="" loading="lazy"><span class="sp-num" aria-hidden="true">04</span></figure>
+      <div class="sp-text reveal" style="--d:120ms">
+        <h2>Apoya un <em>programa</em></h2>
+        <p class="sp-intro">Dirige tu apoyo hacia una iniciativa específica.</p>
+        <label class="f sp-select" for="sp-prog" hidden>Elige el programa que quieres apoyar<select id="sp-prog"><optgroup label="Colaboradores y sus familias"><option>Auxilios educativo-escolares</option><option>Auxilio de educación superior</option><option>Club de Liderazgo</option><option>Subsidio para adquisición de vivienda nueva</option><option>Préstamo de vivienda</option><option>Proyecto Vivienda Digna</option><option>Bienestar Integral – Gimnasio</option><option>Curso de natación</option><option>Emprendiendo Juntos – Colaboradores</option><option>Programa de Riesgo Psicosocial y Salud</option><option>Póliza de beneficio exequial</option></optgroup><optgroup label="Comunidades"><option>Descubriendo mis Habilidades</option><option>Emprendiendo Juntos – Comunidad</option></optgroup></select></label>
+        <div><button class="cta" type="button" data-way="Apoya un programa">Apoyar este programa <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block sp-opt" data-tone="green" id="sp-especie">
+    <div class="wrap sp-grid">
+      <figure class="sp-photo reveal"><img src="assets/img/vitrina.webp" alt="" loading="lazy"><span class="sp-num" aria-hidden="true">05</span></figure>
+      <div class="sp-text reveal" style="--d:120ms">
+        <h2>Donaciones en <em>especie</em></h2>
+        <p class="sp-intro">Conoce qué tipo de aportes recibimos y cómo hacerlos llegar.</p>
+        <div class="sp-subs"><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.500 8 12 3.500 20.500 8v8L12 20.500 3.500 16V8Z" pathLength="1"/><path d="M3.500 8 12 12.500 20.500 8" pathLength="1"/><path d="M12 12.500v8" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Qué tipo de aportes recibimos</h3><p>Materiales, útiles, equipos u otros bienes que necesitan los programas.</p></div></div><div class="sp-sub has-ic"><span class="sp-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l1.500 4.500-2 1.500a11 11 0 0 0 5.500 5.500l1.500-2L20 15v4a1 1 0 0 1-1 1C11 20 4 13 4 5a1 1 0 0 1 1-1Z" pathLength="1"/></svg></span><div class="sp-sub-t"><h3>Cómo contactarnos</h3><p>Canal y horarios para coordinar la entrega.</p></div></div></div>
+        <div><button class="cta" type="button" data-way="Donaciones en especie">Quiero donar en especie <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="navy" id="sp-form">
+    <div class="wrap contact-grid">
+      <div class="stack reveal">
+        <h2>Cuéntanos cómo quieres <em>apoyar</em></h2>
+        <p class="muted">Si tienes dudas te contactaremos para contarte cuáles serían los siguientes pasos.</p>
+        <div class="don2">
+          <p class="don2-acc"><span>Cuenta de ahorros Bancolombia</span><b>000-000000-00</b></p>
+          <p class="don2-own">A nombre de Fundación Social Country Club de Barranquilla · NIT 000.000.000-0</p>
+          <ul class="don2-logos" aria-label="Medios de pago"><li><img src="assets/pago/bancolombia.png" alt="Bancolombia" style="height:26px" loading="lazy"></li><li><img src="assets/pago/bbva.png" alt="BBVA" style="height:20px" loading="lazy"></li><li><img src="assets/pago/nequi.png" alt="Nequi" style="height:22px" loading="lazy"></li><li><img src="assets/pago/nu.png" alt="Nu" style="height:22px" loading="lazy"></li><li><img src="assets/pago/davivienda.png" alt="Davivienda" style="height:13px" loading="lazy"></li><li><img src="assets/pago/lulo.png" alt="Lulo Bank" style="height:30px" loading="lazy"></li><li><img src="assets/pago/visa.png" alt="Visa" style="height:19px" loading="lazy"></li><li><img src="assets/pago/mastercard.png" alt="Mastercard" style="height:34px" loading="lazy"></li><li><img src="assets/pago/pse.png" alt="PSE" style="height:30px" loading="lazy"></li><li><img src="assets/pago/bre-b.png" alt="Bre-B" style="height:22px" loading="lazy"></li></ul>
+        </div>
+      </div>
+      <form id="supportForm" class="ct-panel sp-panel reveal" style="--d:120ms" novalidate>
+        <h2 class="ct-ptitle">¿Cómo quieres apoyar?</h2>
+        <div class="ct-row">
+          <label class="ct-f"><span class="sr-only">Nombre</span><input name="name" placeholder="Nombre" required autocomplete="name"></label>
+          <label class="ct-f"><span class="sr-only">Email</span><input name="email" type="email" placeholder="Email" required autocomplete="email"></label>
+        </div>
+        <label class="ct-f"><span class="sr-only">Teléfono</span><input name="phone" type="tel" placeholder="Teléfono" autocomplete="tel"></label>
+        <fieldset class="ct-want">
+          <legend>Tipo de solicitud</legend>
+          <div class="ct-chips" id="s-way-chips"><label class="ct-chip"><input type="radio" name="topic2" value="Donar"><span>Donar</span></label><label class="ct-chip"><input type="radio" name="topic2" value="Ser voluntario"><span>Ser voluntario</span></label><label class="ct-chip"><input type="radio" name="topic2" value="Crear una alianza"><span>Crear una alianza</span></label><label class="ct-chip"><input type="radio" name="topic2" value="Apoyar un programa"><span>Apoyar un programa</span></label><label class="ct-chip"><input type="radio" name="topic2" value="Solicitar información" checked><span>Solicitar información</span></label><label class="ct-chip"><input type="radio" name="topic2" value="Otro"><span>Otro</span></label></div>
+        </fieldset>
+        <select id="s-way" name="way" class="sr-only" tabindex="-1" aria-hidden="true"><option>Dona</option><option>Sé voluntario</option><option>Haz una alianza</option><option>Apoya un programa</option><option>Donaciones en especie</option></select>
+        <label class="ct-f" for="s-prog" id="s-prog-wrap" hidden><span class="ct-lab">Programa</span><select id="s-prog" name="program"><optgroup label="Colaboradores y sus familias"><option>Auxilios educativo-escolares</option><option>Auxilio de educación superior</option><option>Club de Liderazgo</option><option>Subsidio para adquisición de vivienda nueva</option><option>Préstamo de vivienda</option><option>Proyecto Vivienda Digna</option><option>Bienestar Integral – Gimnasio</option><option>Curso de natación</option><option>Emprendiendo Juntos – Colaboradores</option><option>Programa de Riesgo Psicosocial y Salud</option><option>Póliza de beneficio exequial</option></optgroup><optgroup label="Comunidades"><option>Descubriendo mis Habilidades</option><option>Emprendiendo Juntos – Comunidad</option></optgroup></select></label>
+        <label class="ct-f"><span class="sr-only">Mensaje</span><textarea name="msg" placeholder="Tu mensaje" required></textarea></label>
+        <div class="ct-send"><button class="cta cta-green" type="submit">Enviar mensaje <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
+        <p class="ok" id="supportOk" hidden>Prototipo: este formulario todavía no envía datos. En la web real llegará al correo de la Fundación.</p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ================= NOTICIAS ================= -->
+<div data-page="noticias" hidden>
+  <h1 class="sr-only">Noticias de la Fundación</h1>
+  <section class="nhero" data-tone="navy" id="newsHero" aria-roledescription="carrusel" aria-label="Noticias destacadas">
+    <article class="nh-slide on" aria-roledescription="diapositiva" aria-label="1 de 3">
+      <img src="assets/img/comunidad.webp" alt="" >
+      <div class="wrap nh-wrap">
+        <div class="nh-copy">
+          <span class="nh-date">Noticia destacada</span>
+          <h2>Titular de la noticia <em>destacada</em></h2>
+          <p class="nh-p">Aquí irá la noticia más reciente o importante de la Fundación, con un resumen corto y el enlace para leerla completa.</p>
+        </div>
+      </div>
+    </article>
+    <article class="nh-slide" aria-roledescription="diapositiva" aria-label="2 de 3">
+      <img src="assets/img/gestion-social.webp" alt="" loading="lazy">
+      <div class="wrap nh-wrap">
+        <div class="nh-copy">
+          <span class="nh-date">Noticia destacada</span>
+          <h2>Clausura de Descubriendo mis <em>Habilidades</em></h2>
+          <p class="nh-p">Resumen corto de la noticia: qué pasó, quiénes participaron y qué resultados dejó.</p>
+          <a class="cta" href="#noticia">Leer noticia <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </article>
+    <article class="nh-slide" aria-roledescription="diapositiva" aria-label="3 de 3">
+      <img src="assets/img/vitrina.webp" alt="" loading="lazy">
+      <div class="wrap nh-wrap">
+        <div class="nh-copy">
+          <span class="nh-date">Noticia destacada</span>
+          <h2>La Vitrina: productos y trabajos de los <em>participantes</em></h2>
+          <p class="nh-p">Resumen corto de la noticia: qué pasó, quiénes participaron y qué resultados dejó.</p>
+          <a class="cta" href="#noticia-vitrina">Leer noticia <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </article>
+    <div class="wrap nh-ui"><div class="nh-dots" role="tablist" aria-label="Elegir noticia"><button type="button" role="tab" aria-selected="true" aria-label="Noticia 1" data-i="0"><i></i></button><button type="button" role="tab" aria-selected="false" aria-label="Noticia 2" data-i="1"><i></i></button><button type="button" role="tab" aria-selected="false" aria-label="Noticia 3" data-i="2"><i></i></button></div></div>
+  </section>
+  <section class="block" data-tone="light">
+    <div class="wrap stack">
+      <h2 class="reveal">Últimas <em>noticias</em></h2>
+      <div class="plist">
+        <article class="prog news" style="--i:0" data-go="#noticia" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/gestion-social.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Descubriendo mis Habilidades</h3><p>Tras ocho meses de talleres, los estudiantes del Colegio Eustorgio Salgar cerraron el ciclo de Descubriendo mis Habilidades con una jornada en la que presentaron a sus familias y a la comunidad los proyectos que construyeron durante el año.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:1" data-go="#noticia-emprendiendo" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/mujeres-velas.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Emprendiendo Juntos</h3><p>Veinte mujeres del corregimiento de Salgar recibieron su certificado tras completar el ciclo de formación de Emprendiendo Juntos – Comunidad, en una ceremonia en la que exhibieron las velas decorativas que aprendieron a elaborar.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:2" data-go="#noticia-vitrina" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/vitrina.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>La Vitrina: productos y trabajos de los participantes</h3><p>La Vitrina abrió una nueva edición con los productos y trabajos elaborados por quienes participan en los programas de la Fundación: velas decorativas, manualidades y proyectos escolares que por unos días salieron del aula para encontrarse con el público.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:3" data-go="#noticia-vivienda" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/vivienda.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Convocatoria del Proyecto Vivienda Digna</h3><p>La Fundación abrió la convocatoria anual del Proyecto Vivienda Digna, que entrega subsidios a los colaboradores para atender necesidades locativas básicas y prioritarias de sus hogares.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:4" data-go="#noticia-auxilios" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/educacion.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Auxilios educativos del nuevo calendario</h3><p>Con el inicio del nuevo calendario escolar, la Fundación abre la entrega de los auxilios educativo-escolares, un apoyo económico para que los hijos de los colaboradores cuenten con lo necesario para comenzar y continuar sus estudios.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:5" data-go="#noticia-aliados" role="link" tabindex="0">
+          <div class="media"><span class="pill">Aliados</span><div class="ph"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Nuevos convenios y alianzas</h3><p>La Fundación suma nuevos convenios con empresas e instituciones de la región para ampliar el alcance de sus programas de educación, vivienda, bienestar y gestión social.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= NOTICIAS (detalle) ================= -->
+<div data-page="noticia" hidden>
+  <section class="art-hero" data-tone="navy">
+    <img src="assets/img/gestion-social.webp" alt="Estudiantes presentando sus proyectos en la clausura del programa">
+    <div class="wrap art-hero-in">
+      <nav class="art-crumbs" aria-label="Ruta"><a href="#noticias">Noticias</a><span aria-hidden="true">/</span><span>Eventos</span></nav>
+      <h1>Clausura de Descubriendo mis <em>Habilidades</em></h1>
+      <ul class="art-meta">
+        <li>4 min de lectura</li>
+        <li>Por Comunicaciones de la Fundación</li>
+      </ul>
+    </div>
+  </section>
+  <section class="art" data-tone="light">
+    <div class="wrap art-grid">
+      <aside class="art-side" aria-label="Datos de la noticia">
+        <dl>
+          <div><dt>Categoría</dt><dd>Eventos</dd></div>
+          <div><dt>Programa</dt><dd>Descubriendo mis Habilidades</dd></div>
+          <div><dt>Línea</dt><dd>Gestión social</dd></div>
+          <div><dt>Lugar</dt><dd>Colegio Eustorgio Salgar, Salgar</dd></div>
+        </dl>
+        <div class="art-share"><span>Compartir</span><ul class="fsoc ct-soc" aria-label="Compartir">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul></div>
+        <a class="art-back" href="#noticias">← Volver a noticias</a>
+      </aside>
+      <article class="art-body">
+        <p class="art-note"> Contenido de ejemplo para mostrar el diseño de la noticia.</p>
+        <p class="art-lead">Tras ocho meses de talleres, los estudiantes del Colegio Eustorgio Salgar cerraron el ciclo de Descubriendo mis Habilidades con una jornada en la que presentaron a sus familias y a la comunidad los proyectos que construyeron durante el año.</p>
+        <p class="art-p art-drop">La clausura reunió a estudiantes, docentes, padres de familia y colaboradores del Country Club de Barranquilla en el patio principal del colegio. Durante la mañana, cada grupo expuso su proyecto en una pequeña feria: productos hechos a mano, propuestas de servicio para el barrio e ideas de negocio pensadas desde lo que saben y les gusta hacer.</p>
+        <p class="art-p">El programa hace parte de la línea de Gestión social de la Fundación y se desarrolla cada año, de abril a noviembre. Su propósito es fortalecer en los estudiantes competencias para la vida, el ser y el saber hacer, con un acompañamiento pedagógico que combina el trabajo en el aula con actividades prácticas.</p>
+        <figure class="art-fig">
+          <img src="assets/img/educacion.webp" alt="" loading="lazy">
+          <figcaption>Los talleres combinan trabajo en el aula con actividades prácticas.</figcaption>
+        </figure>
+        <h2>Un año de aprender <em>haciendo</em></h2>
+        <p class="art-p">A lo largo del ciclo, los participantes trabajaron en tres frentes: reconocer sus propias habilidades, aprender a trabajar en equipo y convertir una idea en un proyecto que pudieran mostrar. Cada encuentro terminaba con un reto pequeño que debían resolver antes de la siguiente sesión.</p>
+        <blockquote class="art-quote">
+          <p>«Aprendí que mis ideas también pueden convertirse en un proyecto, y que no tengo que hacerlo sola.»</p>
+          <cite>Estudiante de décimo grado, participante del programa</cite>
+        </blockquote>
+        <p class="art-p">Para los docentes, el cambio más visible estuvo en la confianza con la que los estudiantes hablaron en público. Varios de ellos presentaron por primera vez frente a un auditorio y respondieron las preguntas de los asistentes sobre costos, materiales y tiempos de elaboración.</p>
+        <div class="art-facts" role="list">
+          <div role="listitem"><b>+120</b><span>Estudiantes participantes</span></div>
+          <div role="listitem"><b>8</b><span>Meses de formación</span></div>
+          <div role="listitem"><b>14</b><span>Proyectos presentados</span></div>
+        </div>
+        <h2>La comunidad como <em>invitada</em></h2>
+        <p class="art-p">La jornada cerró con la entrega de reconocimientos y un espacio para que las familias recorrieran los puestos. Algunos de los productos se exhibirán en La Vitrina, el espacio donde la Fundación muestra los trabajos de los participantes de sus programas.</p>
+        <div class="art-duo">
+          <figure><img src="assets/img/vitrina.webp" alt="" loading="lazy"></figure>
+          <figure><img src="assets/img/comunidad.webp" alt="" loading="lazy"></figure>
+        </div>
+        <p class="art-p">La Fundación abrirá una nueva convocatoria del programa al inicio del próximo calendario escolar. Las fechas se anunciarán en esta sección de noticias y en las redes sociales.</p>
+        <ul class="art-tags" aria-label="Temas"><li>Gestión social</li><li>Educación</li><li>Salgar</li><li>Emprendimiento</li></ul>
+      </article>
+    </div>
+  </section>
+  <section class="block art-more" data-tone="sand">
+    <div class="wrap stack">
+      <div class="art-more-h"><h2>Más <em>noticias</em></h2><a class="cta" href="#noticias">Ver todas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      <div class="plist">
+        <article class="prog news" style="--i:0" data-go="#noticia-emprendiendo" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/mujeres-velas.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Emprendiendo Juntos</h3><p>Veinte mujeres del corregimiento de Salgar recibieron su certificado tras completar el ciclo de formación de Emprendiendo Juntos – Comunidad, en una ceremonia en la que exhibieron las velas decorativas que aprendieron a elaborar.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:1" data-go="#noticia-vitrina" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/vitrina.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>La Vitrina: productos y trabajos de los participantes</h3><p>La Vitrina abrió una nueva edición con los productos y trabajos elaborados por quienes participan en los programas de la Fundación: velas decorativas, manualidades y proyectos escolares que por unos días salieron del aula para encontrarse con el público.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:2" data-go="#noticia-vivienda" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/vivienda.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Convocatoria del Proyecto Vivienda Digna</h3><p>La Fundación abrió la convocatoria anual del Proyecto Vivienda Digna, que entrega subsidios a los colaboradores para atender necesidades locativas básicas y prioritarias de sus hogares.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div data-page="noticia-emprendiendo" hidden>
+  <section class="art-hero" data-tone="navy">
+    <img src="assets/img/mujeres-velas.webp" alt="Mujeres de Salgar con las velas que elaboraron en el programa" loading="lazy">
+    <div class="wrap art-hero-in">
+      <nav class="art-crumbs" aria-label="Ruta"><a href="#noticias">Noticias</a><span aria-hidden="true">/</span><span>Eventos</span></nav>
+      <h1>Clausura de Emprendiendo <em>Juntos</em></h1>
+      <ul class="art-meta">
+        <li>4 min de lectura</li>
+        <li>Por Comunicaciones de la Fundación</li>
+      </ul>
+    </div>
+  </section>
+  <section class="art" data-tone="light">
+    <div class="wrap art-grid">
+      <aside class="art-side" aria-label="Datos de la noticia">
+        <dl>
+          <div><dt>Categoría</dt><dd>Eventos</dd></div>
+          <div><dt>Programa</dt><dd>Emprendiendo Juntos – Comunidad</dd></div>
+          <div><dt>Línea</dt><dd>Gestión social</dd></div>
+          <div><dt>Lugar</dt><dd>Institución Educativa Eustorgio Salgar, Salgar</dd></div>
+        </dl>
+        <div class="art-share"><span>Compartir</span><ul class="fsoc ct-soc" aria-label="Compartir">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul></div>
+        <a class="art-back" href="#noticias">← Volver a noticias</a>
+      </aside>
+      <article class="art-body">
+        <p class="art-note"> Contenido de ejemplo para mostrar el diseño de la noticia.</p>
+        <p class="art-lead">Veinte mujeres del corregimiento de Salgar recibieron su certificado tras completar el ciclo de formación de Emprendiendo Juntos – Comunidad, en una ceremonia en la que exhibieron las velas decorativas que aprendieron a elaborar.</p>
+        <p class="art-p art-drop">El acto de cierre se realizó en la Institución Educativa Eustorgio Salgar, el mismo lugar donde las participantes se reunieron todos los jueves, y algunos viernes, durante el programa. Cada una montó una mesa con sus productos: velas aromáticas, de molde y decorativas, con empaques y etiquetas diseñados por ellas mismas.</p>
+        <p class="art-p">Emprendiendo Juntos – Comunidad es un programa de formación, asesoría y acompañamiento que fortalece habilidades emprendedoras y competencias personales. Trabaja tres componentes: emprendimiento, competencias para la vida y elaboración de velas decorativas.</p>
+        <figure class="art-fig">
+          <img src="assets/img/vitrina.webp" alt="" loading="lazy">
+          <figcaption>La muestra final reunió los productos de las veinte participantes.</figcaption>
+        </figure>
+        <h2>Del taller al <em>primer pedido</em></h2>
+        <p class="art-p">Las primeras sesiones se dedicaron a lo básico: cuánto cuesta producir una vela, cómo ponerle precio y a quién vendérsela. Después llegó la práctica, con jornadas completas de taller para dominar las técnicas y mejorar los acabados.</p>
+        <blockquote class="art-quote">
+          <p>«Antes regalaba lo que hacía. Ahora sé cuánto vale mi trabajo y cómo ofrecerlo.»</p>
+          <cite>Participante de Emprendiendo Juntos – Comunidad</cite>
+        </blockquote>
+        <p class="art-p">Además del oficio, las participantes destacaron lo que ganaron en confianza. Varias llegaron sin haber vendido nunca un producto propio y cerraron el ciclo con pedidos de vecinos y familiares.</p>
+        <div class="art-facts" role="list">
+          <div role="listitem"><b>20</b><span>Mujeres certificadas</span></div>
+          <div role="listitem"><b>3</b><span>Componentes de formación</span></div>
+          <div role="listitem"><b>+30</b><span>Sesiones de taller</span></div>
+        </div>
+        <h2>Un cierre con las <em>familias</em></h2>
+        <p class="art-p">Durante la ceremonia, las familias recorrieron la muestra y pudieron comprar directamente a las emprendedoras. Una selección de las velas hará parte de La Vitrina de la Fundación.</p>
+        <div class="art-duo">
+          <figure><img src="assets/img/mujeres-velas.webp" alt="" loading="lazy"></figure>
+          <figure><img src="assets/img/comunidad.webp" alt="" loading="lazy"></figure>
+        </div>
+        <p class="art-p">El equipo de la Fundación seguirá acompañando a las egresadas en la etapa de comercialización. La próxima cohorte se anunciará en esta sección de noticias.</p>
+        <ul class="art-tags" aria-label="Temas"><li>Gestión social</li><li>Emprendimiento</li><li>Salgar</li><li>Mujeres</li></ul>
+      </article>
+    </div>
+  </section>
+  <section class="block art-more" data-tone="sand">
+    <div class="wrap stack">
+      <div class="art-more-h"><h2>Más <em>noticias</em></h2><a class="cta" href="#noticias">Ver todas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      <div class="plist">
+        <article class="prog news" style="--i:0" data-go="#noticia-vitrina" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/vitrina.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>La Vitrina: productos y trabajos de los participantes</h3><p>La Vitrina abrió una nueva edición con los productos y trabajos elaborados por quienes participan en los programas de la Fundación: velas decorativas, manualidades y proyectos escolares que por unos días salieron del aula para encontrarse con el público.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:1" data-go="#noticia-vivienda" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/vivienda.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Convocatoria del Proyecto Vivienda Digna</h3><p>La Fundación abrió la convocatoria anual del Proyecto Vivienda Digna, que entrega subsidios a los colaboradores para atender necesidades locativas básicas y prioritarias de sus hogares.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:2" data-go="#noticia-auxilios" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/educacion.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Auxilios educativos del nuevo calendario</h3><p>Con el inicio del nuevo calendario escolar, la Fundación abre la entrega de los auxilios educativo-escolares, un apoyo económico para que los hijos de los colaboradores cuenten con lo necesario para comenzar y continuar sus estudios.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div data-page="noticia-vitrina" hidden>
+  <section class="art-hero" data-tone="navy">
+    <img src="assets/img/vitrina.webp" alt="Productos elaborados por participantes de los programas" loading="lazy">
+    <div class="wrap art-hero-in">
+      <nav class="art-crumbs" aria-label="Ruta"><a href="#noticias">Noticias</a><span aria-hidden="true">/</span><span>Eventos</span></nav>
+      <h1>La Vitrina: productos y trabajos de los <em>participantes</em></h1>
+      <ul class="art-meta">
+        <li>3 min de lectura</li>
+        <li>Por Comunicaciones de la Fundación</li>
+      </ul>
+    </div>
+  </section>
+  <section class="art" data-tone="light">
+    <div class="wrap art-grid">
+      <aside class="art-side" aria-label="Datos de la noticia">
+        <dl>
+          <div><dt>Categoría</dt><dd>Eventos</dd></div>
+          <div><dt>Programa</dt><dd>La Vitrina</dd></div>
+          <div><dt>Línea</dt><dd>Gestión social</dd></div>
+          <div><dt>Lugar</dt><dd>Country Club de Barranquilla</dd></div>
+        </dl>
+        <div class="art-share"><span>Compartir</span><ul class="fsoc ct-soc" aria-label="Compartir">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul></div>
+        <a class="art-back" href="#noticias">← Volver a noticias</a>
+      </aside>
+      <article class="art-body">
+        <p class="art-note"> Contenido de ejemplo para mostrar el diseño de la noticia.</p>
+        <p class="art-lead">La Vitrina abrió una nueva edición con los productos y trabajos elaborados por quienes participan en los programas de la Fundación: velas decorativas, manualidades y proyectos escolares que por unos días salieron del aula para encontrarse con el público.</p>
+        <p class="art-p art-drop">El espacio se instaló en una de las zonas comunes del Country Club de Barranquilla para que socios y colaboradores pudieran recorrerlo. Cada mesa tenía a su lado a la persona que hizo el producto, lista para contar cómo lo elaboró y qué aprendió en el camino.</p>
+        <p class="art-p">La Vitrina nació como una forma de mostrar los resultados de los programas de Gestión social. Más que una feria de ventas, es un espacio para que los participantes practiquen cómo presentar su trabajo, atender a un cliente y recibir comentarios.</p>
+        <figure class="art-fig">
+          <img src="assets/img/mujeres-velas.webp" alt="" loading="lazy">
+          <figcaption>Cada expositora presentó sus productos y explicó cómo los elabora.</figcaption>
+        </figure>
+        <h2>Mostrar lo que se <em>aprende</em></h2>
+        <p class="art-p">En esta edición estuvieron las emprendedoras de Emprendiendo Juntos – Comunidad y un grupo de estudiantes de Descubriendo mis Habilidades. Para muchos fue la primera vez que ofrecieron lo que hacen a personas fuera de su círculo cercano.</p>
+        <blockquote class="art-quote">
+          <p>«Explicar cómo hago mis velas me hizo darme cuenta de todo lo que ya sé.»</p>
+          <cite>Expositora de La Vitrina</cite>
+        </blockquote>
+        <p class="art-p">Los visitantes dejaron sus opiniones en tarjetas que luego se entregaron a cada expositor. Varias de las sugerencias, sobre empaques, tamaños y precios, se trabajarán en las siguientes sesiones de los programas.</p>
+        <div class="art-facts" role="list">
+          <div role="listitem"><b>+25</b><span>Expositores</span></div>
+          <div role="listitem"><b>2</b><span>Programas representados</span></div>
+          <div role="listitem"><b>+200</b><span>Visitantes</span></div>
+        </div>
+        <h2>Lo que dijo el <em>público</em></h2>
+        <p class="art-p">Al cierre, los expositores compartieron un espacio de balance con el equipo de la Fundación para revisar qué funcionó y qué quieren mejorar antes de la próxima muestra.</p>
+        <div class="art-duo">
+          <figure><img src="assets/img/gestion-social.webp" alt="" loading="lazy"></figure>
+          <figure><img src="assets/img/comunidad.webp" alt="" loading="lazy"></figure>
+        </div>
+        <p class="art-p">La Fundación prepara una nueva edición de La Vitrina. La fecha y el lugar se publicarán en esta sección de noticias.</p>
+        <ul class="art-tags" aria-label="Temas"><li>Gestión social</li><li>La Vitrina</li><li>Emprendimiento</li></ul>
+      </article>
+    </div>
+  </section>
+  <section class="block art-more" data-tone="sand">
+    <div class="wrap stack">
+      <div class="art-more-h"><h2>Más <em>noticias</em></h2><a class="cta" href="#noticias">Ver todas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      <div class="plist">
+        <article class="prog news" style="--i:0" data-go="#noticia-vivienda" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/vivienda.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Convocatoria del Proyecto Vivienda Digna</h3><p>La Fundación abrió la convocatoria anual del Proyecto Vivienda Digna, que entrega subsidios a los colaboradores para atender necesidades locativas básicas y prioritarias de sus hogares.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:1" data-go="#noticia-auxilios" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/educacion.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Auxilios educativos del nuevo calendario</h3><p>Con el inicio del nuevo calendario escolar, la Fundación abre la entrega de los auxilios educativo-escolares, un apoyo económico para que los hijos de los colaboradores cuenten con lo necesario para comenzar y continuar sus estudios.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:2" data-go="#noticia-aliados" role="link" tabindex="0">
+          <div class="media"><span class="pill">Aliados</span><div class="ph"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Nuevos convenios y alianzas</h3><p>La Fundación suma nuevos convenios con empresas e instituciones de la región para ampliar el alcance de sus programas de educación, vivienda, bienestar y gestión social.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div data-page="noticia-vivienda" hidden>
+  <section class="art-hero" data-tone="navy">
+    <img src="assets/img/vivienda.webp" alt="Familia en su cocina renovada" loading="lazy">
+    <div class="wrap art-hero-in">
+      <nav class="art-crumbs" aria-label="Ruta"><a href="#noticias">Noticias</a><span aria-hidden="true">/</span><span>Programas</span></nav>
+      <h1>Convocatoria del Proyecto Vivienda <em>Digna</em></h1>
+      <ul class="art-meta">
+        <li>3 min de lectura</li>
+        <li>Por Comunicaciones de la Fundación</li>
+      </ul>
+    </div>
+  </section>
+  <section class="art" data-tone="light">
+    <div class="wrap art-grid">
+      <aside class="art-side" aria-label="Datos de la noticia">
+        <dl>
+          <div><dt>Categoría</dt><dd>Programas</dd></div>
+          <div><dt>Programa</dt><dd>Proyecto Vivienda Digna</dd></div>
+          <div><dt>Línea</dt><dd>Vivienda</dd></div>
+          <div><dt>Lugar</dt><dd>Country Club de Barranquilla</dd></div>
+        </dl>
+        <div class="art-share"><span>Compartir</span><ul class="fsoc ct-soc" aria-label="Compartir">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul></div>
+        <a class="art-back" href="#noticias">← Volver a noticias</a>
+      </aside>
+      <article class="art-body">
+        <p class="art-note"> Contenido de ejemplo para mostrar el diseño de la noticia.</p>
+        <p class="art-lead">La Fundación abrió la convocatoria anual del Proyecto Vivienda Digna, que entrega subsidios a los colaboradores para atender necesidades locativas básicas y prioritarias de sus hogares.</p>
+        <p class="art-p art-drop">El proyecto hace parte de la línea de Vivienda y está dirigido a los colaboradores del Country Club de Barranquilla y sus familias. Se realiza una convocatoria al año y prioriza las adecuaciones que más inciden en la seguridad y la salud del hogar.</p>
+        <p class="art-p">Entre las mejoras que se pueden postular están arreglos de techos, pisos, baños y cocinas, así como reparaciones de redes eléctricas e hidráulicas. Cada solicitud se revisa con una visita al hogar para verificar la necesidad y definir el alcance de la obra.</p>
+        <figure class="art-fig">
+          <img src="assets/img/colaboradores.webp" alt="" loading="lazy">
+          <figcaption>El proyecto está dirigido a los colaboradores y sus familias.</figcaption>
+        </figure>
+        <h2>Qué mejoras se pueden <em>postular</em></h2>
+        <p class="art-p">Para postularse, el colaborador debe diligenciar el formulario, adjuntar los documentos de la vivienda y describir la mejora que necesita. El equipo de la Fundación acompaña el proceso y resuelve dudas durante todo el periodo de inscripción.</p>
+        <blockquote class="art-quote">
+          <p>«Con la cocina terminada, por fin podemos sentarnos todos a comer en la casa.»</p>
+          <cite>Colaborador beneficiado en una convocatoria anterior</cite>
+        </blockquote>
+        <p class="art-p">Las familias beneficiadas en convocatorias anteriores coinciden en que el cambio va más allá de la obra: un baño terminado o un techo sin goteras modifican la rutina diaria de toda la casa.</p>
+        <div class="art-facts" role="list">
+          <div role="listitem"><b>1</b><span>Convocatoria al año</span></div>
+          <div role="listitem"><b>+40</b><span>Hogares mejorados</span></div>
+          <div role="listitem"><b>4</b><span>Tipos de adecuación</span></div>
+        </div>
+        <h2>Cómo será la <em>selección</em></h2>
+        <p class="art-p">Una vez cerrada la inscripción, un comité evalúa las solicitudes y publica los resultados. Las obras se programan con cada familia para afectar lo menos posible su día a día.</p>
+        <div class="art-duo">
+          <figure><img src="assets/img/vivienda.webp" alt="" loading="lazy"></figure>
+          <figure><img src="assets/img/bienestar.webp" alt="" loading="lazy"></figure>
+        </div>
+        <p class="art-p">Las fechas de apertura y cierre, los requisitos completos y el formulario se compartirán por los canales internos del Club y en esta sección de noticias.</p>
+        <ul class="art-tags" aria-label="Temas"><li>Vivienda</li><li>Colaboradores</li><li>Convocatoria</li></ul>
+      </article>
+    </div>
+  </section>
+  <section class="block art-more" data-tone="sand">
+    <div class="wrap stack">
+      <div class="art-more-h"><h2>Más <em>noticias</em></h2><a class="cta" href="#noticias">Ver todas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      <div class="plist">
+        <article class="prog news" style="--i:0" data-go="#noticia-auxilios" role="link" tabindex="0">
+          <div class="media"><span class="pill">Programas</span><div class="ph"><img src="assets/img/educacion.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Auxilios educativos del nuevo calendario</h3><p>Con el inicio del nuevo calendario escolar, la Fundación abre la entrega de los auxilios educativo-escolares, un apoyo económico para que los hijos de los colaboradores cuenten con lo necesario para comenzar y continuar sus estudios.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:1" data-go="#noticia-aliados" role="link" tabindex="0">
+          <div class="media"><span class="pill">Aliados</span><div class="ph"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Nuevos convenios y alianzas</h3><p>La Fundación suma nuevos convenios con empresas e instituciones de la región para ampliar el alcance de sus programas de educación, vivienda, bienestar y gestión social.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:2" data-go="#noticia" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/gestion-social.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Descubriendo mis Habilidades</h3><p>Tras ocho meses de talleres, los estudiantes del Colegio Eustorgio Salgar cerraron el ciclo de Descubriendo mis Habilidades con una jornada en la que presentaron a sus familias y a la comunidad los proyectos que construyeron durante el año.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div data-page="noticia-auxilios" hidden>
+  <section class="art-hero" data-tone="navy">
+    <img src="assets/img/educacion.webp" alt="Madre e hija estudiando en casa" loading="lazy">
+    <div class="wrap art-hero-in">
+      <nav class="art-crumbs" aria-label="Ruta"><a href="#noticias">Noticias</a><span aria-hidden="true">/</span><span>Programas</span></nav>
+      <h1>Auxilios educativos del nuevo <em>calendario</em></h1>
+      <ul class="art-meta">
+        <li>3 min de lectura</li>
+        <li>Por Comunicaciones de la Fundación</li>
+      </ul>
+    </div>
+  </section>
+  <section class="art" data-tone="light">
+    <div class="wrap art-grid">
+      <aside class="art-side" aria-label="Datos de la noticia">
+        <dl>
+          <div><dt>Categoría</dt><dd>Programas</dd></div>
+          <div><dt>Programa</dt><dd>Auxilios educativo-escolares</dd></div>
+          <div><dt>Línea</dt><dd>Educación</dd></div>
+          <div><dt>Lugar</dt><dd>Country Club de Barranquilla</dd></div>
+        </dl>
+        <div class="art-share"><span>Compartir</span><ul class="fsoc ct-soc" aria-label="Compartir">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul></div>
+        <a class="art-back" href="#noticias">← Volver a noticias</a>
+      </aside>
+      <article class="art-body">
+        <p class="art-note"> Contenido de ejemplo para mostrar el diseño de la noticia.</p>
+        <p class="art-lead">Con el inicio del nuevo calendario escolar, la Fundación abre la entrega de los auxilios educativo-escolares, un apoyo económico para que los hijos de los colaboradores cuenten con lo necesario para comenzar y continuar sus estudios.</p>
+        <p class="art-p art-drop">Los auxilios hacen parte de la línea de Educación y se entregan dos veces al año, al inicio de los calendarios A y B. Están pensados para cubrir gastos escolares como útiles, uniformes y matrículas en los niveles de primaria y secundaria.</p>
+        <p class="art-p">El objetivo es promover la permanencia educativa: que ningún estudiante interrumpa sus clases por no contar con los materiales básicos. Por eso el apoyo llega antes de que arranquen las actividades académicas.</p>
+        <figure class="art-fig">
+          <img src="assets/img/gestion-social.webp" alt="" loading="lazy">
+          <figcaption>El auxilio busca que los estudiantes inicien clases con lo necesario.</figcaption>
+        </figure>
+        <h2>Un apoyo antes del primer día de <em>clases</em></h2>
+        <p class="art-p">Para acceder al auxilio, el colaborador debe presentar el certificado de estudios vigente de cada hijo y diligenciar la solicitud dentro de las fechas establecidas. El equipo de la Fundación revisa la documentación y confirma la entrega.</p>
+        <blockquote class="art-quote">
+          <p>«Saber que los útiles ya están resueltos nos quita un peso de encima cada enero.»</p>
+          <cite>Colaboradora y madre de dos estudiantes</cite>
+        </blockquote>
+        <p class="art-p">Para muchas familias, este apoyo llega en el momento de mayor gasto del año. Los padres destacan que les permite planear el regreso a clases con más tranquilidad.</p>
+        <div class="art-facts" role="list">
+          <div role="listitem"><b>2</b><span>Entregas al año</span></div>
+          <div role="listitem"><b>+90</b><span>Auxilios entregados</span></div>
+          <div role="listitem"><b>2</b><span>Niveles: primaria y secundaria</span></div>
+        </div>
+        <h2>Cómo <em>solicitarlo</em></h2>
+        <p class="art-p">Además del auxilio escolar, la Fundación cuenta con el Auxilio de educación superior, dirigido a quienes adelantan estudios universitarios o de formación técnica y tecnológica.</p>
+        <div class="art-duo">
+          <figure><img src="assets/img/educacion.webp" alt="" loading="lazy"></figure>
+          <figure><img src="assets/img/colaboradores.webp" alt="" loading="lazy"></figure>
+        </div>
+        <p class="art-p">Las fechas de solicitud y los requisitos se informarán por los canales internos del Club y en esta sección de noticias.</p>
+        <ul class="art-tags" aria-label="Temas"><li>Educación</li><li>Colaboradores</li><li>Familias</li></ul>
+      </article>
+    </div>
+  </section>
+  <section class="block art-more" data-tone="sand">
+    <div class="wrap stack">
+      <div class="art-more-h"><h2>Más <em>noticias</em></h2><a class="cta" href="#noticias">Ver todas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      <div class="plist">
+        <article class="prog news" style="--i:0" data-go="#noticia-aliados" role="link" tabindex="0">
+          <div class="media"><span class="pill">Aliados</span><div class="ph"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Nuevos convenios y alianzas</h3><p>La Fundación suma nuevos convenios con empresas e instituciones de la región para ampliar el alcance de sus programas de educación, vivienda, bienestar y gestión social.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:1" data-go="#noticia" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/gestion-social.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Descubriendo mis Habilidades</h3><p>Tras ocho meses de talleres, los estudiantes del Colegio Eustorgio Salgar cerraron el ciclo de Descubriendo mis Habilidades con una jornada en la que presentaron a sus familias y a la comunidad los proyectos que construyeron durante el año.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:2" data-go="#noticia-emprendiendo" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/mujeres-velas.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Emprendiendo Juntos</h3><p>Veinte mujeres del corregimiento de Salgar recibieron su certificado tras completar el ciclo de formación de Emprendiendo Juntos – Comunidad, en una ceremonia en la que exhibieron las velas decorativas que aprendieron a elaborar.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div data-page="noticia-aliados" hidden>
+  <section class="art-hero" data-tone="navy">
+    <img src="assets/img/colaboradores.webp" alt="Colaboradores reunidos" loading="lazy">
+    <div class="wrap art-hero-in">
+      <nav class="art-crumbs" aria-label="Ruta"><a href="#noticias">Noticias</a><span aria-hidden="true">/</span><span>Aliados</span></nav>
+      <h1>Nuevos convenios y <em>alianzas</em></h1>
+      <ul class="art-meta">
+        <li>3 min de lectura</li>
+        <li>Por Comunicaciones de la Fundación</li>
+      </ul>
+    </div>
+  </section>
+  <section class="art" data-tone="light">
+    <div class="wrap art-grid">
+      <aside class="art-side" aria-label="Datos de la noticia">
+        <dl>
+          <div><dt>Categoría</dt><dd>Aliados</dd></div>
+          <div><dt>Programa</dt><dd>Alianzas institucionales</dd></div>
+          <div><dt>Línea</dt><dd>Todas las líneas</dd></div>
+          <div><dt>Lugar</dt><dd>Barranquilla, Atlántico</dd></div>
+        </dl>
+        <div class="art-share"><span>Compartir</span><ul class="fsoc ct-soc" aria-label="Compartir">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul></div>
+        <a class="art-back" href="#noticias">← Volver a noticias</a>
+      </aside>
+      <article class="art-body">
+        <p class="art-note"> Contenido de ejemplo para mostrar el diseño de la noticia.</p>
+        <p class="art-lead">La Fundación suma nuevos convenios con empresas e instituciones de la región para ampliar el alcance de sus programas de educación, vivienda, bienestar y gestión social.</p>
+        <p class="art-p art-drop">Las alianzas permiten llegar a más personas y fortalecer lo que ya se hace. Algunas aportan recursos económicos; otras, conocimiento técnico, espacios de formación o voluntariado de sus equipos.</p>
+        <p class="art-p">Los nuevos convenios se concentran en tres frentes: formación para el trabajo y el emprendimiento, mejoramiento de vivienda y actividades de bienestar para los colaboradores y sus familias.</p>
+        <figure class="art-fig">
+          <img src="assets/img/comunidad.webp" alt="" loading="lazy">
+          <figcaption>Las alianzas amplían el alcance de los programas en la comunidad.</figcaption>
+        </figure>
+        <h2>Tres frentes de <em>trabajo</em></h2>
+        <p class="art-p">Cada alianza parte de una necesidad identificada en los programas. Antes de firmar, la Fundación y la organización aliada definen juntos el objetivo, las personas a las que se quiere llegar y la forma de medir los resultados.</p>
+        <blockquote class="art-quote">
+          <p>«Buscamos aliados que quieran quedarse: los cambios que importan toman tiempo.»</p>
+          <cite>Equipo de la Fundación</cite>
+        </blockquote>
+        <p class="art-p">Para los aliados, el vínculo también tiene valor: les permite participar en proyectos con resultados visibles y acompañados por un equipo que conoce de cerca a la comunidad.</p>
+        <div class="art-facts" role="list">
+          <div role="listitem"><b>+7</b><span>Organizaciones aliadas</span></div>
+          <div role="listitem"><b>3</b><span>Frentes de trabajo</span></div>
+          <div role="listitem"><b>5</b><span>Líneas beneficiadas</span></div>
+        </div>
+        <h2>Cómo se construye una <em>alianza</em></h2>
+        <p class="art-p">Los convenios vigentes tendrán seguimiento periódico y sus avances se compartirán en la sección Nuestro impacto.</p>
+        <div class="art-duo">
+          <figure><img src="assets/img/bienestar.webp" alt="" loading="lazy"></figure>
+          <figure><img src="assets/img/gestion-ambiental.webp" alt="" loading="lazy"></figure>
+        </div>
+        <p class="art-p">Las organizaciones interesadas en sumarse pueden escribir a la Fundación desde la sección Sé parte, en la opción Haz una alianza.</p>
+        <ul class="art-tags" aria-label="Temas"><li>Aliados</li><li>Convenios</li><li>Sé parte</li></ul>
+      </article>
+    </div>
+  </section>
+  <section class="block art-more" data-tone="sand">
+    <div class="wrap stack">
+      <div class="art-more-h"><h2>Más <em>noticias</em></h2><a class="cta" href="#noticias">Ver todas <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
+      <div class="plist">
+        <article class="prog news" style="--i:0" data-go="#noticia" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/gestion-social.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Descubriendo mis Habilidades</h3><p>Tras ocho meses de talleres, los estudiantes del Colegio Eustorgio Salgar cerraron el ciclo de Descubriendo mis Habilidades con una jornada en la que presentaron a sus familias y a la comunidad los proyectos que construyeron durante el año.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:1" data-go="#noticia-emprendiendo" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/mujeres-velas.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>Clausura de Emprendiendo Juntos</h3><p>Veinte mujeres del corregimiento de Salgar recibieron su certificado tras completar el ciclo de formación de Emprendiendo Juntos – Comunidad, en una ceremonia en la que exhibieron las velas decorativas que aprendieron a elaborar.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+        <article class="prog news" style="--i:2" data-go="#noticia-vitrina" role="link" tabindex="0">
+          <div class="media"><span class="pill m">Eventos</span><div class="ph"><img src="assets/img/vitrina.webp" alt="" loading="lazy"></div></div>
+          <div class="body">
+            <div><h3>La Vitrina: productos y trabajos de los participantes</h3><p>La Vitrina abrió una nueva edición con los productos y trabajos elaborados por quienes participan en los programas de la Fundación: velas decorativas, manualidades y proyectos escolares que por unos días salieron del aula para encontrarse con el público.</p></div>
+            <div class="foot"><span class="more">Leer más <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= CONTACTO ================= -->
+<div data-page="contacto" hidden>
+  <section class="ct-hero" data-tone="deep" id="formContacto">
+    <div class="wrap ct-grid">
+      <div class="ct-info">
+        <h1 class="ct-title">Estamos aquí para <em>ayudarte</em></h1>
+        <p class="ct-lead">Escríbenos si quieres donar, ser voluntario, crear una alianza, apoyar un programa o pedir información.</p>
+      </div>
+      <div class="ct-panel-wrap">
+      <form id="contactForm" class="ct-panel" novalidate>
+        <h2 class="ct-ptitle">¿Quieres conocer más sobre nuestra labor?</h2>
+        <div class="ct-row">
+          <label class="ct-f"><span class="sr-only">Nombre</span><input name="name" placeholder="Nombre" required autocomplete="name"></label>
+          <label class="ct-f"><span class="sr-only">Email</span><input name="email" type="email" placeholder="Email" required autocomplete="email"></label>
+        </div>
+        <label class="ct-f"><span class="sr-only">Teléfono</span><input name="phone" type="tel" placeholder="Teléfono" autocomplete="tel"></label>
+        <fieldset class="ct-want">
+          <legend>Tipo de solicitud</legend>
+          <div class="ct-chips"><label class="ct-chip"><input type="radio" name="topic" value="Donar"><span>Donar</span></label><label class="ct-chip"><input type="radio" name="topic" value="Ser voluntario"><span>Ser voluntario</span></label><label class="ct-chip"><input type="radio" name="topic" value="Crear una alianza"><span>Crear una alianza</span></label><label class="ct-chip"><input type="radio" name="topic" value="Apoyar un programa"><span>Apoyar un programa</span></label><label class="ct-chip"><input type="radio" name="topic" value="Solicitar información" checked><span>Solicitar información</span></label><label class="ct-chip"><input type="radio" name="topic" value="Otro"><span>Otro</span></label></div>
+        </fieldset>
+        <label class="ct-f"><span class="sr-only">Mensaje</span><textarea name="msg" placeholder="Tu mensaje" required></textarea></label>
+        <div class="ct-send"><button class="cta cta-green" type="submit">Enviar mensaje <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
+        <p class="ok" id="contactOk" hidden>Prototipo: este formulario todavía no envía datos.</p>
+      </form>
+      </div>
+    </div>
+  </section>
+  <section class="block" data-tone="light" id="ubicacion">
+    <div class="wrap ct-map-grid">
+      <div class="stack reveal">
+        <h2 class="ct-where">¿Dónde <span class="nw"><em>encontrarnos</em>?</span></h2>
+        <p class="muted">Estamos en el Country Club de Barranquilla, Atlántico.</p>
+        <dl class="ct-data">
+          <div><dt>Redes sociales</dt><dd><ul class="fsoc ct-soc" aria-label="Redes sociales">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul></dd></div>
+        </dl>
+      </div>
+      <div class="ct-map reveal" style="--d:120ms" aria-label="Mapa de ubicación">
+        <svg class="ct-map-lines" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M-20 300 C 120 260 200 330 320 280 S 520 200 640 240" /><path d="M80 -20 C 110 120 60 240 140 440" /><path d="M-20 120 C 160 150 300 60 460 110 S 600 160 640 120" /><path d="M420 -20 C 380 140 470 260 400 440" />
+          <path class="thin" d="M-20 200 H 640" /><path class="thin" d="M250 -20 V 440" /><path class="thin" d="M-20 360 C 200 380 380 330 640 370" />
+        </svg>
+        <span class="ct-pin" aria-hidden="true"><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+        <iframe class="ct-map-frame" title="Mapa de Google: Country Club de Barranquilla" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=Country+Club+de+Barranquilla,+Barranquilla,+Atl%C3%A1ntico,+Colombia&z=16&hl=es&output=embed"></iframe>
+        <div class="ct-map-card"><b>Country Club de Barranquilla</b>
+          <dl class="ct-card-data">
+            <div><dt>Dirección</dt><dd>Barranquilla, Atlántico</dd></div>
+          </dl>
+          <a class="ct-map-link" href="https://www.google.com/maps/search/?api=1&query=Country+Club+de+Barranquilla,+Barranquilla,+Atl%C3%A1ntico,+Colombia" target="_blank" rel="noopener">Abrir en Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site" data-tone="deep">
+  <div class="wrap">
+    <div class="fgrid">
+      <nav class="fnav" aria-label="Pie de página">
+        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a>
+        <a href="#programas">Programas</a><a href="#impacto">Impacto</a>
+        <a href="#apoya">Sé parte</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="fside">
+        <h2 class="reveal">Transformamos realidades, generamos <em>oportunidades.</em></h2>
+        <ul class="fsoc" aria-label="Redes sociales">
+          <li><a class="fsoc-link" href="#" aria-label="Instagram" data-cursor="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="Facebook" data-cursor="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="LinkedIn" data-cursor="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.8H3.8V20h3.1V8.8ZM5.3 3.8a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM20.2 13.6c0-3-1.6-4.9-4.2-4.9-1.4 0-2.4.8-2.8 1.5V8.8h-3V20h3.1v-5.9c0-1.5.7-2.5 2-2.5 1.2 0 1.8.9 1.8 2.5V20h3.1v-6.4Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="YouTube" data-cursor="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.6 2.6 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z"/></svg></a></li><li><a class="fsoc-link" href="#" aria-label="TikTok" data-cursor="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3h-3.1v12.2a2.7 2.7 0 1 1-2.7-2.7c.3 0 .5 0 .8.1V9.4a5.8 5.8 0 1 0 5 5.8V9.1a7.6 7.6 0 0 0 4.1 1.2V7.2a4.3 4.3 0 0 1-4.1-4.2Z"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fmega" aria-hidden="true"><img src="assets/logo-horizontal-color-oscuro.png" alt=""></div>
+    <div class="fbottom">
+      <span>Country Club de Barranquilla · Barranquilla, Atlántico</span>
+      <span class="flegal"><a href="#contacto">Política de privacidad</a><a href="#contacto">Términos</a></span>
+      <span>© 2026 Fundación Social Country Club de Barranquilla · Prototipo por Eme Agencia</span>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
