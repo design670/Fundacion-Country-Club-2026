@@ -1665,3 +1665,145 @@ body.jm-lock{overflow:hidden}
 #enrollModal .ct-want legend{font-weight:700;padding:0;margin-bottom:10px;color:#16313F}
 .jm-box{overflow-x:hidden}
 .jm-info,.jm-form{min-width:0}
+/* Footer en celular: todo centrado */
+@media (max-width:860px){
+  footer.site .fgrid{justify-items:center;text-align:center}
+  footer.site .fnav{width:100%;grid-template-columns:1fr 1fr;justify-items:center;gap:14px 20px!important}
+  footer.site .fnav a{text-align:center}
+  footer.site .fside{align-items:center;max-width:100%;min-width:0;margin-inline:auto}
+  footer.site .fside h2{text-wrap:balance;max-width:100%}
+  footer.site .fsoc{justify-content:center}
+  footer.site .fbottom{align-items:center;text-align:center}
+  footer.site .flegal{justify-content:center;flex-wrap:wrap}
+}
+/* Celular: los títulos de los heros nunca se cortan; el tamaño se ajusta al ancho y, si hace falta, el texto baja a otra línea */
+@media (max-width:600px){
+  main .hero-sheet h1,main .phead h1,main .nhero h2,main .art-hero h1,main .ct-title{font-size:clamp(1.6rem,calc((100vw - 56px) / 9.2),2.6rem)!important;max-width:100%;overflow-wrap:break-word;text-wrap:balance}
+  main .hero-sheet .hero-copy,main .nh-copy,main .art-hero-in{max-width:100%;min-width:0}
+  main .hero-sheet h1 .hw{white-space:normal}
+}
+/* Footer en celular: los íconos de redes siempre en una sola línea */
+@media (max-width:860px){
+  footer.site .fsoc{flex-wrap:nowrap;width:100%;gap:clamp(6px,2.6vw,14px)}
+  footer.site .fsoc li{flex:0 1 52px;min-width:0}
+  footer.site .fsoc .fsoc-link{width:100%}
+}
+
+/* ============ Trabaja con nosotros: solo hero + CTA ============ */
+.tj-cta{margin-top:clamp(22px,3.4vh,34px)}
+
+/* ============ Gestión de informes ============ */
+[data-page="informes"] .phead{padding-bottom:clamp(30px,4vh,56px)}
+.inf-years .ps-b{padding:14px 12px;font-size:1.05rem}
+.inf-years .ps-b.inf-inst{margin-top:10px;padding-top:20px;border-top:1px solid var(--line)}
+.inf-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px 30px;flex-wrap:wrap;margin-bottom:clamp(20px,3vh,32px)}
+main [data-page="informes"] h2.inf-year{font-size:clamp(2.6rem,5.2vw,4.8rem)!important;line-height:1;margin:0;color:var(--heading)}
+main p.inf-count{margin:0;color:var(--muted);font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase}
+a.doc{text-decoration:none}
+.doc h3{font-size:clamp(1.15rem,1.7vw,1.6rem)}
+.doc .job-go i svg{width:22px;height:22px}
+.doc:hover .job-go i,.doc:focus-visible .job-go i{transform:translateY(4px)}
+@media (max-width:1000px){
+  .inf-years{flex-direction:row;flex-wrap:wrap;gap:8px;padding-top:16px}
+  .inf-years .ps-b{width:auto;padding:10px 16px;border:1px solid var(--line);border-left-width:1px;gap:10px}
+  .inf-years .ps-b.inf-inst{margin-top:0;padding-top:10px}
+}
+@media (max-width:640px){
+  .doc{grid-template-columns:minmax(0,1fr) auto}
+  .doc .job-go span{display:none}
+}
+.inf-years .ps-b:hover{background:rgba(22,49,63,.05)}
+.inf-years .ps-b[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy);border-left-color:var(--orange)}
+.inf-years .ps-b[aria-pressed="true"] .ps-n{background:rgba(255,255,255,.16);color:#fff}
+main [data-page="informes"] h2.inf-year.long{font-size:clamp(1.9rem,3.4vw,3.1rem)!important;line-height:1.08}
+@media (max-width:860px){footer.site .fnav a:last-child:nth-child(odd){grid-column:1/-1;justify-self:center}}
+
+/* ============ Inicio: fotos de historias como carrusel en celular ============ */
+.stack-dots{display:none}
+@media (max-width:760px){
+  .stack-row{flex-wrap:nowrap!important;justify-content:flex-start!important;align-items:stretch;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-inline:calc(50% - 50vw)!important;padding:clamp(20px,4vh,36px) 12vw 8px!important}
+  .stack-row::-webkit-scrollbar{display:none}
+  .stack-row .ptk{flex:0 0 76vw;width:76vw!important;margin:0!important;transform:none!important;scroll-snap-align:center}
+  .stack-row .ptk .ph{max-height:none!important;aspect-ratio:4/5}
+  .stack-dots{display:flex;justify-content:center;gap:12px;margin-top:22px}
+  .stack-dots button{all:unset;cursor:pointer;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);transition:background-color .3s,transform .4s cubic-bezier(.22,.7,.2,1)}
+  .stack-dots button[aria-selected="true"]{background:#FFFFFF;transform:scale(1.35)}
+  .stack-dots button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+}
+
+/* ============ Quiénes somos: línea de tiempo como carrusel en celular ============ */
+@media (max-width:760px){
+  .tlx.static .tlx-pin{padding:clamp(70px,10vh,90px) 0 clamp(60px,9vh,80px);gap:clamp(24px,4vh,36px)}
+  .tlx.static .tlx-track{flex-direction:row;align-items:stretch;gap:16px;width:auto;margin-left:0;border-left:0;padding:0 8vw 6px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tlx.static .tlx-track::-webkit-scrollbar{display:none}
+  .tlx.static .tlx-item,.tlx.static .tlx-end{flex:0 0 84vw;width:84vw;max-width:none;scroll-snap-align:center;align-content:start}
+  .tlx.static .tlx-node{display:none}
+  .tlx.static .tlx-year{margin-bottom:14px}
+  .tlx.static .tlx-body{grid-template-columns:1fr;gap:18px}
+  .tlx.static .tlx-photo{max-width:none;width:100%;aspect-ratio:4/3;transform:none!important}
+  .tlx.static .tlx-end{align-content:center;justify-items:start}
+  .tlx .stack-dots{margin-top:26px}
+}
+
+/* ============ Quiénes somos: valores como carrusel en celular ============ */
+@media (max-width:760px){
+  .vfan{flex-wrap:nowrap!important;justify-content:flex-start!important;align-items:stretch;gap:14px!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-inline:calc(50% - 50vw)!important;padding:10px 12vw 8px!important}
+  .vfan::-webkit-scrollbar{display:none}
+  .vfan .vcard{flex:0 0 76vw;width:76vw!important;margin:0!important;aspect-ratio:auto;min-height:300px;gap:40px;scroll-snap-align:center;box-shadow:none}
+  .vfan.in .vcard,.vfan.in .vcard:hover{transform:none!important}
+  .vfan + .stack-dots{margin-top:18px}
+}
+footer.site .fbottom{justify-content:center;text-align:center}
+.fmega-link{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0}
+
+/* ============ Programas: en celular el filtro son dos bloques desplegables ============ */
+@media (max-width:900px){
+  #pside .ps-all{display:none}
+  #pside .ps-g{padding:6px 0}
+  #pside .ps-g .pb-tag{display:block;margin:12px 0 0}
+  #pside .ps-g .ps-b.ps-main{padding:12px 0 14px;gap:10px}
+  #pside .ps-g .ps-b.ps-main > span{flex:1 1 auto}
+  #pside .ps-g .ps-b.ps-main::after{content:"";flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 4px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .35s cubic-bezier(.22,.7,.2,1)}
+  #pside .ps-g.open .ps-b.ps-main::after{transform:rotate(-135deg);margin-bottom:-4px}
+  #pside .ps-sub{display:none}
+  #pside .ps-g.open .ps-sub{display:flex;margin:0 0 12px}
+  #pside .ps-sub .ps-b{padding:13px 14px}
+}
+@media (max-width:900px){
+  .pshop.pm-closed .pmain{display:none}
+  #pside .ps-g > .pmain{margin:6px 0 26px}
+  #pside .ps-g > .pmain .plist{grid-template-columns:1fr}
+}
+
+/* Impacto: flechas de las historias debajo de las tarjetas */
+.vst .vst-arrows{justify-content:center;margin-top:clamp(22px,3.4vh,36px)}
+
+/* ============ Formularios (Sé parte y Contacto) más compactos en celular ============ */
+@media (max-width:760px){
+  #supportForm.ct-panel,#contactForm.ct-panel{padding:20px 18px 22px;gap:8px}
+  :is(#supportForm,#contactForm) .ct-ptitle{font-size:1.4rem;margin-bottom:6px}
+  :is(#supportForm,#contactForm) .ct-row{gap:8px}
+  :is(#supportForm,#contactForm) .ct-f :is(input,textarea,select),:is(#supportForm,#contactForm) .cs-btn{padding:11px 14px;font-size:1rem}
+  :is(#supportForm,#contactForm) .ct-f textarea{min-height:70px}
+  :is(#supportForm,#contactForm) .ct-want{margin-top:4px}
+  :is(#supportForm,#contactForm) :is(.ct-want legend,.ct-lab){font-size:.9rem;margin-bottom:7px}
+  :is(#supportForm,#contactForm) .ct-chips{gap:6px}
+  :is(#supportForm,#contactForm) .ct-chip span{padding:8px 12px;font-size:.82rem}
+  :is(#supportForm,#contactForm) .ct-send{margin-top:6px}
+  :is(#supportForm,#contactForm) .ct-send .cta{height:48px}
+  :is(#supportForm,#contactForm) :is(p,small,.jm-check){font-size:.85rem;line-height:1.4}
+}
+/* Menú interno: Contacto solo en celular (en computador ya está en el header) */
+@media (min-width:901px){.mm-group.mm-only-m{display:none}}
+
+/* ============ Gestión de informes: en celular los años van en una línea fija al hacer scroll ============ */
+@media (max-width:900px){
+  .inf .pside{position:sticky;top:0;z-index:20;max-height:none;overflow:visible;background:var(--bg);margin-inline:calc(50% - 50vw);padding:10px 0;box-shadow:0 1px 0 var(--line);transition:top .35s cubic-bezier(.22,.7,.2,1)}
+  body:has(header.site:not(.hide)) .inf .pside{top:var(--inf-top,84px)}
+  .inf .pside .ps-title{display:none}
+  .inf .inf-years{flex-direction:row;flex-wrap:nowrap;gap:8px;padding:0 26px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .inf .inf-years::-webkit-scrollbar{display:none}
+  .inf .inf-years .ps-b{flex:0 0 auto;width:auto;white-space:nowrap;padding:9px 14px;font-size:.95rem;gap:8px}
+  .inf .inf-years .ps-b.inf-inst{margin-top:0;padding-top:9px}
+  .inf .inf-years .ps-n{display:none}
+}

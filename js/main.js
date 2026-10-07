@@ -476,73 +476,6 @@ document.querySelectorAll(".vswitch").forEach(sw => sw.addEventListener("click",
 document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.violatedDirective || "") && /google/.test(e.blockedURI || "")) document.querySelectorAll(".ct-map").forEach(m => m.classList.add("no-frame")); });
 
 
-/* ---------- Trabaja con nosotros: vacantes (contenido de ejemplo) y ventana de postulación ---------- */
-(function(){
-  const list = document.getElementById("jobList"), filters = document.getElementById("jobFilters"), modal = document.getElementById("jobModal");
-  if(!list || !modal) return;
-  const JOBS = [{"t":"Coordinador(a) de programas educativos","a":"Educación","tipo":"Tiempo completo","lugar":"Barranquilla","d":"Lidera la planeación y el seguimiento de los auxilios educativos, el Club de Liderazgo y las alianzas con instituciones de formación.","r":["Coordinar las convocatorias de auxilios educativos de los calendarios A y B.","Hacer seguimiento a la permanencia y el desempeño de los beneficiarios.","Gestionar convenios con universidades e instituciones aliadas."],"q":["Profesional en educación, psicología, trabajo social o afines.","Tres años de experiencia en programas educativos o sociales.","Manejo de indicadores y elaboración de informes."]},{"t":"Trabajador(a) social comunitario","a":"Gestión social","tipo":"Tiempo completo","lugar":"Salgar, Puerto Colombia","d":"Acompaña a las familias y líderes de la comunidad de Salgar en los programas de la Fundación y fortalece el vínculo con el territorio.","r":["Caracterizar a las familias participantes y hacer visitas domiciliarias.","Acompañar los procesos de Descubriendo mis Habilidades y Emprendiendo Juntos.","Articular acciones con el colegio y las organizaciones del corregimiento."],"q":["Profesional en trabajo social o desarrollo familiar.","Dos años de experiencia en trabajo con comunidades.","Disponibilidad para desplazarse a Salgar."]},{"t":"Facilitador(a) de emprendimiento","a":"Gestión social","tipo":"Medio tiempo","lugar":"Salgar, Puerto Colombia","d":"Dicta los talleres de emprendimiento y competencias para la vida del programa Emprendiendo Juntos – Comunidad.","r":["Preparar y facilitar las sesiones de los jueves y algunos viernes.","Asesorar a las participantes en costos, precios y comercialización.","Apoyar la preparación de la muestra de productos en La Vitrina."],"q":["Formación en administración, mercadeo o áreas afines.","Experiencia como formador(a) de emprendedores.","Habilidad para trabajar con grupos de mujeres adultas."]},{"t":"Profesional de bienestar y salud","a":"Bienestar","tipo":"Tiempo completo","lugar":"Barranquilla","d":"Diseña y ejecuta las actividades de bienestar integral para los colaboradores del Club y sus familias.","r":["Programar las actividades de Bienestar Integral, gimnasio y curso de natación.","Apoyar el Programa de Riesgo Psicosocial y Salud.","Medir la participación y la satisfacción de los colaboradores."],"q":["Profesional en psicología, salud ocupacional o afines.","Dos años de experiencia en bienestar laboral.","Licencia en seguridad y salud en el trabajo (deseable)."]},{"t":"Analista de proyectos de vivienda","a":"Vivienda","tipo":"Tiempo completo","lugar":"Barranquilla","d":"Gestiona las solicitudes de subsidio, préstamo y mejoramiento de vivienda, y acompaña a las familias durante las obras.","r":["Recibir y evaluar las postulaciones al Proyecto Vivienda Digna.","Realizar visitas técnicas y hacer seguimiento a las obras.","Llevar el control presupuestal de los subsidios y préstamos."],"q":["Profesional en arquitectura, ingeniería civil o afines.","Experiencia en proyectos de vivienda de interés social.","Manejo de presupuestos y herramientas ofimáticas."]},{"t":"Practicante de comunicaciones","a":"Comunicaciones","tipo":"Prácticas","lugar":"Barranquilla","d":"Apoya la creación de contenidos para la web, las redes sociales y las noticias de la Fundación.","r":["Redactar notas y cubrir los eventos de los programas.","Tomar fotografías y editar piezas para redes sociales.","Mantener actualizada la sección de noticias del sitio web."],"q":["Estudiante de últimos semestres de comunicación social o afines.","Buena redacción y manejo básico de edición de fotos y video.","Aval de la universidad para realizar prácticas."]}];
-  const SPONT = {t:"Envíanos tu hoja de vida", a:"Candidatura espontánea", tipo:"", lugar:"", d:"Cuéntanos quién eres y en qué área te gustaría aportar. Guardaremos tu hoja de vida para las próximas convocatorias de la Fundación.", r:[], q:[]};
-  const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg>';
-  let area = "todas";
-  const areas = ["todas", ...new Set(JOBS.map(j => j.a))];
-  filters.innerHTML = areas.map(a => '<button type="button" class="chip" data-a="' + h(a) + '" aria-pressed="' + (a === area) + '">' + (a === "todas" ? "Todas" : h(a)) + '</button>').join("");
-  function render(){
-    const rows = JOBS.map((j, i) => ({j, i})).filter(x => area === "todas" || x.j.a === area);
-    list.innerHTML = rows.length ? rows.map(({j, i}) =>
-      '<article class="job" tabindex="0" role="button" data-job="' + i + '" aria-label="' + h(j.t) + ': ver vacante y postularme">' +
-        '<div><span class="job-area">' + h(j.a) + '</span><h3>' + h(j.t) + '</h3><ul class="job-meta"><li>' + h(j.tipo) + '</li><li>' + h(j.lugar) + '</li></ul></div>' +
-        '<div class="job-go"><span>Postularme</span><i>' + arrow + '</i></div>' +
-      '</article>').join("") : '<p class="job-empty">No hay vacantes abiertas en esta área por ahora.</p>';
-    [...filters.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.a === area)));
-  }
-  filters.addEventListener("click", e => { const b = e.target.closest(".chip"); if(b){ area = b.dataset.a; render(); } });
-  render();
-
-  /* ventana */
-  const form = document.getElementById("jobForm"), ok = document.getElementById("jobOk"), fileName = document.getElementById("jmFileName"), fileBox = modal.querySelector(".jm-file");
-  let last = null;
-  const listHTML = (title, arr) => arr.length ? '<div><h4>' + title + '</h4><ul>' + arr.map(x => '<li>' + h(x) + '</li>').join("") + '</ul></div>' : "";
-  function open(i, from){
-    const j = i < 0 ? SPONT : JOBS[i]; if(!j) return;
-    last = from || document.activeElement;
-    document.getElementById("jmArea").textContent = j.a;
-    document.getElementById("jmTitle").textContent = j.t;
-    document.getElementById("jmMeta").innerHTML = [j.tipo, j.lugar].filter(Boolean).map(x => '<li>' + h(x) + '</li>').join("");
-    document.getElementById("jmDesc").textContent = j.d;
-    document.getElementById("jmCols").innerHTML = listHTML("Qué harás", j.r) + listHTML("Qué buscamos", j.q);
-    form.reset(); ok.hidden = true; fileBox.classList.remove("has"); fileName.textContent = "PDF o Word, máximo 5 MB";
-    modal.hidden = false; document.body.classList.add("jm-lock");
-    modal.querySelector(".jm-box").scrollTop = 0;
-    void modal.offsetWidth; setTimeout(() => modal.classList.add("open"), 20);
-    setTimeout(() => modal.querySelector(".jm-x").focus(), 60);
-  }
-  function close(){
-    if(modal.hidden) return;
-    modal.classList.remove("open"); document.body.classList.remove("jm-lock");
-    setTimeout(() => { modal.hidden = true; }, 380);
-    if(last && last.focus) last.focus();
-  }
-  document.addEventListener("click", e => {
-    const t = e.target.closest("[data-job]"); if(t){ open(+t.dataset.job, t); return; }
-    if(e.target.closest("#jobModal [data-close]")) close();
-  });
-  document.addEventListener("keydown", e => {
-    if(e.key === "Escape") close();
-    if((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("job")){ e.preventDefault(); open(+e.target.dataset.job, e.target); }
-    if(e.key === "Tab" && !modal.hidden){
-      const f = [...modal.querySelectorAll("button, input, textarea, a[href]")].filter(x => x.offsetParent !== null);
-      if(!f.length) return;
-      if(e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f[f.length - 1].focus(); }
-      else if(!e.shiftKey && document.activeElement === f[f.length - 1]){ e.preventDefault(); f[0].focus(); }
-    }
-  });
-  form.cv.addEventListener("change", () => { const f = form.cv.files[0]; fileBox.classList.toggle("has", !!f); fileName.textContent = f ? f.name : "PDF o Word, máximo 5 MB"; });
-  form.addEventListener("submit", e => { e.preventDefault(); if(!form.checkValidity()){ form.reportValidity(); return; } ok.hidden = false; ok.scrollIntoView({block:"nearest"}); });
-  addEventListener("hashchange", close);
-})();
-
-
 /* ---------- Programas: ventana de inscripción ---------- */
 (function(){
   const modal = document.getElementById("enrollModal"); if(!modal) return;
@@ -594,6 +527,124 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
   });
   form.addEventListener("submit", e => { e.preventDefault(); if(!form.checkValidity()){ form.reportValidity(); return; } ok.hidden = false; ok.scrollIntoView({block:"nearest"}); });
   addEventListener("hashchange", close);
+})();
+
+
+/* ---------- Gestión de informes: documentos por año (contenido de ejemplo) ---------- */
+/* PROGRAMADOR: cada documento tiene "f" (ruta del archivo PDF). Hoy están vacíos: poner la ruta real de cada archivo. */
+(function(){
+  const years = document.getElementById("infYears"), list = document.getElementById("infList"); if(!years || !list) return;
+  const title = document.getElementById("infTitle"), count = document.getElementById("infCount");
+  const perYear = y => [
+    {c:"Informe de gestión", t:"Informe de gestión " + y, f:""},
+    {c:"Estados financieros", t:"Estados financieros a 31 de diciembre de " + y, f:""},
+    {c:"Estados financieros", t:"Dictamen del revisor fiscal " + y, f:""},
+    {c:"Régimen tributario especial", t:"Certificación de requisitos y cargos directivos " + y, f:""},
+    {c:"Actas", t:"Acta de la asamblea ordinaria " + y, f:""}
+  ];
+  const DOCS = [2025, 2024, 2023, 2022].map(y => ({k:String(y), label:String(y), docs:perYear(y)}));
+  DOCS.push({k:"inst", label:"Documentos institucionales", docs:[
+    {c:"Institucional", t:"Estatutos de la Fundación", f:""},
+    {c:"Institucional", t:"Certificado de existencia y representación legal", f:""},
+    {c:"Institucional", t:"Registro Único Tributario (RUT)", f:""},
+    {c:"Institucional", t:"Política de tratamiento de datos personales", f:""}
+  ]});
+  const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const dl = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>';
+  let cur = DOCS[0].k;
+  years.innerHTML = DOCS.map(g => '<button type="button" class="ps-b' + (g.k === "inst" ? " inf-inst" : "") + '" data-y="' + g.k + '" aria-pressed="false"><span>' + h(g.label) + '</span><i class="ps-n">' + g.docs.length + '</i></button>').join("");
+  function render(){
+    const g = DOCS.find(x => x.k === cur);
+    title.textContent = g.label; title.classList.toggle("long", g.k === "inst");
+    count.textContent = g.docs.length + " documentos";
+    list.innerHTML = g.docs.map(d =>
+      '<a class="job doc" href="' + (d.f ? h(d.f) : "#informes") + '"' + (d.f ? ' download target="_blank" rel="noopener"' : '') + ' aria-label="Descargar ' + h(d.t) + ' (PDF)">' +
+        '<div><span class="job-area">' + h(d.c) + '</span><h3>' + h(d.t) + '</h3><ul class="job-meta"><li>PDF</li></ul></div>' +
+        '<div class="job-go"><span>Descargar</span><i>' + dl + '</i></div>' +
+      '</a>').join("");
+    [...years.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.y === cur)));
+    const act = years.querySelector('[aria-pressed="true"]'); if(act && years.scrollWidth > years.clientWidth) years.scrollTo({left: act.offsetLeft - (years.clientWidth - act.offsetWidth) / 2, behavior:"smooth"});
+  }
+  years.addEventListener("click", e => { const b = e.target.closest(".ps-b"); if(!b) return; cur = b.dataset.y; render();
+    const t = document.getElementById("infDocs").getBoundingClientRect().top; if(t < -40) window.scrollTo({top: t + scrollY - 20, behavior:"auto"}); });
+  render();
+})();
+
+
+/* ---------- Inicio: fotos de historias como carrusel en celular ---------- */
+(function(){
+  const row = document.getElementById("stackRow"); if(!row) return;
+  const items = [...row.querySelectorAll(".ptk")];
+  const dots = document.createElement("div"); dots.className = "stack-dots"; dots.setAttribute("role", "tablist"); dots.setAttribute("aria-label", "Fotos de historias");
+  dots.innerHTML = items.map((_, i) => '<button type="button" role="tab" aria-label="Foto ' + (i + 1) + '" aria-selected="' + (i === 0) + '"></button>').join("");
+  row.after(dots);
+  const btns = [...dots.children];
+  const center = el => el.offsetLeft - row.offsetLeft - (row.clientWidth - el.offsetWidth) / 2;
+  let tick = false;
+  row.addEventListener("scroll", () => { if(tick) return; tick = true; requestAnimationFrame(() => { tick = false;
+    const mid = row.scrollLeft + row.clientWidth / 2; let best = 0, d = Infinity;
+    items.forEach((el, i) => { const c = el.offsetLeft - row.offsetLeft + el.offsetWidth / 2, x = Math.abs(c - mid); if(x < d){ d = x; best = i; } });
+    btns.forEach((b, i) => b.setAttribute("aria-selected", String(i === best))); }); }, {passive:true});
+  dots.addEventListener("click", e => { const i = btns.indexOf(e.target.closest("button")); if(i >= 0) row.scrollTo({left: center(items[i]), behavior:"smooth"}); });
+})();
+
+
+/* ---------- Quiénes somos: línea de tiempo como carrusel en celular ---------- */
+(function(){
+  const sec = document.getElementById("timeline"); if(!sec) return;
+  const row = sec.querySelector(".tlx-track"), items = [...sec.querySelectorAll(".tlx-item, .tlx-end")];
+  const dots = document.createElement("div"); dots.className = "stack-dots"; dots.setAttribute("role", "tablist"); dots.setAttribute("aria-label", "Momentos de la historia");
+  dots.innerHTML = items.map((_, i) => '<button type="button" role="tab" aria-label="Momento ' + (i + 1) + '" aria-selected="' + (i === 0) + '"></button>').join("");
+  sec.querySelector(".tlx-viewport").after(dots);
+  const btns = [...dots.children];
+  const off = el => el.getBoundingClientRect().left - row.getBoundingClientRect().left + row.scrollLeft;
+  let tick = false;
+  row.addEventListener("scroll", () => { if(tick) return; tick = true; requestAnimationFrame(() => { tick = false;
+    const mid = row.scrollLeft + row.clientWidth / 2; let best = 0, d = Infinity;
+    items.forEach((el, i) => { const x = Math.abs(off(el) + el.offsetWidth / 2 - mid); if(x < d){ d = x; best = i; } });
+    btns.forEach((b, i) => b.setAttribute("aria-selected", String(i === best))); }); }, {passive:true});
+  dots.addEventListener("click", e => { const i = btns.indexOf(e.target.closest("button")); if(i >= 0) row.scrollTo({left: off(items[i]) - (row.clientWidth - items[i].offsetWidth) / 2, behavior:"smooth"}); });
+})();
+
+
+/* ---------- Quiénes somos: valores como carrusel en celular ---------- */
+(function(){
+  const row = document.querySelector(".vfan"); if(!row) return;
+  const items = [...row.querySelectorAll(".vcard")];
+  const dots = document.createElement("div"); dots.className = "stack-dots"; dots.setAttribute("role", "tablist"); dots.setAttribute("aria-label", "Valores");
+  dots.innerHTML = items.map((_, i) => '<button type="button" role="tab" aria-label="Valor ' + (i + 1) + '" aria-selected="' + (i === 0) + '"></button>').join("");
+  row.after(dots);
+  const btns = [...dots.children];
+  const off = el => el.getBoundingClientRect().left - row.getBoundingClientRect().left + row.scrollLeft;
+  let tick = false;
+  row.addEventListener("scroll", () => { if(tick) return; tick = true; requestAnimationFrame(() => { tick = false;
+    const mid = row.scrollLeft + row.clientWidth / 2; let best = 0, d = Infinity;
+    items.forEach((el, i) => { const x = Math.abs(off(el) + el.offsetWidth / 2 - mid); if(x < d){ d = x; best = i; } });
+    btns.forEach((b, i) => b.setAttribute("aria-selected", String(i === best))); }); }, {passive:true});
+  dots.addEventListener("click", e => { const i = btns.indexOf(e.target.closest("button")); if(i >= 0) row.scrollTo({left: off(items[i]) - (row.clientWidth - items[i].offsetWidth) / 2, behavior:"smooth"}); });
+})();
+
+
+/* ---------- Programas: en celular solo se ven los dos bloques; las tarjetas aparecen dentro del bloque que se despliega ---------- */
+(function(){
+  const side = document.getElementById("pside"); if(!side) return;
+  const shop = document.getElementById("pshop"), main = shop.querySelector(".pmain"), home = main.parentNode;
+  const MQ = matchMedia("(max-width: 900px)"), groups = [...side.querySelectorAll(".ps-g")];
+  let cur = "todos";
+  function sync(f){
+    cur = f; let openG = null;
+    groups.forEach(g => { const on = f !== "todos" && [...g.querySelectorAll(".ps-b")].some(b => b.dataset.f === f);
+      g.classList.toggle("open", on); g.querySelector(".ps-main").setAttribute("aria-expanded", String(on)); if(on) openG = g; });
+    if(MQ.matches){ shop.classList.toggle("pm-closed", !openG); if(openG && main.parentNode !== openG) openG.appendChild(main); }
+    else { shop.classList.remove("pm-closed"); if(main.parentNode !== home) home.appendChild(main); }
+  }
+  const base = setFilter;
+  setFilter = function(f, jump){ base(f, jump); sync(f); };
+  /* tocar un bloque ya abierto lo cierra */
+  side.addEventListener("click", e => { if(!MQ.matches) return; const b = e.target.closest(".ps-g .ps-main");
+    if(b && b.closest(".ps-g").classList.contains("open")){ e.stopPropagation(); setFilter("todos", false); } }, true);
+  MQ.addEventListener("change", () => sync(cur));
+  sync(cur);
 })();
 
 /* ---------- Video de Quiénes somos: se reproduce al estar visible ---------- */
@@ -933,9 +984,13 @@ function closeMenu(focusBack){
 burger.addEventListener("click", () => mm.classList.contains("open") ? closeMenu(true) : openMenu());
 mm.addEventListener("click", e => { if(e.target.closest("a")) closeMenu(false); });
 addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(true); });
+/* el logo (header, menú y footer) siempre lleva al inicio, también si ya se está en él */
+document.addEventListener("click", e => { const a = e.target.closest('a[href="#inicio"]'); if(!a) return;
+  closeMenu(false);
+  if((location.hash || "#inicio") === "#inicio"){ e.preventDefault(); window.scrollTo({top:0, behavior: reduced ? "auto" : "smooth"}); } });
 
 /* ---------- Navegación entre páginas ---------- */
-const PAGES = ["inicio","nosotros","programas","impacto","apoya","noticias","trabaja","noticia","noticia-emprendiendo","noticia-vitrina","noticia-vivienda","noticia-auxilios","noticia-aliados","contacto"];
+const PAGES = ["inicio","nosotros","programas","impacto","apoya","noticias","trabaja","informes","noticia","noticia-emprendiendo","noticia-vitrina","noticia-vivienda","noticia-auxilios","noticia-aliados","contacto"];
 function route(){
   const h = (location.hash || "#inicio").slice(1);
   const page = PAGES.includes(h) ? h : (h === "formContacto" ? "contacto" : "inicio");
