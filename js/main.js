@@ -993,11 +993,17 @@ document.addEventListener("click", e => { const a = e.target.closest('a[href="#i
 const PAGES = ["inicio","nosotros","programas","impacto","apoya","noticias","trabaja","informes","noticia","noticia-emprendiendo","noticia-vitrina","noticia-vivienda","noticia-auxilios","noticia-aliados","contacto"];
 function route(){
   const h = (location.hash || "#inicio").slice(1);
-  const page = PAGES.includes(h) ? h : (h === "formContacto" ? "contacto" : "inicio");
+  const page = PAGES.includes(h) ? h : (h === "formContacto" ? "contacto" : h === "donar" ? "contacto" : "inicio");
   let current;
   document.querySelectorAll("[data-page]").forEach(s => { s.hidden = s.dataset.page !== page; if(!s.hidden) current = s; });
   document.querySelectorAll(".hnav .link-u").forEach(a => a.getAttribute("href")==="#"+page ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
-  if(h === "formContacto") document.getElementById("formContacto").scrollIntoView(); else window.scrollTo(0,0);
+  if(h === "formContacto") document.getElementById("formContacto").scrollIntoView();
+  else if(h === "donar"){ /* el botón Donar del header lleva directo al formulario, con "Donar" ya marcado */
+    const f = document.getElementById("contactForm"), r = f.querySelector('input[type="radio"][value="Donar"]');
+    if(r){ r.checked = true; r.dispatchEvent(new Event("change", {bubbles:true})); }
+    window.scrollTo(0, Math.max(0, f.getBoundingClientRect().top + scrollY - 110));
+  }
+  else window.scrollTo(0,0);
   if(page === "programas") renderPrograms();
   toneSections = [...current.querySelectorAll("[data-tone]"), document.querySelector("footer.site")];
   parallaxEls = [...current.querySelectorAll("[data-parallax]")];
@@ -1006,6 +1012,7 @@ function route(){
   requestAnimationFrame(() => { if(HW && page === "inicio"){ HW.layout(); HW.update(); } armScribbles(current); armScribbles(document.querySelector("footer.site")); armReveals(current); armReveals(document.querySelector("footer.site")); updateHeader(); updateTone(); updatePins(); updateParallax(); });
 }
 addEventListener("hashchange", route);
+document.addEventListener("click", e => { if(e.target.closest('a[href="#donar"]') && location.hash === "#donar"){ e.preventDefault(); route(); } });
 document.addEventListener("click", e => { const g = e.target.closest("[data-go]"); if(g) location.hash = g.dataset.go; });
 document.addEventListener("keydown", e => { if(e.key === "Enter" && e.target.matches && e.target.matches("[data-go]")) location.hash = e.target.dataset.go; });
 
