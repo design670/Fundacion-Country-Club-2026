@@ -30,9 +30,8 @@ Proyecto de página web para la Fundación Social Country Club de Barranquilla (
 
 - Preguntas 9–12: beneficiarios, cifras de impacto, historias y testimonios. Solo hay una cifra confirmada (20 mujeres de Salgar).
 - Preguntas 15–25: formas de apoyo a promover, relación con el Country Club, mensajes y acciones clave de la web, información que no debe publicarse, material disponible y referentes.
-- Programas de la línea de Gestión ambiental (mencionada, sin programas descritos).
-- Lugar donde se desarrolla la Póliza exequial.
-- Año en que la Fundación empezó a trabajar con la comunidad.
+- Gestión ambiental · Actividades ambientales: a quién beneficia, frecuencia y resultados.
 - Manual de marca (si existe), fotografías y logos de aliados.
-- Datos de contacto oficiales, redes sociales y datos para donar (cuenta, pasarela, certificado de donación).
+- Usuarios de Facebook, LinkedIn, YouTube y TikTok (los íconos están, sin enlace) y canal o lugar para entregar donaciones en especie.
+- Boletines: portada, número, fecha y PDF de cada uno (la página Boletines tiene 6 de ejemplo).
 - Documentación: estatutos, certificado de existencia, informes de gestión e impacto, presentaciones.

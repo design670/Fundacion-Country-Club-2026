@@ -774,6 +774,13 @@ main p.sp-intro{font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.5;color:var
 .ct-title{font-size:clamp(2.6rem,5.4vw,5.2rem);line-height:1;color:#fff}
 .ct-title em{color:var(--orange)}
 main p.ct-lead{font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.5;color:rgba(255,255,255,.72);max-width:32ch}
+/* Contacto: teléfono, correo e Instagram en la portada */
+.ct-direct{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.ct-direct a{display:inline-flex;align-items:center;gap:14px;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:clamp(1rem,1.3vw,1.15rem);overflow-wrap:anywhere}
+.ct-direct i{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);color:var(--orange);transition:background-color .4s ease,color .4s ease,transform .5s var(--spring)}
+.ct-direct svg{width:20px;height:20px}
+.ct-direct a:hover i,.ct-direct a:focus-visible i{background:var(--orange);color:#16313F;transform:rotate(-8deg)}
+.ct-data dd a,.sp-sub p a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .ct-list{list-style:none;padding:0;margin:10px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:22px 30px}
 .ct-list li{display:flex;gap:16px;align-items:flex-start}
 .ct-list b{display:block;font-size:1.05rem;margin-bottom:6px;color:#fff}
@@ -911,6 +918,9 @@ main p.ct-lead{font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.5;color:rgba
 .aporte-cards .card:is(:nth-child(1),:nth-child(3),:nth-child(4)):hover .ic{background:#16313F;color:#fff}
 .aporte-cards .card:nth-child(2):hover :is(h3,p){color:#fff}
 .aporte-cards .card:nth-child(2):hover .ic{background:#fff;color:#279A68}
+/* Tres formas de apoyo: tres columnas, una sola en pantallas angostas */
+.values.aporte-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:720px){.values.aporte-cards{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.aporte-cards .card:hover{transform:none!important}}
 
 /* Misión y Visión: se tuercen y toman color al pasar el cursor */
@@ -1095,6 +1105,9 @@ body[data-tone="green"] header.site .cta.cta-green{--cta-bg:var(--orange);--cta-
 
 /* Cifras de impacto del Home en naranja */
 .facts-stack .fi b{color:var(--orange)!important}
+/* Home · impacto: rótulos de los dos enfoques (comunidad / colaboradores) */
+.facts-stack .facts-label{margin:10px 0 -2px;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--em,var(--green))}
+.facts-stack .facts-label:first-child{margin-top:0}
 
 /* Título de sección centrado, sin texto al lado */
 .intro.intro-center{display:block;text-align:center}
@@ -1206,6 +1219,11 @@ main section.pshop{padding-top:clamp(20px,3vh,40px)!important}
 .res-sec .stack > h2{margin-bottom:clamp(18px,3.4vh,36px)}
 .res-sec .brush-frame{aspect-ratio:4/5;width:min(100%,500px);max-height:76vh;justify-self:center}
 .res-sec .brush-frame > .gen{min-height:0!important;height:100%}
+/* Resultados destacados: grupos Colaboradores / Comunidad */
+.res-group + .res-group{margin-top:clamp(22px,3.6vh,36px)}
+.res-group h3{margin:0 0 14px;font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--em,var(--green))}
+.res-group .results{gap:10px}
+.results li b{font-weight:800;color:var(--heading)}
 
 /* ============ Páginas internas: misma distancia entre título de sección y contenido ============ */
 :root{--tg:clamp(36px,6.6vh,56px)}
@@ -1233,6 +1251,8 @@ main [data-page]:not([data-page="inicio"]) section:not(.hero-sheet,.phead,.ct-he
 .ct-soc .fsoc-link{width:42px;background:var(--navy);color:#FFFFFF;-webkit-backdrop-filter:none;backdrop-filter:none}
 .ct-soc .fsoc-link:hover,.ct-soc .fsoc-link:focus-visible{background:var(--orange);color:#16313F}
 .ct-data > div:has(.ct-soc){align-items:center}
+/* Contacto: datos y tarjeta del mapa ocultos por ahora (quitar "hidden" en el HTML para mostrarlos) */
+.ct-data[hidden],.ct-map-card[hidden]{display:none!important}
 /* Menú: contenido alineado con el logo */
 .mm-grid{max-width:var(--wrap);box-sizing:border-box;width:100%;padding-inline:clamp(20px,7vw,150px)}
 @media (min-width:901px){.mm-grid{align-items:start}.mm-grid > :last-child{margin-top:.5rem}}
@@ -1503,6 +1523,23 @@ body[data-tone="green"] .sp-subs .sp-sub:nth-child(4n+2) .sp-ic,body[data-tone="
 /* Sé parte: íconos sin recuadro: blancos en las secciones verdes, azules en Dona */
 .sp-subs .sp-sub .sp-ic{background:transparent!important;color:#FFFFFF!important;width:40px;height:40px}
 #sp-dona .sp-subs .sp-sub .sp-ic{color:var(--navy)!important}
+/* Dona: lista de artículos y aviso de donaciones en especie */
+.sp-sub .sp-list{margin:2px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:.95rem;line-height:1.4;color:var(--muted)}
+#sp-dona .sp-subs{grid-template-columns:1fr}
+/* Sé voluntario: perfiles requeridos como etiquetas */
+#sp-voluntario .sp-subs{grid-template-columns:1fr}
+.sp-sub.vol-prof{gap:14px}
+.vol-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.vol-tags li{padding:8px 16px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:.95rem;color:var(--heading);transition:border-color .4s ease,background-color .4s ease}
+.vol-tags li:hover{border-color:var(--orange);background:rgba(244,161,54,.12)}
+/* Dona: mosaico de artículos que se pueden donar */
+.sp-sub.don-what{gap:16px}
+.don-grid{list-style:none;margin:0;padding:0;width:100%;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px}
+.don-grid li{display:flex;align-items:center;gap:12px;padding:12px 14px 12px 12px;border:1px solid var(--line);border-radius:var(--r-md);font-size:.95rem;line-height:1.3;font-weight:600;color:var(--heading);transition:border-color .4s ease,transform .5s var(--spring)}
+.don-grid li:hover{border-color:var(--orange);transform:translateY(-3px)}
+.don-ic{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#16313F}
+.don-ic svg{width:22px;height:22px}
+main p.sp-note{margin:0;max-width:none;font-size:1rem;line-height:1.5;color:var(--heading);border-left:3px solid var(--orange);padding:4px 0 4px 14px}
 .sp-ic svg{width:38px;height:38px}
 @media (max-width:1200px){.sp-ic{width:34px;height:34px}.sp-ic svg{width:32px;height:32px}}
 /* Menú: logo y botón de cerrar un poco más abajo, y el contenido con más aire */
@@ -1700,6 +1737,35 @@ body.jm-lock{overflow:hidden}
 main [data-page="informes"] h2.inf-year{font-size:clamp(2.6rem,5.2vw,4.8rem)!important;line-height:1;margin:0;color:var(--heading)}
 main p.inf-count{margin:0;color:var(--muted);font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase}
 a.doc{text-decoration:none}
+/* Boletines: tarjetas con portada */
+.bol-sec .stack{gap:clamp(18px,3vh,28px)}
+.bol-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+@media (max-width:900px){.bol-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.bol-grid{grid-template-columns:1fr}}
+.bol{display:flex;flex-direction:column;background:var(--card);color:var(--heading);text-decoration:none;border-radius:var(--r-md);overflow:hidden;transition:transform .6s var(--spring),box-shadow .6s ease}
+.bol:hover,.bol:focus-visible{transform:translateY(-6px);box-shadow:0 34px 56px -38px rgba(15,42,56,.55)}
+.bol-cover{position:relative;aspect-ratio:4/5;overflow:hidden;background:#16313F}
+.bol-cover img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,.7,.2,1)}
+.bol:hover .bol-cover img{transform:scale(1.05)}
+.bol-new{position:absolute;left:14px;top:14px;padding:6px 12px;border-radius:999px;background:var(--orange);color:#16313F;font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.bol-body{display:flex;flex-direction:column;gap:6px;padding:20px 22px 22px}
+.bol-body h3{margin:0;font-size:1.3rem;color:inherit}
+.bol-body p{margin:0;font-size:.95rem;color:var(--muted)}
+.bol-go{margin-top:12px;display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.bol-go i{width:38px;height:38px;display:grid;place-items:center;background:var(--orange);color:#16313F;transition:transform .5s cubic-bezier(.22,.7,.2,1)}
+.bol-go svg{width:18px;height:18px}
+.bol:hover .bol-go i{transform:translateX(5px)}
+/* Gestión de informes: grupos por tipo de documento */
+.inf-groups{display:flex;flex-direction:column}
+.inf-group{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px clamp(30px,5vw,90px);padding:clamp(34px,6vh,64px) 0;border-top:1px solid var(--line)}
+.inf-group:first-child{border-top:0;padding-top:0}
+.inf-gh{display:flex;flex-direction:column;gap:12px;align-self:start;position:sticky;top:110px}
+.inf-n{font-weight:800;font-size:.85rem;letter-spacing:.14em;color:var(--orange)}
+main #infList .inf-gh h2{font-size:clamp(1.7rem,2.8vw,2.6rem)!important;line-height:1.08!important;margin:0;color:var(--heading)}
+main [data-page="informes"] .inf-gh p{margin:0;color:var(--muted);font-size:1.05rem;line-height:1.5;max-width:32ch}
+.inf-group .inf-list{border-bottom:0}
+.inf-group .inf-list .doc:first-child{border-top:0}
+@media (max-width:860px){.inf-group{grid-template-columns:1fr}.inf-gh{position:static}}
 .doc h3{font-size:clamp(1.15rem,1.7vw,1.6rem)}
 .doc .job-go i svg{width:22px;height:22px}
 .doc:hover .job-go i,.doc:focus-visible .job-go i{transform:translateY(4px)}

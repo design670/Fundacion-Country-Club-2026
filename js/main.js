@@ -152,7 +152,7 @@ const HW = (function(){
   const title = sec.querySelector(".hwords-title"), track = sec.querySelector(".hwords-track");
   const sticker = sec.querySelector(".hwords-sticker"), arc = sec.querySelector(".hwords-arc"), arcPath = arc.querySelector("path");
   const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const words = [["Transformamos"],["realidades,"],["generamos"],["oportunidades.",1]];
+  const words = [["Comprometidos"],["con"],["el"],["bienestar"],["que"],["deja"],["huella.",1]];
   const r = rng(314);
   title.innerHTML = words.map(([w,em],wi) => {
     const letters = [...w].map(ch => '<span class="l" aria-hidden="true" data-y="'+(RM?0:(r()*460-230).toFixed(0))+'" data-r="'+(RM?0:(r()*60-30).toFixed(1))+'">'+ch+'</span>').join("");
@@ -245,7 +245,7 @@ document.querySelectorAll(".pin-media").forEach(m => {
 /* ---------- WhatsApp: tarjeta con QR que se abre desde el botón ---------- */
 (function(){
   const wpp = document.getElementById("wpp"), btn = document.getElementById("wppBtn"), qrBox = document.getElementById("wppQr");
-  const URL_WA = "https://wa.me/570000000000";
+  const URL_WA = "https://wa.me/573176453695";
   try { if(window.qrcode){ const q = qrcode(0, "M"); q.addData(URL_WA); q.make(); qrBox.innerHTML = q.createSvgTag({cellSize:4, margin:0, scalable:true}); } } catch(e){}
   const fine = matchMedia("(hover:hover) and (pointer:fine)").matches;
   let t = null;
@@ -494,7 +494,7 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
     document.getElementById("emLine").textContent = p.l;
     document.getElementById("emTitle").textContent = p.n;
     document.getElementById("emDesc").textContent = p.d;
-    document.getElementById("emCols").innerHTML = row("A quién beneficia", p.who) + row("Dónde", p.where || "Por confirmar") + row("Frecuencia", p.freq);
+    document.getElementById("emCols").innerHTML = (p.who ? row("A quién beneficia", p.who) : "") + (p.where === false ? "" : row("Dónde", p.where || "Por confirmar")) + (p.freq ? row("Frecuencia", p.freq) : "") + (p.note ? row("Nota", p.note) : "");
     document.getElementById("emFormTitle").textContent = label;
     document.getElementById("emSubmit").textContent = /^Solicitar|^Postularme/.test(label) ? "Enviar solicitud" : "Enviar inscripción";
     form.reset(); ok.hidden = true;
@@ -530,44 +530,61 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
 })();
 
 
-/* ---------- Gestión de informes: documentos por año (contenido de ejemplo) ---------- */
+/* ---------- Boletines (contenido de ejemplo) ---------- */
+/* PROGRAMADOR: cada boletín tiene "img" (portada), "t" (número o nombre), "d" (fecha) y "f" (ruta del PDF). Hoy son de ejemplo: cambiarlos por los reales. */
+(function(){
+  const box = document.getElementById("bolList"); if(!box) return;
+  const BOLETINES = [
+    {t:"Boletín N.º 6", d:"Fecha por confirmar", img:"assets/img/comunidad.webp", f:""},
+    {t:"Boletín N.º 5", d:"Fecha por confirmar", img:"assets/img/mujeres-velas.webp", f:""},
+    {t:"Boletín N.º 4", d:"Fecha por confirmar", img:"assets/img/gestion-social.webp", f:""},
+    {t:"Boletín N.º 3", d:"Fecha por confirmar", img:"assets/img/vivienda.webp", f:""},
+    {t:"Boletín N.º 2", d:"Fecha por confirmar", img:"assets/img/educacion.webp", f:""},
+    {t:"Boletín N.º 1", d:"Fecha por confirmar", img:"assets/img/vitrina.webp", f:""}
+  ];
+  const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg>';
+  box.innerHTML = BOLETINES.map((b, i) =>
+    '<a class="bol" href="' + (b.f ? h(b.f) : "#boletines") + '"' + (b.f ? ' target="_blank" rel="noopener"' : '') + ' aria-label="Ver ' + h(b.t) + ' (PDF)">' +
+      '<div class="bol-cover"><img src="' + h(b.img) + '" alt="" loading="lazy">' + (i === 0 ? '<span class="bol-new">Más reciente</span>' : '') + '</div>' +
+      '<div class="bol-body"><h3>' + h(b.t) + '</h3><p>' + h(b.d) + '</p><span class="bol-go">Ver boletín <i>' + arrow + '</i></span></div>' +
+    '</a>').join("");
+})();
+
+/* ---------- Gestión de informes: documentos agrupados por tipo (contenido de ejemplo) ---------- */
 /* PROGRAMADOR: cada documento tiene "f" (ruta del archivo PDF). Hoy están vacíos: poner la ruta real de cada archivo. */
 (function(){
-  const years = document.getElementById("infYears"), list = document.getElementById("infList"); if(!years || !list) return;
-  const title = document.getElementById("infTitle"), count = document.getElementById("infCount");
-  const perYear = y => [
-    {c:"Informe de gestión", t:"Informe de gestión " + y, f:""},
-    {c:"Estados financieros", t:"Estados financieros a 31 de diciembre de " + y, f:""},
-    {c:"Estados financieros", t:"Dictamen del revisor fiscal " + y, f:""},
-    {c:"Régimen tributario especial", t:"Certificación de requisitos y cargos directivos " + y, f:""},
-    {c:"Actas", t:"Acta de la asamblea ordinaria " + y, f:""}
+  const box = document.getElementById("infList"); if(!box) return;
+  const GROUPS = [
+    {t:"Informes de gestión", d:"Resultados, programas y actividades de la Fundación.", docs:[
+      {t:"Informe de gestión", f:""}
+    ]},
+    {t:"Estados financieros", d:"Información financiera de la Fundación y concepto del revisor fiscal.", docs:[
+      {t:"Estados financieros", f:""},
+      {t:"Dictamen del revisor fiscal", f:""}
+    ]},
+    {t:"Régimen tributario especial", d:"Documentos que la Fundación publica como entidad del régimen tributario especial.", docs:[
+      {t:"Certificación de requisitos y cargos directivos", f:""},
+      {t:"Acta de la asamblea ordinaria", f:""}
+    ]},
+    {t:"Documentos institucionales", d:"Estatutos, registros y políticas de la Fundación.", docs:[
+      {t:"Estatutos de la Fundación", f:""},
+      {t:"Certificado de existencia y representación legal", f:""},
+      {t:"Registro Único Tributario (RUT)", f:""},
+      {t:"Política de tratamiento de datos personales", f:""}
+    ]}
   ];
-  const DOCS = [2025, 2024, 2023, 2022].map(y => ({k:String(y), label:String(y), docs:perYear(y)}));
-  DOCS.push({k:"inst", label:"Documentos institucionales", docs:[
-    {c:"Institucional", t:"Estatutos de la Fundación", f:""},
-    {c:"Institucional", t:"Certificado de existencia y representación legal", f:""},
-    {c:"Institucional", t:"Registro Único Tributario (RUT)", f:""},
-    {c:"Institucional", t:"Política de tratamiento de datos personales", f:""}
-  ]});
   const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const dl = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>';
-  let cur = DOCS[0].k;
-  years.innerHTML = DOCS.map(g => '<button type="button" class="ps-b' + (g.k === "inst" ? " inf-inst" : "") + '" data-y="' + g.k + '" aria-pressed="false"><span>' + h(g.label) + '</span><i class="ps-n">' + g.docs.length + '</i></button>').join("");
-  function render(){
-    const g = DOCS.find(x => x.k === cur);
-    title.textContent = g.label; title.classList.toggle("long", g.k === "inst");
-    count.textContent = g.docs.length + " documentos";
-    list.innerHTML = g.docs.map(d =>
-      '<a class="job doc" href="' + (d.f ? h(d.f) : "#informes") + '"' + (d.f ? ' download target="_blank" rel="noopener"' : '') + ' aria-label="Descargar ' + h(d.t) + ' (PDF)">' +
-        '<div><span class="job-area">' + h(d.c) + '</span><h3>' + h(d.t) + '</h3><ul class="job-meta"><li>PDF</li></ul></div>' +
-        '<div class="job-go"><span>Descargar</span><i>' + dl + '</i></div>' +
-      '</a>').join("");
-    [...years.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.y === cur)));
-    const act = years.querySelector('[aria-pressed="true"]'); if(act && years.scrollWidth > years.clientWidth) years.scrollTo({left: act.offsetLeft - (years.clientWidth - act.offsetWidth) / 2, behavior:"smooth"});
-  }
-  years.addEventListener("click", e => { const b = e.target.closest(".ps-b"); if(!b) return; cur = b.dataset.y; render();
-    const t = document.getElementById("infDocs").getBoundingClientRect().top; if(t < -40) window.scrollTo({top: t + scrollY - 20, behavior:"auto"}); });
-  render();
+  box.innerHTML = GROUPS.map((g, i) =>
+    '<section class="inf-group" aria-labelledby="infG' + i + '">' +
+      '<div class="inf-gh"><span class="inf-n">' + String(i + 1).padStart(2, "0") + '</span><h2 id="infG' + i + '">' + h(g.t) + '</h2><p>' + h(g.d) + '</p></div>' +
+      '<div class="job-list inf-list">' + g.docs.map(d =>
+        '<a class="job doc" href="' + (d.f ? h(d.f) : "#informes") + '"' + (d.f ? ' download target="_blank" rel="noopener"' : '') + ' aria-label="Descargar ' + h(d.t) + ' (PDF)">' +
+          '<div><h3>' + h(d.t) + '</h3><ul class="job-meta"><li>PDF</li></ul></div>' +
+          '<div class="job-go"><span>Descargar</span><i>' + dl + '</i></div>' +
+        '</a>').join("") + '</div>' +
+    '</section>').join("");
 })();
 
 
@@ -745,18 +762,19 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
 /* ---------- Programas ---------- */
 const PROGRAMS = [
   {"n":"Auxilios educativo-escolares","e":"colaboradores","l":"Educación","d":"Auxilios económicos para cubrir gastos escolares y promover la permanencia educativa de los hijos de los colaboradores en primaria y secundaria.","who":"Hijos de colaboradores","where":"Country Club","freq":"2 veces al año (inicio de calendario A y B)","res":"Contribuye a la permanencia escolar y al acceso a recursos necesarios para el desarrollo académico."},
-  {"n":"Auxilio de educación superior","e":"colaboradores","l":"Educación","d":"Apoyo económico para el acceso y la continuidad de estudios de educación superior, incluidos programas universitarios y de formación avanzada.","who":"Colaboradores, hijos de colaboradores y cónyuges","where":"Country Club","freq":"Dos veces al año (primer y segundo semestre)","res":"Favorece la continuidad de la formación académica y fortalece las oportunidades de desarrollo profesional y crecimiento personal."},
-  {"n":"Club de Liderazgo","e":"colaboradores","l":"Educación","d":"Espacio de formación en liderazgo, comunicación efectiva, gestión de equipos y manejo del estrés en entornos de alta presión.","who":"Colaboradores","where":"Country Club","freq":"Una vez al año","res":"Fortalece habilidades personales y profesionales aplicables al liderazgo, el trabajo en equipo y la gestión de situaciones laborales."},
-  {"n":"Subsidio para adquisición de vivienda nueva","e":"colaboradores","l":"Vivienda","d":"Apoyo económico para adquirir una vivienda nueva, contribuyendo a una solución habitacional digna y a la estabilidad familiar.","who":"Colaboradores y sus familias","where":"Hogares de los colaboradores","freq":"Convocatoria abierta todo el año · se otorga una única vez","res":"Facilita el acceso a vivienda propia y contribuye al bienestar y estabilidad de los hogares."},
-  {"n":"Préstamo de vivienda","e":"colaboradores","l":"Vivienda","d":"Ayuda para solucionar emergencias y necesidades de mejoras y reparaciones locativas en las viviendas propias de los colaboradores.","who":"Colaboradores y sus familias","where":"Hogares de los colaboradores","freq":"Convocatoria abierta todo el año","res":"Permite mejorar condiciones básicas de habitabilidad y brindar mayor bienestar y dignidad a las familias."},
-  {"n":"Proyecto Vivienda Digna","e":"colaboradores","l":"Vivienda","d":"Subsidios para atender necesidades locativas básicas y prioritarias de los hogares, especialmente en cocina, baño y sala.","who":"Colaboradores y sus familias","where":"Hogares de los colaboradores","freq":"Una convocatoria al año","res":"Permite mejorar condiciones básicas de habitabilidad y brindar mayor bienestar y dignidad a las familias."},
+  {"n":"Auxilio de educación superior","e":"colaboradores","l":"Educación","d":"Apoyo económico para el acceso y la continuidad de estudios de educación superior, incluidos programas universitarios y de formación avanzada.","who":"Trabajadores directos e hijos de trabajadores directos","where":false,"freq":"Dos veces al año (primer y segundo semestre)","res":"Favorece la continuidad de la formación académica y fortalece las oportunidades de desarrollo profesional y crecimiento personal."},
+  {"n":"Programa de formación y desarrollo para colaboradores","e":"colaboradores","l":"Educación","d":"Espacios de formación que fortalecen las habilidades personales y profesionales de los colaboradores, a través del Club de Liderazgo y la formación en inteligencia artificial.","who":"Colaboradores","comp":["Club de Liderazgo: liderazgo, comunicación efectiva, gestión de equipos y manejo del estrés en entornos de alta presión","Formación en inteligencia artificial"],"where":"Country Club","freq":"Una vez al año","res":"Fortalece habilidades personales y profesionales aplicables al liderazgo, el trabajo en equipo, la gestión de situaciones laborales y el uso de la inteligencia artificial en el trabajo."},
+  {"n":"Subsidio para adquisición de vivienda nueva","e":"colaboradores","l":"Vivienda","d":"Apoyo económico para adquirir una vivienda nueva, contribuyendo a una solución habitacional digna y a la estabilidad familiar.","who":"Trabajadores directos","where":false,"freq":"Convocatoria abierta todo el año · se otorga una única vez","res":"Facilita el acceso a vivienda propia y contribuye al bienestar y estabilidad de los hogares."},
+  {"n":"Préstamo de vivienda","e":"colaboradores","l":"Vivienda","d":"Ayuda para solucionar emergencias y necesidades de mejoras y reparaciones locativas en las viviendas propias de los colaboradores.","who":"Trabajadores directos","where":false,"freq":"Convocatoria abierta todo el año","res":"Permite mejorar condiciones básicas de habitabilidad y brindar mayor bienestar y dignidad a las familias."},
+  {"n":"Proyecto Vivienda Digna","e":"colaboradores","l":"Vivienda","d":"Subsidios para atender necesidades locativas básicas y prioritarias de los hogares, especialmente en cocina, baño y sala.","who":"Trabajadores directos","where":false,"freq":"Una convocatoria al año","note":"Proyecto aprobado por 3 años: 2026, 2027 y 2028.","res":"Permite mejorar condiciones básicas de habitabilidad y brindar mayor bienestar y dignidad a las familias."},
   {"n":"Bienestar Integral – Gimnasio","e":"colaboradores","l":"Bienestar","d":"Iniciativa para promover la actividad física, el ejercicio y la adopción de hábitos de vida saludable.","who":"Colaboradores","where":"Sede principal del Country Club de Barranquilla","freq":"Permanente durante todo el año","res":"Fomenta la actividad física y el cuidado integral de la salud y el bienestar de los colaboradores."},
   {"n":"Curso de natación","e":"colaboradores","l":"Bienestar","d":"Espacio de formación y actividad física que promueve el aprendizaje de nuevas habilidades, hábitos saludables y bienestar integral.","who":"Colaboradores","where":"Proveedor externo","freq":"Una vez al año","res":"Fortalece la actividad física, el aprendizaje de nuevas habilidades y el bienestar integral de los participantes."},
-  {"n":"Emprendiendo Juntos – Colaboradores","e":"colaboradores","l":"Bienestar","d":"Modelo de acompañamiento con herramientas y orientación para fortalecer capacidades y explorar opciones para generar ingresos.","who":"Colaboradores del Country Club de Barranquilla","where":"Dispropan Casa Horne-Arte y Country Club de Barranquilla","freq":"Sábados de 8:00 a. m. a 12:00 m. durante 3 meses","res":"Ha despertado el interés de los participantes por adquirir nuevos conocimientos y explorar alternativas para generar ingresos."},
-  {"n":"Programa de Riesgo Psicosocial y Salud","e":"colaboradores","l":"Bienestar","d":"Identificación y comprensión de la percepción de los factores psicosociales de los colaboradores, como base para fortalecer el bienestar laboral.","who":"Colaboradores","where":"Country Club de Barranquilla","freq":"Permanente durante todo el año","res":"Aporta información para orientar acciones de promoción del bienestar y prevención frente a factores de riesgo psicosocial."},
-  {"n":"Póliza de beneficio exequial","e":"colaboradores","l":"Bienestar","d":"Apoyo económico y acompañamiento logístico ante el fallecimiento de un familiar.","who":"Colaboradores y sus beneficiarios registrados en la póliza","where":null,"freq":"Durante todo el año","res":"Brinda respaldo económico y acompañamiento oportuno a las familias durante situaciones de pérdida."},
-  {"n":"Descubriendo mis Habilidades","e":"comunidad","l":"Gestión social","d":"Fortalecimiento pedagógico que desarrolla en los estudiantes competencias para la vida, el ser y el saber hacer.","who":"Estudiantes del Colegio Eustorgio Salgar","where":"Colegio Eustorgio Salgar, Salgar","freq":"Anual, de abril a noviembre","res":"Fortalece habilidades personales y para la vida, promueve el aprendizaje práctico y genera espacios de participación y emprendimiento."},
-  {"n":"Emprendiendo Juntos – Comunidad","e":"comunidad","l":"Gestión social","d":"Programa de formación, asesoría y acompañamiento para fortalecer habilidades emprendedoras y competencias personales en mujeres de la comunidad.","who":"20 mujeres del corregimiento de Salgar","where":"Institución Educativa Eustorgio Salgar, Salgar","freq":"Todos los jueves y algunos viernes","comp":["Emprendimiento","Competencias para la vida","Elaboración de velas decorativas"],"res":["20 mujeres fortalecidas en conocimientos y habilidades de emprendimiento y competencias para la vida.","20 mujeres capacitadas en la elaboración de diferentes tipos de velas decorativas.","Fortalecimiento de la confianza y el empoderamiento de las participantes.","Desarrollo de nuevas habilidades prácticas para generar ingresos."]}
+  {"n":"Emprendiendo Juntos – Colaboradores","e":"colaboradores","l":"Bienestar","d":"Modelo de acompañamiento con herramientas y orientación para fortalecer capacidades y explorar opciones para generar ingresos.","who":"Colaboradores","where":false,"res":"Ha despertado el interés de los participantes por adquirir nuevos conocimientos y explorar alternativas para generar ingresos."},
+  {"n":"Un espacio para ti","e":"colaboradores","l":"Bienestar","d":"Creamos un espacio de escucha, orientación y acompañamiento para los colaboradores.","who":"Colaboradores","where":false,"freq":"Permanente durante todo el año","res":"Facilita una primera orientación para promover el bienestar y el autocuidado, y brinda herramientas para afrontar situaciones particulares."},
+  {"n":"Póliza de beneficio exequial","e":"colaboradores","l":"Bienestar","d":"Apoyo económico y acompañamiento logístico ante el fallecimiento de un familiar.","who":"Trabajadores directos","where":false,"freq":"Durante todo el año","res":"Brinda respaldo económico y acompañamiento oportuno a las familias durante situaciones de pérdida."},
+  {"n":"Descubriendo mis Habilidades","e":"comunidad","l":"Gestión social","d":"Fortalecimiento pedagógico que desarrolla en los estudiantes competencias para la vida, el ser y el saber hacer.","who":"Estudiantes del Colegio Eustorgio Salgar","comp":["Fortalecimiento pedagógico en competencias para la vida, el ser y el saber hacer","Auxilio educativo de inglés como requisito de grado"],"where":"Colegio Eustorgio Salgar, Salgar","freq":"Anual","res":"Fortalece habilidades personales y para la vida, promueve el aprendizaje práctico y genera espacios de participación y emprendimiento."},
+  {"n":"Emprendiendo Juntos – Comunidad","e":"comunidad","l":"Gestión social","d":"Programa de formación, asesoría y acompañamiento para fortalecer habilidades emprendedoras y competencias personales en mujeres de la comunidad.","who":"20 mujeres del corregimiento de Salgar","where":"Institución Educativa Eustorgio Salgar, Salgar","freq":"Todos los jueves y algunos viernes","comp":["Emprendimiento","Competencias para la vida","Elaboración de velas decorativas"],"res":["20 mujeres fortalecidas en conocimientos y habilidades de emprendimiento y competencias para la vida.","20 mujeres capacitadas en la elaboración de diferentes tipos de velas decorativas.","Fortalecimiento de la confianza y el empoderamiento de las participantes.","Desarrollo de nuevas habilidades prácticas para generar ingresos."]},
+  {"n":"Actividades ambientales","e":"comunidad","l":"Gestión ambiental","d":"Capacitación en el manejo adecuado de residuos.","where":"Colegio Eustorgio Salgar"}
 ];
 const LINE_IMG = {"Educación":"assets/img/educacion.webp","Vivienda":"assets/img/vivienda.webp","Bienestar":"assets/img/bienestar.webp","Gestión social":"assets/img/gestion-social.webp","Gestión ambiental":"assets/img/gestion-ambiental.webp"};
 const LINE_PAL = {"Educación":"navy","Vivienda":"orange","Bienestar":"green","Gestión social":"sand","Gestión ambiental":"green"};
@@ -792,15 +810,16 @@ function progCard(p, i){
         <div><h3>${esc(p.n)}</h3><p class="pdesc">${esc(p.d)}</p>
           <dl class="pdl"><div class="pdl-in">
             <div><dt>Qué hacemos</dt><dd>${esc(p.d)}</dd></div>
-            <div><dt>A quién beneficia</dt><dd>${esc(p.who)}</dd></div>
+            ${p.who ? '<div><dt>A quién beneficia</dt><dd>' + esc(p.who) + '</dd></div>' : ''}
             ${p.comp ? '<div><dt>Componentes</dt><dd>' + listHTML(p.comp) + '</dd></div>' : ''}
-            <div><dt>Dónde</dt><dd>${p.where ? esc(p.where) : 'Por confirmar'}</dd></div>
-            <div><dt>Frecuencia</dt><dd>${esc(p.freq)}</dd></div>
-            <div><dt>Resultados</dt><dd>${listHTML(p.res)}</dd></div>
+            ${p.where === false ? '' : '<div><dt>Dónde</dt><dd>' + (p.where ? esc(p.where) : 'Por confirmar') + '</dd></div>'}
+            ${p.freq ? '<div><dt>Frecuencia</dt><dd>' + esc(p.freq) + '</dd></div>' : ''}
+            ${p.note ? '<div><dt>Nota</dt><dd>' + esc(p.note) + '</dd></div>' : ''}
+            ${p.res ? '<div><dt>Resultados</dt><dd>' + listHTML(p.res) + '</dd></div>' : ''}
             <div class="pdl-cta"><button type="button" class="cta" data-enroll="${esc(p.n)}">${esc(enrollLabel(p.n))} <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
           </div></dl>
         </div>
-        <div class="foot"><small>${esc(p.freq)}</small><span class="more"><span class="more-t">Más información</span> <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
+        <div class="foot"><small>${p.freq ? esc(p.freq) : ''}</small><span class="more"><span class="more-t">Más información</span> <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></i></span></div>
       </div>
     </article>`;
 }
@@ -861,7 +880,7 @@ function countUp(el){
   if(el.dataset.done) return; el.dataset.done = "1";
   const to = +el.dataset.count, dur = 1900, t0 = performance.now();
   if(reduced) return;
-  const step = t => { const k = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-k,3); el.textContent = (el.dataset.prefix || "") + Math.round(to*e); if(k<1) requestAnimationFrame(step); };
+  const step = t => { const k = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-k,3); el.textContent = (el.dataset.prefix || "") + Math.round(to*e).toLocaleString("de-DE"); if(k<1) requestAnimationFrame(step); };
   requestAnimationFrame(step);
 }
 
@@ -990,7 +1009,7 @@ document.addEventListener("click", e => { const a = e.target.closest('a[href="#i
   if((location.hash || "#inicio") === "#inicio"){ e.preventDefault(); window.scrollTo({top:0, behavior: reduced ? "auto" : "smooth"}); } });
 
 /* ---------- Navegación entre páginas ---------- */
-const PAGES = ["inicio","nosotros","programas","impacto","apoya","noticias","trabaja","informes","noticia","noticia-emprendiendo","noticia-vitrina","noticia-vivienda","noticia-auxilios","noticia-aliados","contacto"];
+const PAGES = ["inicio","nosotros","programas","impacto","apoya","boletines","informes","contacto"];
 function route(){
   const h = (location.hash || "#inicio").slice(1);
   const page = PAGES.includes(h) ? h : (h === "formContacto" ? "contacto" : h === "donar" ? "contacto" : "inicio");
@@ -1056,26 +1075,26 @@ function enhanceSelect(sel){
   sync();
   return sync;
 }
-const csSync = enhanceSelect(document.getElementById("s-prog"));
 
 /* ---------- Formas de apoyo y formularios ---------- */
-const WAY_ID = {"Dona":"dona","Sé voluntario":"voluntario","Haz una alianza":"alianza","Apoya un programa":"programa","Donaciones en especie":"especie"};
+const WAY_ID = {"Dona":"dona","Sé voluntario":"voluntario","Haz una alianza":"alianza"};
 const goTo = el => window.scrollTo({top: el.getBoundingClientRect().top + scrollY - 90, behavior: reduced ? "auto" : "smooth"});
-const WAY_CHIP = {"Dona":"Donar","Sé voluntario":"Ser voluntario","Haz una alianza":"Crear una alianza","Apoya un programa":"Apoyar un programa","Donaciones en especie":"Otro"};
+const WAY_CHIP = {"Dona":"Donar","Sé voluntario":"Ser voluntario","Haz una alianza":"Crear una alianza"};
 function setWay(w){
   document.querySelectorAll("#ways .way").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.w === w)));
   document.getElementById("s-way").value = w;
   document.querySelectorAll("#s-way-chips input").forEach(r => r.checked = r.value === WAY_CHIP[w]);
-  document.getElementById("s-prog-wrap").hidden = w !== "Apoya un programa"; if(csSync) csSync();
+  volField(w === "Sé voluntario");
 }
+/* El voluntariado es solo para socios: se pide el número de acción */
+function volField(on){ document.getElementById("s-acc-wrap").hidden = !on; document.getElementById("s-acc").required = on; }
 
 document.querySelectorAll("[data-way]").forEach(btn => btn.addEventListener("click", () => {
   setWay(btn.dataset.way);
-  if(btn.dataset.way === "Apoya un programa") { document.getElementById("s-prog").value = document.getElementById("sp-prog").value; if(csSync) csSync(); }
   goTo(document.getElementById("sp-form"));
 }));
 document.getElementById("s-way").addEventListener("change", e => setWay(e.target.value));
-document.getElementById("s-way-chips").addEventListener("change", e => { const w = Object.keys(WAY_CHIP).find(k => WAY_CHIP[k] === e.target.value); if(w && w !== "Donaciones en especie") setWay(w); else document.getElementById("s-prog-wrap").hidden = true; });
+document.getElementById("s-way-chips").addEventListener("change", e => { const w = Object.keys(WAY_CHIP).find(k => WAY_CHIP[k] === e.target.value); if(w) setWay(w); else volField(false); });
 function wireForm(id, okId){
   document.getElementById(id).addEventListener("submit", e => {
     e.preventDefault();
