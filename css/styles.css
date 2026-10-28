@@ -1220,9 +1220,11 @@ main section.pshop{padding-top:clamp(20px,3vh,40px)!important}
 .res-sec .brush-frame{aspect-ratio:4/5;width:min(100%,500px);max-height:76vh;justify-self:center}
 .res-sec .brush-frame > .gen{min-height:0!important;height:100%}
 /* Resultados destacados: grupos Colaboradores / Comunidad */
-.res-group + .res-group{margin-top:clamp(22px,3.6vh,36px)}
-.res-group h3{margin:0 0 14px;font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--em,var(--green))}
-.res-group .results{gap:10px}
+.res-group + .res-group{margin-top:clamp(18px,3vh,28px)}
+.res-group h3{margin:0 0 10px;font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--em,var(--green))}
+.res-group .results{gap:8px}
+/* Listas más compactas para que la sección quepa en una pantalla */
+main .res-group .results li{font-size:clamp(1rem,1.25vw,1.2rem);line-height:1.4;max-width:none}
 .results li b{font-weight:800;color:var(--heading)}
 
 /* ============ Páginas internas: misma distancia entre título de sección y contenido ============ */
@@ -1540,6 +1542,31 @@ body[data-tone="green"] .sp-subs .sp-sub:nth-child(4n+2) .sp-ic,body[data-tone="
 .don-ic{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#16313F}
 .don-ic svg{width:22px;height:22px}
 main p.sp-note{margin:0;max-width:none;font-size:1rem;line-height:1.5;color:var(--heading);border-left:3px solid var(--orange);padding:4px 0 4px 14px}
+/* Dona más compacta para que quepa en una pantalla: texto, mosaico en 3 columnas y menos espacios */
+#sp-dona .sp-text{gap:14px}
+main #sp-dona p.sp-intro{font-size:clamp(1.05rem,1.35vw,1.25rem)}
+#sp-dona .sp-subs{gap:10px}
+#sp-dona .sp-sub{padding:16px 20px}
+#sp-dona .sp-sub.don-what{gap:12px}
+#sp-dona .don-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:8px}
+#sp-dona .don-grid li{padding:10px 12px 10px 10px;font-size:.92rem}
+#sp-dona .don-ic{width:34px;height:34px}
+#sp-dona .don-ic svg{width:19px;height:19px}
+main #sp-dona p.sp-note{font-size:.95rem;padding:2px 0 2px 14px}
+/* Dona: franja de artículos que se desplaza sola y se pausa al pasar el mouse */
+.don-marquee{display:flex;width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.don-track{flex:none;display:flex;gap:10px;margin:0;padding:4px 10px 4px 0;list-style:none;animation:donScroll 32s linear infinite}
+.don-marquee:hover .don-track,.don-marquee:focus-within .don-track{animation-play-state:paused}
+.don-track li{flex:none;display:inline-flex;align-items:center;gap:10px;padding:7px 18px 7px 7px;border:1px solid var(--line);border-radius:999px;background:#FFFFFF;white-space:nowrap;font-weight:600;font-size:.95rem;color:var(--heading);transition:border-color .3s ease}
+.don-track li:hover{border-color:var(--orange)}
+.don-track .don-ic{width:34px;height:34px}
+.don-track .don-ic svg{width:19px;height:19px}
+/* la franja no debe ensanchar la columna */
+#sp-dona .sp-text,#sp-dona .sp-subs,#sp-dona .sp-sub,.don-marquee{min-width:0;max-width:100%}
+/* "¿Qué puedes donar?" va sin recuadro: el de Datos de contacto ya lo tiene */
+#sp-dona .sp-sub.don-what{background:transparent;padding:0;margin-top:8px;box-shadow:none;transform:none}
+@keyframes donScroll{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.don-track{animation:none;flex-wrap:wrap;flex:1;padding-right:0}.don-track[aria-hidden]{display:none}.don-marquee{-webkit-mask-image:none;mask-image:none}}
 .sp-ic svg{width:38px;height:38px}
 @media (max-width:1200px){.sp-ic{width:34px;height:34px}.sp-ic svg{width:32px;height:32px}}
 /* Menú: logo y botón de cerrar un poco más abajo, y el contenido con más aire */
