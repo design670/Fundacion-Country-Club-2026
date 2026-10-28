@@ -658,7 +658,7 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
   const base = setFilter;
   setFilter = function(f, jump){ base(f, jump); sync(f); };
   /* tocar un bloque ya abierto lo cierra */
-  side.addEventListener("click", e => { if(!MQ.matches) return; const b = e.target.closest(".ps-g .ps-main");
+  side.addEventListener("click", e => { const b = e.target.closest(".ps-g .ps-main");
     if(b && b.closest(".ps-g").classList.contains("open")){ e.stopPropagation(); setFilter("todos", false); } }, true);
   MQ.addEventListener("change", () => sync(cur));
   sync(cur);
@@ -781,13 +781,6 @@ const LINE_PAL = {"Educación":"navy","Vivienda":"orange","Bienestar":"green","G
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const esc = s => s.replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
 const LINES = {colaboradores:["Educación","Vivienda","Bienestar"], comunidad:["Gestión social","Gestión ambiental"]};
-const LINE_TXT = {
-  "Educación":"Acceso y permanencia educativa, formación superior, aprendizaje de inglés y fortalecimiento de competencias.",
-  "Vivienda":"Apoyo para adquisición, mejoramiento y adecuación de viviendas, promoviendo hogares dignos y seguros.",
-  "Bienestar":"Salud física, mental y emocional, actividad física, desarrollo personal, emprendimiento y acompañamiento en situaciones familiares.",
-  "Gestión social":"Proyectos orientados al desarrollo integral, fortalecimiento de capacidades, participación y tejido social.",
-  "Gestión ambiental":"Educación ambiental y promoción de prácticas responsables para el cuidado y conservación del entorno."
-};
 const listHTML = v => Array.isArray(v) ? '<ul class="pdl-list">' + v.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul>' : esc(v);
 function enrollLabel(n){
   if(/^Auxilio/i.test(n)) return "Inscribirme al auxilio";
@@ -825,18 +818,18 @@ function progCard(p, i){
 }
 const FHEAD = {
   "todos": ["", "Todos los programas", "", "Programas para colaboradores y sus familias, y para las comunidades de nuestro entorno."],
-  "colaboradores": ["Bloque 1 · Fortalecimiento interno", "Colaboradores y sus ", "familias", "Orientado a fortalecer las capacidades, oportunidades y condiciones de vida de nuestros colaboradores y sus familias, a través de tres líneas."],
-  "comunidad": ["Bloque 2 · Transformación del entorno", "Comunidades de nuestro ", "entorno", "Dirigido a comunidades de nuestro entorno, especialmente Salgar, mediante dos líneas."]
+  "colaboradores": ["Fortalecimiento interno", "Colaboradores y sus ", "familias", "Orientado a fortalecer las capacidades, oportunidades y condiciones de vida de nuestros colaboradores y sus familias, a través de tres líneas."],
+  "comunidad": ["Transformación del entorno", "Comunidades de nuestro ", "entorno", "Dirigido a comunidades de nuestro entorno, especialmente Salgar, mediante dos líneas."]
 };
 const LINE_E = {"Educación":"colaboradores","Vivienda":"colaboradores","Bienestar":"colaboradores","Gestión social":"comunidad","Gestión ambiental":"comunidad"};
 let filter = "todos";
 const progMatch = f => p => f === "todos" || p.e === f || p.l === f;
 function renderPrograms(){
   const list = PROGRAMS.filter(progMatch(filter)), n = list.length;
-  const h = FHEAD[filter] || [FHEAD[LINE_E[filter]][0], "", filter, LINE_TXT[filter] || ""];
+  const h = FHEAD[filter] || [FHEAD[LINE_E[filter]][0], "", filter, ""];
   const head = document.getElementById("pfhead");
   head.innerHTML = `${filter === "todos" ? "" : `<p class="lead">${h[3]}</p>`}`;
-  head.hidden = filter === "todos";
+  head.hidden = filter === "todos" || !h[3];
   document.getElementById("plist").innerHTML = n ? list.map(progCard).join("")
     : `<div class="empty">Esta línea estratégica aún no tiene programas concretos. La Fundación debe confirmar qué iniciativas ambientales publicar.</div>`;
   document.querySelectorAll("#pside .ps-b").forEach(b => {

@@ -1226,6 +1226,7 @@ main section.pshop{padding-top:clamp(20px,3vh,40px)!important}
 /* Listas más compactas para que la sección quepa en una pantalla */
 main .res-group .results li{font-size:clamp(1rem,1.25vw,1.2rem);line-height:1.4;max-width:none}
 .results li b{font-weight:800;color:var(--heading)}
+.res-group .results li::before{background:currentColor}
 
 /* ============ Páginas internas: misma distancia entre título de sección y contenido ============ */
 :root{--tg:clamp(36px,6.6vh,56px)}
@@ -1848,6 +1849,15 @@ main [data-page="informes"] h2.inf-year.long{font-size:clamp(1.9rem,3.4vw,3.1rem
 }
 footer.site .fbottom{justify-content:center;text-align:center}
 .fmega-link{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0}
+
+/* ============ Programas: los dos grupos del filtro se despliegan con flecha (sin número) ============ */
+#pside .ps-g .ps-b.ps-main{gap:10px}
+#pside .ps-g .ps-b.ps-main > span{flex:1 1 auto}
+#pside .ps-g .ps-b.ps-main .ps-n{display:none}
+#pside .ps-g .ps-b.ps-main::after{content:"";flex:0 0 auto;width:9px;height:9px;margin:0 6px 4px 4px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .35s cubic-bezier(.22,.7,.2,1)}
+#pside .ps-g.open .ps-b.ps-main::after{transform:rotate(-135deg);margin-bottom:-4px}
+#pside .ps-sub{display:none}
+#pside .ps-g.open .ps-sub{display:flex}
 
 /* ============ Programas: en celular el filtro son dos bloques desplegables ============ */
 @media (max-width:900px){
