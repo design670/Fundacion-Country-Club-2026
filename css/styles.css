@@ -105,6 +105,10 @@ body.menu-open .burger span{background:transparent}
 body.menu-open .burger span::before{top:0;transform:rotate(45deg)}
 body.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
 @media (max-width:900px){.hnav .links{display:none}.hnav .cta{display:none}}
+/* Pantallas medianas: los enlaces nunca se parten en dos líneas; entre 1180 y 1300px se compactan y debajo de 1180px quedan solo en el menú */
+.hnav .links a{white-space:nowrap}
+@media (max-width:1300px){.hnav{gap:18px}.hnav .links{gap:18px}}
+@media (max-width:1180px){.hnav .links{display:none}}
 
 /* ============ Menú EON: círculo que crece y contenido con resorte ============ */
 .mm{position:fixed;inset:0;z-index:110;pointer-events:none;visibility:hidden}
@@ -808,7 +812,8 @@ main p.ct-lead{font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.5;color:rgba
 .ct-want{border:0;padding:0;margin:6px 0 0}
 .ct-want legend{font-weight:700;margin-bottom:10px;padding:0}
 .ct-chips{display:flex;flex-wrap:wrap;gap:8px}
-.ct-chip input{position:absolute;opacity:0;pointer-events:none}
+.ct-chip{position:relative}
+.ct-chip input{position:absolute;inset:0;opacity:0;pointer-events:none}
 .ct-chip span{display:inline-block;padding:11px 16px;border-radius:999px;background:rgba(22,49,63,.08);font-weight:600;font-size:.92rem;cursor:pointer;transition:background-color .3s,color .3s,transform .4s var(--spring)}
 .ct-chip span:hover{transform:translateY(-2px)}
 .ct-chip input:checked + span{background:#16313F;color:#fff}
@@ -1607,6 +1612,10 @@ main #sp-dona p.sp-note{font-size:.95rem;padding:2px 0 2px 14px}
 /* Menú: logo y botón de cerrar un poco más abajo, y el contenido con más aire */
 @media (min-width:901px){body.menu-open header.site .wrap,body.menu-open header.site.scrolled .wrap{height:124px}.mm-grid{padding-top:clamp(170px,23vh,210px);padding-bottom:28px}}
 @media (min-width:1000px) and (min-height:800px){main section.ct-hero{padding-top:clamp(124px,17.5vh,160px)!important}}
+/* Contacto en pantallas bajas (MacBook): más aire bajo el menú, título algo menor y el correo en una sola línea */
+@media (min-width:1000px) and (max-height:799px){main section.ct-hero{padding-top:118px!important;padding-bottom:48px!important}main .ct-title{font-size:clamp(2.4rem,4.4vw,4rem)}}
+.ct-direct a span{white-space:nowrap}
+@media (min-width:1000px){.ct-direct a{font-size:clamp(.92rem,1.05vw,1.15rem)}}
 .sp-select[hidden]{display:none!important}
 main section#ubicacion h2.ct-where{font-size:clamp(2.2rem,4.1vw,3.9rem)!important}
 .ct-where .nw,#sp-form h2 .nw{white-space:nowrap}
@@ -1985,6 +1994,7 @@ footer.site .fbottom{justify-content:center;text-align:center}
 /* Cada sección mide lo que mide su contenido, con el mismo aire arriba y abajo. */
 @media (min-width:1000px) and (min-height:640px){
   main section.block:not(.pshop){min-height:0}
-  main section.block:not(.pshop):not(.bol-detail){padding-top:clamp(64px,9vh,104px)!important;padding-bottom:clamp(64px,9vh,104px)!important}
+  /* arriba siempre más que el alto del menú (≈70px) para que ningún título quede pegado o tapado en pantallas bajas como las de un MacBook */
+  main section.block:not(.pshop):not(.bol-detail){padding-top:clamp(100px,12vh,128px)!important;padding-bottom:clamp(72px,9vh,104px)!important}
   html{scroll-snap-type:none}
 }
