@@ -770,24 +770,26 @@
 
 <!-- ================= BOLETÍN (página interna; el contenido lo llena el js según #boletin-N) ================= -->
 <div data-page="boletin" hidden>
-  <section class="block bol-detail" data-tone="light">
-    <div class="wrap bol-d-grid">
-      <figure class="bol-d-cover reveal"><img id="bolDImg" src="assets/img/comunidad.webp" alt=""></figure>
-      <div class="bol-d-text reveal" style="--d:120ms">
-        <nav class="bol-d-crumbs" aria-label="Ruta"><a href="#boletines">Boletines</a><span aria-hidden="true">/</span><span id="bolDCrumb"></span></nav>
-        <span class="bol-d-date" id="bolDDate"></span>
-        <h1 id="bolDTitle"></h1>
-        <p class="lead" id="bolDDesc"></p>
-        <div class="bol-d-actions">
-          <a class="cta" id="bolDPdf" href="#boletines">Descargar PDF <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg></span></a>
-          <a class="art-back" href="#boletines">← Volver a boletines</a>
-        </div>
-      </div>
+  <section class="art-hero" data-tone="navy">
+    <img id="bolDImg" src="assets/img/comunidad.webp" alt="">
+    <div class="wrap art-hero-in">
+      <nav class="art-crumbs" aria-label="Ruta"><a href="#boletines">Boletines</a><span aria-hidden="true">/</span><span id="bolDCrumb"></span></nav>
+      <h1 id="bolDTitle"></h1>
+      <ul class="art-meta"><li id="bolDDate"></li><li id="bolDRead"></li></ul>
+    </div>
+  </section>
+  <section class="art" data-tone="light">
+    <div class="wrap art-grid">
+      <aside class="art-side" aria-label="Datos del boletín">
+        <dl id="bolDData"></dl>
+        <a class="art-back" href="#boletines">← Volver a boletines</a>
+      </aside>
+      <article class="art-body" id="bolDBody"></article>
     </div>
   </section>
   <section class="block bol-more" data-tone="light">
     <div class="wrap stack">
-      <h2 class="reveal">Más <em>boletines</em></h2>
+      <h2 class="reveal">Más boletines</h2>
       <div class="bol-grid" id="bolMore"></div>
     </div>
   </section>

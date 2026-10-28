@@ -33,5 +33,5 @@ Proyecto de página web para la Fundación Social Country Club de Barranquilla (
 - Gestión ambiental · Actividades ambientales: a quién beneficia, frecuencia y resultados.
 - Manual de marca (si existe), fotografías y logos de aliados.
 - Usuarios de Facebook, LinkedIn, YouTube y TikTok (los íconos están, sin enlace) y canal o lugar para entregar donaciones en especie.
-- Boletines: portada, número, fecha, descripción y PDF de cada uno (la página Boletines tiene 15 de ejemplo, cada uno con su página interna en #boletin-N).
+- Boletines: contenido real de cada boletín (portada, número, fecha, texto completo, fotos y cifras). Hoy hay 15 de ejemplo, cada uno con su página interna tipo artículo en #boletin-N.
 - Documentación: estatutos, certificado de existencia, informes de gestión e impacto, presentaciones.

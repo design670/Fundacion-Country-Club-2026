@@ -1832,7 +1832,6 @@ main .bol-d-text p.lead{margin:0;max-width:46ch}
 .bol-d-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:10px}
 @media (max-width:900px){.bol-d-grid{grid-template-columns:1fr}.bol-d-cover{max-width:420px;width:100%}}
 /* tarjetas compactas */
-.bol-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
 .bol-body h3{line-height:1.25}
 .bol .bol-body{flex:1}
 .bol .bol-body .bol-go{margin-top:auto;padding-top:8px}
