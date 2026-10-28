@@ -531,24 +531,52 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
 
 
 /* ---------- Boletines (contenido de ejemplo) ---------- */
-/* PROGRAMADOR: cada boletín tiene "img" (portada), "t" (número o nombre), "d" (fecha) y "f" (ruta del PDF). Hoy son de ejemplo: cambiarlos por los reales. */
+/* PROGRAMADOR: cada boletín tiene "n" (número), "img" (portada), "d" (fecha), "desc" (descripción) y "f" (ruta del PDF).
+   Hoy son de ejemplo: cambiarlos por los reales. Cada tarjeta abre su página interna en #boletin-N. */
 (function(){
   const box = document.getElementById("bolList"); if(!box) return;
+  /* 15 boletines de ejemplo (títulos, fechas y textos inventados), del más reciente al más antiguo */
   const BOLETINES = [
-    {t:"Boletín N.º 6", d:"Fecha por confirmar", img:"assets/img/comunidad.webp", f:""},
-    {t:"Boletín N.º 5", d:"Fecha por confirmar", img:"assets/img/mujeres-velas.webp", f:""},
-    {t:"Boletín N.º 4", d:"Fecha por confirmar", img:"assets/img/gestion-social.webp", f:""},
-    {t:"Boletín N.º 3", d:"Fecha por confirmar", img:"assets/img/vivienda.webp", f:""},
-    {t:"Boletín N.º 2", d:"Fecha por confirmar", img:"assets/img/educacion.webp", f:""},
-    {t:"Boletín N.º 1", d:"Fecha por confirmar", img:"assets/img/vitrina.webp", f:""}
+    {n:15, t:"Emprendiendo juntos: nuevas ideas de negocio en Salgar", d:"Octubre 2026", img:"assets/img/mujeres-velas.webp", desc:"Mujeres de Salgar presentan los productos que crearon en bisutería, gastronomía, velas artesanales y tejido, y comparten cómo empezaron a generar ingresos.", f:""},
+    {n:14, t:"Vivienda Digna: hogares que se transforman", d:"Septiembre 2026", img:"assets/img/vivienda.webp", desc:"Conoce a las familias de nuestros trabajadores que mejoraron su cocina, baño o sala gracias al Proyecto Vivienda Digna.", f:""},
+    {n:13, t:"Descubriendo mis Habilidades cierra un nuevo ciclo", d:"Agosto 2026", img:"assets/img/gestion-social.webp", desc:"Los estudiantes del Colegio Eustorgio Salgar muestran a sus familias los proyectos que construyeron durante el año.", f:""},
+    {n:12, t:"Un espacio para ti: bienestar y autocuidado", d:"Julio 2026", img:"assets/img/bienestar.webp", desc:"Te contamos cómo funciona este espacio de escucha, orientación y acompañamiento para nuestros colaboradores.", f:""},
+    {n:11, t:"Auxilios educativos para el nuevo año escolar", d:"Junio 2026", img:"assets/img/educacion.webp", desc:"Fechas, requisitos y testimonios de las familias que reciben los auxilios educativo-escolares.", f:""},
+    {n:10, t:"La Vitrina: el talento de nuestras emprendedoras", d:"Mayo 2026", img:"assets/img/vitrina.webp", desc:"Un recorrido por la nueva edición de La Vitrina y los productos hechos por quienes participan en nuestros programas.", f:""},
+    {n:9, t:"Actividades ambientales en el colegio", d:"Abril 2026", img:"assets/img/gestion-ambiental.webp", desc:"Estudiantes del Colegio Eustorgio Salgar aprenden a manejar adecuadamente los residuos y a cuidar su entorno.", f:""},
+    {n:8, t:"Formación en liderazgo e inteligencia artificial", d:"Marzo 2026", img:"assets/img/colaboradores.webp", desc:"Así avanzan el Club de Liderazgo y la formación en inteligencia artificial para nuestros colaboradores.", f:""},
+    {n:7, t:"Más cerca de las comunidades de nuestro entorno", d:"Febrero 2026", img:"assets/img/comunidad.webp", desc:"Nuestro trabajo con las comunidades de Salgar, La Playa y Puerto Colombia, cercanas a la sede campestre del Club.", f:""},
+    {n:6, t:"Repostería creativa: colaboradores que emprenden", d:"Enero 2026", img:"assets/img/trabaja-equipo.webp", desc:"Colaboradores del Club cuentan lo que aprendieron en los cursos de repostería y decoración navideña.", f:""},
+    {n:5, t:"Educación superior: un paso más para nuestros trabajadores", d:"Diciembre 2025", img:"assets/img/educacion.webp", desc:"Trabajadores que avanzan en sus estudios universitarios con el apoyo del Auxilio de educación superior.", f:""},
+    {n:4, t:"Donaciones en especie: gracias a quienes se suman", d:"Noviembre 2025", img:"assets/img/manos-planta.webp", desc:"Ropa, alimentos, útiles escolares y otros artículos que llegaron a las familias gracias a las donaciones recibidas.", f:""},
+    {n:3, t:"Voluntariado: socios que comparten su talento", d:"Octubre 2025", img:"assets/img/colaboradores.webp", desc:"Socios del Club que enseñan manualidades, cocina, música, deporte e idiomas en nuestras comunidades.", f:""},
+    {n:2, t:"Alianzas que multiplican el impacto", d:"Septiembre 2025", img:"assets/img/sede-club.webp", desc:"Empresas y entidades que se suman a nuestros programas para crear mayores y mejores oportunidades.", f:""},
+    {n:1, t:"Un solo propósito, un mayor impacto", d:"Agosto 2025", img:"assets/img/impacto-hero.webp", desc:"FundaCountry y la Fundación Social Country Club de Barranquilla unen sus caminos en una sola apuesta social.", f:""}
   ];
+  const title = b => "Boletín N.º " + b.n;
   const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg>';
-  box.innerHTML = BOLETINES.map((b, i) =>
-    '<a class="bol" href="' + (b.f ? h(b.f) : "#boletines") + '"' + (b.f ? ' target="_blank" rel="noopener"' : '') + ' aria-label="Ver ' + h(b.t) + ' (PDF)">' +
-      '<div class="bol-cover"><img src="' + h(b.img) + '" alt="" loading="lazy">' + (i === 0 ? '<span class="bol-new">Más reciente</span>' : '') + '</div>' +
-      '<div class="bol-body"><h3>' + h(b.t) + '</h3><p>' + h(b.d) + '</p><span class="bol-go">Ver boletín <i>' + arrow + '</i></span></div>' +
-    '</a>').join("");
+  const card = b =>
+    '<a class="bol" href="#boletin-' + b.n + '" aria-label="Ver ' + h(title(b)) + ': ' + h(b.t) + '">' +
+      '<div class="bol-cover"><img src="' + h(b.img) + '" alt="" loading="lazy">' + (b === BOLETINES[0] ? '<span class="bol-new">Más reciente</span>' : '') + '</div>' +
+      '<div class="bol-body"><span class="bol-num">' + h(title(b)) + '</span><h3>' + h(b.t) + '</h3><p>' + h(b.d) + '</p><span class="bol-go">Ver boletín <i>' + arrow + '</i></span></div>' +
+    '</a>';
+  box.innerHTML = BOLETINES.map(card).join("");
+  /* página interna: la llama route() cuando la dirección es #boletin-N */
+  window.renderBoletin = hash => {
+    const n = +hash.replace("boletin-", ""), i = Math.max(0, BOLETINES.findIndex(b => b.n === n)), b = BOLETINES[i];
+    document.getElementById("bolDImg").src = b.img;
+    document.getElementById("bolDImg").alt = "Portada del " + title(b);
+    document.getElementById("bolDCrumb").textContent = title(b);
+    document.getElementById("bolDDate").textContent = title(b) + " · " + b.d;
+    document.getElementById("bolDTitle").textContent = b.t;
+    document.getElementById("bolDDesc").textContent = b.desc;
+    const pdf = document.getElementById("bolDPdf");
+    pdf.href = b.f || "#" + hash;
+    if(b.f){ pdf.setAttribute("download", ""); pdf.target = "_blank"; pdf.rel = "noopener"; } else { pdf.removeAttribute("download"); pdf.removeAttribute("target"); }
+    /* "Más boletines": los cinco siguientes, dando la vuelta al final de la lista */
+    document.getElementById("bolMore").innerHTML = [1,2,3,4,5].map(k => card(BOLETINES[(i + k) % BOLETINES.length])).join("");
+  };
 })();
 
 /* ---------- Gestión de informes: tarjetas de documentos con filtro por tipo (contenido de ejemplo) ---------- */
@@ -770,7 +798,7 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
 /* ---------- Programas ---------- */
 const PROGRAMS = [
   {"n":"Auxilios educativo-escolares","e":"colaboradores","l":"Educación","d":"Auxilios económicos para cubrir gastos escolares y promover la permanencia educativa de los hijos de los colaboradores en primaria y secundaria.","who":"Hijos de trabajadores directos","where":false,"freq":"2 veces al año (inicio de calendario A y B)","res":"Contribuye a la permanencia escolar y al acceso a recursos necesarios para el desarrollo académico."},
-  {"n":"Auxilio de educación superior","e":"colaboradores","l":"Educación","d":"Apoyo económico para el acceso y la continuidad de estudios de educación superior, incluidos programas universitarios y de formación avanzada.","who":"Trabajadores directos","where":false,"freq":"Dos veces al año (primer y segundo semestre)","res":"Favorece la continuidad de la formación académica y fortalece las oportunidades de desarrollo profesional y crecimiento personal."},
+  {"n":"Auxilio de educación superior","e":"colaboradores","l":"Educación","d":"Apoyo económico para el acceso y la continuidad de estudios de educación superior, incluidos programas universitarios y de formación avanzada.","who":"Trabajadores directos e hijos de trabajadores directos","where":false,"freq":"Dos veces al año (primer y segundo semestre)","res":"Favorece la continuidad de la formación académica y fortalece las oportunidades de desarrollo profesional y crecimiento personal."},
   {"n":"Programa de formación y desarrollo para colaboradores","e":"colaboradores","l":"Educación","d":"Espacios de formación que fortalecen las habilidades personales y profesionales de los colaboradores, a través del Club de Liderazgo y la formación en inteligencia artificial.","who":"Colaboradores","comp":["Club de Liderazgo: liderazgo, comunicación efectiva, gestión de equipos y manejo del estrés en entornos de alta presión","Formación en inteligencia artificial"],"where":"Country Club","freq":"Una vez al año","res":"Fortalece habilidades personales y profesionales aplicables al liderazgo, el trabajo en equipo, la gestión de situaciones laborales y el uso de la inteligencia artificial en el trabajo."},
   {"n":"Subsidio para adquisición de vivienda nueva","e":"colaboradores","l":"Vivienda","d":"Apoyo económico para adquirir una vivienda nueva, contribuyendo a una solución habitacional digna y a la estabilidad familiar.","who":"Trabajadores directos","where":false,"freq":"Convocatoria abierta todo el año · se otorga una única vez","res":"Facilita el acceso a vivienda propia y contribuye al bienestar y estabilidad de los hogares."},
   {"n":"Préstamo de vivienda","e":"colaboradores","l":"Vivienda","d":"Ayuda para solucionar emergencias y necesidades de mejoras y reparaciones locativas en las viviendas propias de los colaboradores.","who":"Trabajadores directos","where":false,"freq":"Convocatoria abierta todo el año","res":"Permite mejorar condiciones básicas de habitabilidad y brindar mayor bienestar y dignidad a las familias."},
@@ -1010,10 +1038,10 @@ document.addEventListener("click", e => { const a = e.target.closest('a[href="#i
   if((location.hash || "#inicio") === "#inicio"){ e.preventDefault(); window.scrollTo({top:0, behavior: reduced ? "auto" : "smooth"}); } });
 
 /* ---------- Navegación entre páginas ---------- */
-const PAGES = ["inicio","nosotros","programas","impacto","apoya","boletines","informes","contacto"];
+const PAGES = ["inicio","nosotros","programas","impacto","apoya","boletines","boletin","informes","contacto"];
 function route(){
   const h = (location.hash || "#inicio").slice(1);
-  const page = PAGES.includes(h) ? h : (h === "formContacto" ? "contacto" : h === "donar" ? "contacto" : "inicio");
+  const page = PAGES.includes(h) ? h : /^boletin-\d+$/.test(h) ? "boletin" : (h === "formContacto" ? "contacto" : h === "donar" ? "contacto" : "inicio");
   let current;
   document.querySelectorAll("[data-page]").forEach(s => { s.hidden = s.dataset.page !== page; if(!s.hidden) current = s; });
   document.querySelectorAll(".hnav .link-u").forEach(a => a.getAttribute("href")==="#"+page ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
@@ -1025,6 +1053,7 @@ function route(){
   }
   else window.scrollTo(0,0);
   if(page === "programas") renderPrograms();
+  if(page === "boletin" && window.renderBoletin) window.renderBoletin(h);
   toneSections = [...current.querySelectorAll("[data-tone]"), document.querySelector("footer.site")];
   parallaxEls = [...current.querySelectorAll("[data-parallax]")];
   setupPins(current);

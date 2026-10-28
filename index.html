@@ -222,11 +222,15 @@
       <div class="stack reveal" style="--d:120ms">
         <h2>El impacto comienza cuando una oportunidad cambia una <em>realidad</em></h2>
         <div class="facts-stack">
-          <p class="facts-label">En la comunidad</p>
-          <div class="fi"><b data-count="300" data-prefix="+">+300</b><span>Mujeres fortalecidas en emprendimiento y competencias para la vida</span></div>
-          <p class="facts-label">En nuestros colaboradores y sus familias</p>
-          <div class="fi"><b data-count="589">589</b><span>Apoyos en educación superior</span></div>
-          <div class="fi"><b data-count="39">39</b><span>Viviendas adquiridas o mejoradas</span></div>
+          <div class="fgroup fg-com">
+            <p class="facts-label">En la comunidad</p>
+            <div class="fi"><b data-count="300" data-prefix="+">+300</b><span>Emprendimiento</span></div>
+          </div>
+          <div class="fgroup fg-col">
+            <p class="facts-label">En nuestros colaboradores y sus familias</p>
+            <div class="fi"><b data-count="589">589</b><span>Educación superior</span></div>
+            <div class="fi"><b data-count="39">39</b><span>Vivienda</span></div>
+          </div>
         </div>
         <div><a class="cta" href="#impacto">Conoce nuestro impacto <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></a></div>
       </div>
@@ -445,8 +449,8 @@
   <section class="block" data-tone="light">
     <div class="wrap stack">
       <h2 class="istat-title reveal">Nuestro <em>impacto</em></h2>
-      <div class="istat-car reveal" id="statCar" role="region" aria-roledescription="carrusel" aria-label="Cifras de impacto">
-        <div class="istat-track" tabindex="0">
+      <div class="istat-wall reveal" role="region" aria-label="Cifras de impacto">
+        <div class="istat-rows">
           <article class="istat">
             <b class="istat-num" data-count="947">947</b>
             <h3>Auxilios educativos entregados</h3>
@@ -476,7 +480,6 @@
             <h3>Programas ambientales</h3>
           </article>
         </div>
-        <div class="istat-dots" role="tablist" aria-label="Grupos de cifras"></div>
       </div>
     </div>
   </section>
@@ -749,17 +752,43 @@
 
 <!-- ================= BOLETINES ================= -->
 <div data-page="boletines" hidden>
-  <section class="phead" data-tone="light">
-    <div class="wrap stack">
-      <div class="intro intro-col">
-        <div class="stack reveal"><h1>Nuestros <em>boletines</em></h1></div>
-        <p class="lead reveal" style="--d:100ms">Consulta y descarga los boletines de la Fundación, con las noticias, actividades y resultados de nuestros programas.</p>
+  <section class="hero-sheet has-photo bol-hero" data-tone="light">
+    <div class="hero-bg" data-parallax=".18"><div class="zoom"><img src="assets/img/comunidad.webp" alt="" style="object-position:50% 55%"></div></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 class="fade-up" style="animation-delay:.1s">Nuestros <em>boletines</em></h1>
+        <p class="lead fade-up" style="margin-top:22px;animation-delay:.4s">Consulta y descarga los boletines de la Fundación, con las noticias, actividades y resultados de nuestros programas.</p>
       </div>
     </div>
   </section>
   <section class="block bol-sec" data-tone="light">
     <div class="wrap stack">
       <div class="bol-grid" id="bolList"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= BOLETÍN (página interna; el contenido lo llena el js según #boletin-N) ================= -->
+<div data-page="boletin" hidden>
+  <section class="block bol-detail" data-tone="light">
+    <div class="wrap bol-d-grid">
+      <figure class="bol-d-cover reveal"><img id="bolDImg" src="assets/img/comunidad.webp" alt=""></figure>
+      <div class="bol-d-text reveal" style="--d:120ms">
+        <nav class="bol-d-crumbs" aria-label="Ruta"><a href="#boletines">Boletines</a><span aria-hidden="true">/</span><span id="bolDCrumb"></span></nav>
+        <span class="bol-d-date" id="bolDDate"></span>
+        <h1 id="bolDTitle"></h1>
+        <p class="lead" id="bolDDesc"></p>
+        <div class="bol-d-actions">
+          <a class="cta" id="bolDPdf" href="#boletines">Descargar PDF <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg></span></a>
+          <a class="art-back" href="#boletines">← Volver a boletines</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="block bol-more" data-tone="light">
+    <div class="wrap stack">
+      <h2 class="reveal">Más <em>boletines</em></h2>
+      <div class="bol-grid" id="bolMore"></div>
     </div>
   </section>
 </div>
