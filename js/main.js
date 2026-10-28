@@ -551,40 +551,48 @@ document.addEventListener("securitypolicyviolation", e => { if(/frame/.test(e.vi
     '</a>').join("");
 })();
 
-/* ---------- Gestión de informes: documentos agrupados por tipo (contenido de ejemplo) ---------- */
+/* ---------- Gestión de informes: tarjetas de documentos con filtro por tipo (contenido de ejemplo) ---------- */
 /* PROGRAMADOR: cada documento tiene "f" (ruta del archivo PDF). Hoy están vacíos: poner la ruta real de cada archivo. */
 (function(){
-  const box = document.getElementById("infList"); if(!box) return;
+  const box = document.getElementById("infList"), chips = document.getElementById("infChips"); if(!box || !chips) return;
   const GROUPS = [
-    {t:"Informes de gestión", d:"Resultados, programas y actividades de la Fundación.", docs:[
+    {t:"Informes de gestión", docs:[
       {t:"Informe de gestión", f:""}
     ]},
-    {t:"Estados financieros", d:"Información financiera de la Fundación y concepto del revisor fiscal.", docs:[
+    {t:"Estados financieros", docs:[
       {t:"Estados financieros", f:""},
       {t:"Dictamen del revisor fiscal", f:""}
     ]},
-    {t:"Régimen tributario especial", d:"Documentos que la Fundación publica como entidad del régimen tributario especial.", docs:[
+    {t:"Régimen tributario especial", docs:[
       {t:"Certificación de requisitos y cargos directivos", f:""},
       {t:"Acta de la asamblea ordinaria", f:""}
     ]},
-    {t:"Documentos institucionales", d:"Estatutos, registros y políticas de la Fundación.", docs:[
+    {t:"Documentos institucionales", docs:[
       {t:"Estatutos de la Fundación", f:""},
       {t:"Certificado de existencia y representación legal", f:""},
       {t:"Registro Único Tributario (RUT)", f:""},
       {t:"Política de tratamiento de datos personales", f:""}
     ]}
   ];
+  const DOCS = GROUPS.flatMap(g => g.docs.map(d => ({...d, c:g.t})));
   const h = v => String(v).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const pdf = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>';
   const dl = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>';
-  box.innerHTML = GROUPS.map((g, i) =>
-    '<section class="inf-group" aria-labelledby="infG' + i + '">' +
-      '<div class="inf-gh"><span class="inf-n">' + String(i + 1).padStart(2, "0") + '</span><h2 id="infG' + i + '">' + h(g.t) + '</h2><p>' + h(g.d) + '</p></div>' +
-      '<div class="job-list inf-list">' + g.docs.map(d =>
-        '<a class="job doc" href="' + (d.f ? h(d.f) : "#informes") + '"' + (d.f ? ' download target="_blank" rel="noopener"' : '') + ' aria-label="Descargar ' + h(d.t) + ' (PDF)">' +
-          '<div><h3>' + h(d.t) + '</h3><ul class="job-meta"><li>PDF</li></ul></div>' +
-          '<div class="job-go"><span>Descargar</span><i>' + dl + '</i></div>' +
-        '</a>').join("") + '</div>' +
-    '</section>').join("");
+  let cur = "todos";
+  chips.innerHTML = [{k:"todos", t:"Todos"}].concat(GROUPS.map(g => ({k:g.t, t:g.t}))).map(c =>
+    '<button type="button" data-k="' + h(c.k) + '" aria-pressed="false">' + h(c.t) + '</button>').join("");
+  function render(){
+    box.innerHTML = DOCS.filter(d => cur === "todos" || d.c === cur).map(d =>
+      '<a class="inf-card" href="' + (d.f ? h(d.f) : "#informes") + '"' + (d.f ? ' download target="_blank" rel="noopener"' : '') + ' aria-label="Descargar ' + h(d.t) + ' (PDF)">' +
+        '<span class="inf-ic">' + pdf + '</span>' +
+        '<span class="inf-cat">' + h(d.c) + '</span>' +
+        '<h3>' + h(d.t) + '</h3>' +
+        '<span class="inf-dl">Descargar PDF <i>' + dl + '</i></span>' +
+      '</a>').join("");
+    [...chips.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.k === cur)));
+  }
+  chips.addEventListener("click", e => { const b = e.target.closest("button"); if(!b) return; cur = b.dataset.k; render(); });
+  render();
 })();
 
 

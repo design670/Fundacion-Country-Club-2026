@@ -503,7 +503,7 @@ footer .fgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:
 .flegal a{color:inherit;text-decoration:none;transition:color .2s}
 .flegal a:hover{color:#FFFFFF}
 .fmega{margin-top:auto;padding-top:clamp(28px,5vh,80px);padding-bottom:clamp(20px,2.4vw,36px);overflow:hidden}
-.fmega img{width:clamp(40%,calc((100svh - 600px) * 3.57),75%);height:auto;display:block;margin-inline:auto;transform:translateY(40%);opacity:0;transition:transform 1.2s cubic-bezier(.625,.05,0,1),opacity .8s ease}
+.fmega img{width:clamp(32%,calc((100svh - 600px) * 2.7),55%);height:auto;display:block;margin-inline:auto;transform:translateY(40%);opacity:0;transition:transform 1.2s cubic-bezier(.625,.05,0,1),opacity .8s ease}
 .fmega.in img{transform:none;opacity:1}
 @media (max-width:860px){footer .fgrid{grid-template-columns:1fr;gap:48px}.fnav{gap:10px 40px}.fbottom{flex-direction:column}.fmega{padding-top:70px}}
 @media (prefers-reduced-motion:reduce){.fmega img{transform:none;opacity:1}}
@@ -576,6 +576,8 @@ main :is(.card,.prog,.way,.icard,.formcard) p.muted{font-size:inherit;line-heigh
 .tlx-item.on .tlx-photo{transform:rotate(-2deg)}
 .tlx-item.on:nth-of-type(even) .tlx-photo{transform:rotate(2deg)}
 .tlx-photo img{width:100%;height:100%;object-fit:cover;display:block}
+/* título y texto centrados; arrancan arriba para que todos los títulos queden a la misma altura */
+.tlx-text{align-self:start;text-align:center;padding-top:clamp(20px,3.6vh,40px)}
 .tlx-text h3{font-size:clamp(1.4rem,2vw,2rem);margin-bottom:12px}
 .tlx-text p{color:rgba(255,255,255,.78);font-size:clamp(1rem,1.25vw,1.2rem);line-height:1.5}
 .tlx-text .pending{margin-top:14px}
@@ -901,7 +903,7 @@ main p.ct-lead{font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.5;color:rgba
   .fsoc{margin-top:6px}
   .fsoc-link{width:46px}
   .fmega{flex:1 1 0;min-height:0;margin-top:0;display:flex;align-items:center;justify-content:center;padding-top:clamp(14px,3vh,40px);padding-bottom:clamp(14px,2.4vh,30px)}
-  .fmega img{width:auto;height:100%;max-width:75%;object-fit:contain;margin-inline:auto}
+  .fmega img{width:auto;height:100%;max-width:55%;object-fit:contain;margin-inline:auto}
 }
 
 /* Tu aporte: cards que se tuercen y toman color al pasar el cursor */
@@ -1575,7 +1577,7 @@ main #sp-dona p.sp-note{font-size:.95rem;padding:2px 0 2px 14px}
 @media (min-width:1000px) and (min-height:800px){main section.ct-hero{padding-top:clamp(124px,17.5vh,160px)!important}}
 .sp-select[hidden]{display:none!important}
 main section#ubicacion h2.ct-where{font-size:clamp(2.2rem,4.1vw,3.9rem)!important}
-.ct-where .nw{white-space:nowrap}
+.ct-where .nw,#sp-form h2 .nw{white-space:nowrap}
 /* Sin subrayado a mano en ningún título */
 .scribble > svg{display:none!important}
 
@@ -1783,17 +1785,27 @@ a.doc{text-decoration:none}
 .bol-go i{width:38px;height:38px;display:grid;place-items:center;background:var(--orange);color:#16313F;transition:transform .5s cubic-bezier(.22,.7,.2,1)}
 .bol-go svg{width:18px;height:18px}
 .bol:hover .bol-go i{transform:translateX(5px)}
-/* Gestión de informes: grupos por tipo de documento */
-.inf-groups{display:flex;flex-direction:column}
-.inf-group{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px clamp(30px,5vw,90px);padding:clamp(34px,6vh,64px) 0;border-top:1px solid var(--line)}
-.inf-group:first-child{border-top:0;padding-top:0}
-.inf-gh{display:flex;flex-direction:column;gap:12px;align-self:start;position:sticky;top:110px}
-.inf-n{font-weight:800;font-size:.85rem;letter-spacing:.14em;color:var(--orange)}
-main #infList .inf-gh h2{font-size:clamp(1.7rem,2.8vw,2.6rem)!important;line-height:1.08!important;margin:0;color:var(--heading)}
-main [data-page="informes"] .inf-gh p{margin:0;color:var(--muted);font-size:1.05rem;line-height:1.5;max-width:32ch}
-.inf-group .inf-list{border-bottom:0}
-.inf-group .inf-list .doc:first-child{border-top:0}
-@media (max-width:860px){.inf-group{grid-template-columns:1fr}.inf-gh{position:static}}
+/* Gestión de informes: la foto es clara arriba; se oscurece para que el menú se lea */
+.inf-hero .hero-bg .zoom::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,56,.6) 0%,rgba(15,42,56,0) 32%);pointer-events:none}
+/* Gestión de informes: filtro por tipo y tarjetas de documentos */
+.inf-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(24px,4vh,40px)}
+.inf-chips button{all:unset;cursor:pointer;padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:.95rem;color:var(--heading);transition:background-color .3s ease,color .3s ease,border-color .3s ease}
+.inf-chips button:hover{border-color:var(--heading)}
+.inf-chips button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#FFFFFF}
+.inf-chips button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.inf-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.inf-card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:clamp(22px,2vw,30px);background:var(--card);border:1px solid transparent;border-radius:var(--r-md);color:var(--heading);text-decoration:none;transition:transform .5s var(--spring),box-shadow .5s ease,border-color .4s ease}
+.inf-card:hover,.inf-card:focus-visible{transform:translateY(-4px);border-color:var(--orange);box-shadow:0 30px 50px -36px rgba(15,42,56,.5)}
+.inf-ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:rgba(39,154,104,.12);color:var(--green);margin-bottom:6px}
+.inf-ic svg{width:24px;height:24px}
+.inf-cat{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.inf-card h3{flex:1;margin:0;font-size:clamp(1.1rem,1.4vw,1.35rem);line-height:1.25;color:inherit}
+.inf-dl{display:inline-flex;align-items:center;gap:10px;margin-top:10px;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.inf-dl i{width:36px;height:36px;display:grid;place-items:center;background:var(--orange);color:#16313F;transition:transform .5s cubic-bezier(.22,.7,.2,1)}
+.inf-dl svg{width:18px;height:18px}
+.inf-card:hover .inf-dl i{transform:translateY(3px)}
+@media (max-width:900px){.inf-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.inf-cards{grid-template-columns:1fr}.inf-chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}.inf-chips button{flex:none}}
 .doc h3{font-size:clamp(1.15rem,1.7vw,1.6rem)}
 .doc .job-go i svg{width:22px;height:22px}
 .doc:hover .job-go i,.doc:focus-visible .job-go i{transform:translateY(4px)}
@@ -1909,4 +1921,11 @@ footer.site .fbottom{justify-content:center;text-align:center}
   .inf .inf-years .ps-b{flex:0 0 auto;width:auto;white-space:nowrap;padding:9px 14px;font-size:.95rem;gap:8px}
   .inf .inf-years .ps-b.inf-inst{margin-top:0;padding-top:9px}
   .inf .inf-years .ps-n{display:none}
+}
+
+/* ============ Espacio entre secciones (pedido del cliente): sin alto de pantalla completa ============ */
+/* Cada sección mide lo que mide su contenido, con el mismo aire arriba y abajo. */
+@media (min-width:1000px) and (min-height:640px){
+  main section.block:not(.pshop){min-height:0;padding-top:clamp(64px,9vh,104px)!important;padding-bottom:clamp(64px,9vh,104px)!important}
+  html{scroll-snap-type:none}
 }

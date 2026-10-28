@@ -568,15 +568,15 @@
       <div class="stack reveal">
         <h2>Resultados <em>destacados</em></h2>
         <div class="res-group">
-          <h3>Emprendiendo Juntos Colaboradores</h3>
+          <h3>Emprendiendo juntos</h3>
           <ul class="results">
-            <li><span>Curso de decoración navideña: <b>18</b></span></li>
-            <li><span>Repostería creativa: <b>19</b></span></li>
-            <li><span>Repostería salada y pasabocas gourmet: <b>15</b></span></li>
+            <li><span>Curso de decoración navideña: <b>18 colaboradores</b></span></li>
+            <li><span>Repostería creativa: <b>19 colaboradores</b></span></li>
+            <li><span>Repostería salada y pasabocas gourmet: <b>15 colaboradores</b></span></li>
           </ul>
         </div>
         <div class="res-group">
-          <h3>Emprendiendo Juntos Comunidad</h3>
+          <h3>Emprendiendo juntos con nuestra comunidad</h3>
           <ul class="results">
             <li><span>Bisutería, crochet y macramé: <b>38 mujeres</b></span></li>
             <li><span>Gastronomía: <b>25 mujeres</b></span></li>
@@ -714,7 +714,7 @@
       <figure class="sp-photo reveal"><img src="assets/img/colaboradores.webp" alt="" loading="lazy"><span class="sp-num" aria-hidden="true">03</span></figure>
       <div class="sp-text reveal" style="--d:120ms">
         <h2>Haz una <em>alianza</em></h2>
-        <p class="sp-intro">La fuerza y el impacto de las iniciativas sociales reside, en gran medida, en la posibilidad de sumar capacidades para crear mayores y mejores oportunidades. Mayores, porque se suman los conocimientos y los recursos; mejores, porque se aplican con cercanía, conocimiento y posibilidad de seguimiento. Si eres parte de una empresa privada o de una entidad pública y te identificas con nuestro propósito y nuestros programas, hablemos y revisemos la posibilidad de trabajar juntos.</p>
+        <p class="sp-intro">Sumar capacidades multiplica el impacto social: juntos aportamos más conocimientos y recursos, y los aplicamos con cercanía y seguimiento. Si eres parte de una empresa privada o de una entidad pública y te identificas con nuestro propósito, hablemos y trabajemos juntos.</p>
         <ul class="sp-chips"><li>Empresas</li><li>Instituciones</li></ul>
         <div><button class="cta" type="button" data-way="Haz una alianza">Proponer una alianza <span class="arr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m13 5 7 7-7 7"/></svg></span></button></div>
       </div>
@@ -724,7 +724,7 @@
   <section class="block" data-tone="navy" id="sp-form">
     <div class="wrap contact-grid">
       <div class="stack reveal">
-        <h2>Cuéntanos cómo quieres <em>apoyar</em></h2>
+        <h2>Cuéntanos, ¿cómo quieres <span class="nw"><em>apoyar</em>?</span></h2>
       </div>
       <form id="supportForm" class="ct-panel sp-panel reveal" style="--d:120ms" novalidate>
         <h2 class="ct-ptitle">¿Cómo quieres apoyar?</h2>
@@ -1403,17 +1403,19 @@
 
 <!-- ================= GESTIÓN DE INFORMES ================= -->
 <div data-page="informes" hidden>
-  <section class="phead" data-tone="light">
-    <div class="wrap stack">
-      <div class="intro intro-col">
-        <div class="stack reveal"><h1>Gestión de <em>informes</em></h1></div>
-        <p class="lead reveal" style="--d:100ms">Consulta y descarga los informes de gestión, los estados financieros y los documentos institucionales de la Fundación.</p>
+  <section class="hero-sheet has-photo inf-hero" data-tone="light">
+    <div class="hero-bg" data-parallax=".18"><div class="zoom"><img src="assets/img/sede-club.webp" alt="" style="object-position:50% 72%"></div></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1 class="fade-up" style="animation-delay:.1s">Gestión de <em>informes</em></h1>
+        <p class="lead fade-up" style="margin-top:22px;animation-delay:.4s">Consulta y descarga los informes de gestión, los estados financieros y los documentos institucionales de la Fundación.</p>
       </div>
     </div>
   </section>
   <section class="block inf" data-tone="light" id="infDocs">
     <div class="wrap">
-      <div class="inf-groups" id="infList"></div>
+      <div class="inf-chips" id="infChips" role="group" aria-label="Filtrar documentos por tipo"></div>
+      <div class="inf-cards" id="infList" aria-live="polite"></div>
     </div>
   </section>
 </div>
