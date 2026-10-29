@@ -79,7 +79,7 @@ header.site.scrolled .wrap{height:70px}
 header.site.on-dark{color:#fff}
 header.site.on-dark .wordmark .t2{color:#fff}
 header.site.on-dark .wordmark .t1,header.site.on-dark .wordmark .t3{color:#BDEBD3}
-.brand{position:relative;display:block;text-decoration:none;height:52px;transition:height .4s var(--ease)}
+.brand{position:relative;display:block;text-decoration:none;height:62px;transition:height .4s var(--ease)}
 .brand img{height:100%;width:auto;display:block;transition:opacity .35s}
 .brand .logo-blanco{position:absolute;left:0;top:0;opacity:0}
 header.site.on-dark .brand .logo-color{opacity:0}
@@ -87,8 +87,8 @@ header.site.on-dark .brand .logo-blanco{opacity:1}
 /* Sobre fondos oscuros o de color (azul, verde, profundo) el logo pasa a blanco */
 body[data-tone="navy"] header.site .brand .logo-color,body[data-tone="green"] header.site .brand .logo-color,body[data-tone="deep"] header.site .brand .logo-color{opacity:0}
 body[data-tone="navy"] header.site .brand .logo-blanco,body[data-tone="green"] header.site .brand .logo-blanco,body[data-tone="deep"] header.site .brand .logo-blanco{opacity:1}
-header.site.scrolled .brand{height:44px}
-@media (max-width:560px){.brand{height:42px}header.site.scrolled .brand{height:38px}}
+header.site.scrolled .brand{height:52px}
+@media (max-width:560px){.brand{height:48px}header.site.scrolled .brand{height:42px}}
 .brand .mark{width:46px;height:46px;border-radius:var(--r-sm);background:#fff;display:grid;place-items:center;padding:5px;flex:none;box-shadow:0 4px 14px -6px rgba(0,0,0,.25)}
 .brand .mark img{width:100%;height:auto;display:block}
 .wordmark{display:flex;flex-direction:column;line-height:1.08;text-transform:uppercase}
@@ -105,10 +105,10 @@ body.menu-open .burger span{background:transparent}
 body.menu-open .burger span::before{top:0;transform:rotate(45deg)}
 body.menu-open .burger span::after{top:0;transform:rotate(-45deg)}
 @media (max-width:900px){.hnav .links{display:none}.hnav .cta{display:none}}
-/* Pantallas medianas: los enlaces nunca se parten en dos líneas; entre 1180 y 1300px se compactan y debajo de 1180px quedan solo en el menú */
+/* Pantallas medianas: los enlaces nunca se parten en dos líneas; entre 1240 y 1300px se compactan y debajo de 1240px quedan solo en el menú */
 .hnav .links a{white-space:nowrap}
 @media (max-width:1300px){.hnav{gap:18px}.hnav .links{gap:18px}}
-@media (max-width:1180px){.hnav .links{display:none}}
+@media (max-width:1240px){.hnav .links{display:none}}
 
 /* ============ Menú EON: círculo que crece y contenido con resorte ============ */
 .mm{position:fixed;inset:0;z-index:110;pointer-events:none;visibility:hidden}
@@ -466,6 +466,11 @@ body[data-tone="green"] .scribble path,body[data-tone="navy"] .scribble path{str
 .wpp{position:fixed;right:clamp(16px,2vw,32px);bottom:calc(clamp(16px,2vw,32px) + env(safe-area-inset-bottom,0px));z-index:95}
 .wpp-btn{position:relative;z-index:2;width:64px;height:64px;border-radius:50%;border:0;background:#25D366;color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 14px 30px -12px rgba(15,42,56,.55);transition:transform .8s cubic-bezier(.625,.05,0,1) .15s,background-color .3s}
 .wpp-btn svg{width:30px;height:30px}
+/* Botón de WhatsApp más grande, sin tarjeta con QR */
+.wpp-btn{width:76px;height:76px;text-decoration:none}
+.wpp-btn svg{width:38px;height:38px}
+.wpp-btn:hover{transform:scale(1.06)}
+@media (max-width:560px){.wpp-btn{width:64px;height:64px}.wpp-btn svg{width:32px;height:32px}}
 .wpp.open .wpp-btn{transform:rotate(-12deg) scale(.9);transition-delay:0s;background:#1EBE5A}
 .wpp-card{position:absolute;right:-8px;bottom:-8px;width:300px;border-radius:26px;background:#FAF5F2;color:#16313F;padding:28px 26px 84px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;box-shadow:0 30px 60px -30px rgba(15,42,56,.6);
   clip-path:circle(0px at calc(100% - 40px) calc(100% - 40px));visibility:hidden;transition:clip-path .55s cubic-bezier(.625,.05,0,1),visibility 0s linear .55s}
@@ -854,6 +859,10 @@ main p.ct-lead{font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.5;color:rgba
 .ally-logo img{height:clamp(46px,4.4vw,68px);width:auto;max-width:none;object-fit:contain;display:block}
 .marquee .track:has(.ally-logo){gap:18px;padding:14px 0 24px}
 .marquee:has(.ally-logo){margin-top:clamp(28px,4vw,64px)}
+/* Aliados en dos filas: la segunda va en sentido contrario y un poco más lenta */
+.marquee.marquee-rev:has(.ally-logo){margin-top:0}
+.marquee-rev .track{animation-direction:reverse;animation-duration:46s}
+@media (prefers-reduced-motion:reduce){.marquee .track{animation:none}}
 
 /* CTA final del Home: la foto ocupa toda la card */
 .band-final{grid-template-columns:1fr;min-height:clamp(420px,38vw,560px);align-content:center;isolation:isolate;overflow:hidden;background:#279A68}

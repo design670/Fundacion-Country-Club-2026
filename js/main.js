@@ -242,23 +242,7 @@ document.querySelectorAll(".pin-media").forEach(m => {
 
 
 
-/* ---------- WhatsApp: tarjeta con QR que se abre desde el botón ---------- */
-(function(){
-  const wpp = document.getElementById("wpp"), btn = document.getElementById("wppBtn"), qrBox = document.getElementById("wppQr");
-  const URL_WA = "https://wa.me/573176453695";
-  try { if(window.qrcode){ const q = qrcode(0, "M"); q.addData(URL_WA); q.make(); qrBox.innerHTML = q.createSvgTag({cellSize:4, margin:0, scalable:true}); } } catch(e){}
-  const fine = matchMedia("(hover:hover) and (pointer:fine)").matches;
-  let t = null;
-  const open = () => { clearTimeout(t); wpp.classList.add("open"); btn.setAttribute("aria-expanded","true"); };
-  const close = () => { t = setTimeout(() => { wpp.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }, 180); };
-  if(fine){ wpp.addEventListener("pointerenter", open); wpp.addEventListener("pointerleave", close); }
-  btn.addEventListener("click", () => {
-    if(!fine){ window.open(URL_WA, "_blank", "noopener"); return; }
-    wpp.classList.contains("open") ? (clearTimeout(t), wpp.classList.remove("open"), btn.setAttribute("aria-expanded","false")) : open();
-  });
-  wpp.addEventListener("focusin", open); wpp.addEventListener("focusout", e => { if(!wpp.contains(e.relatedTarget)) close(); });
-  addEventListener("keydown", e => { if(e.key === "Escape" && wpp.classList.contains("open")){ wpp.classList.remove("open"); btn.focus(); } });
-})();
+/* ---------- WhatsApp: el botón flotante es un enlace directo al chat (https://wa.me/573176453695) ---------- */
 
 
 /* ---------- Logo gigante del footer: sube al entrar en pantalla ---------- */
